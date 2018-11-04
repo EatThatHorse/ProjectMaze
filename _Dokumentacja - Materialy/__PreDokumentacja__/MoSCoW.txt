@@ -4,6 +4,17 @@
 	• Writen By [Kacper Ptysiek Kacu Kaleta].
 	• Part of ProjectMaze Documentation.
 
+	• W TYM PLIKU PROSZĘ DOPISUJCIE WSZYSTKIE SWOJE POMYSŁY 
+	  Najpierw w formie wypunktowanej, następnie, niżej, Dokładniejsze instrukcje / Wyjaśnienia.
+	
+	• LEGENDA:
+		[¤ Punkt Nie Wykonany, Nie Ukończony]
+		[■ Punkt Działający, Przetestowany, Ukończony]
+		[- Podpunkt, dodatkowe informacje]
+		Unikamy Rozpoczynania Prac nad [Could/Would have] przed ukończeniem [Must/Should have].
+	
+
+	
 	╔═══════════════════════════════════════════════════════════════════════════╗
 	║	888b     d888         .d8888b.  .d8888b.         888       888   888 	║
 	║	8888b   d8888        d88P  Y88bd88P  Y88b        888   o   888   888  	║
@@ -17,8 +28,54 @@
 		  ~  http://www.network-science.de/ascii/    [Font: Colossal]
 
 		  
-
-	│ Must Have:  
-	└───────────────  
-
+	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	█ Must Have:  													█ Should Have:  
+	▀▀▀▀▀▀▀▀▀▀▀▀▀▀													▀▀▀▀▀▀▀▀▀▀▀▀▀▀	
+	┌ ¤ Klasa [room]												┌ ¤ Klasa [bot]
+	└ ¤ Generator pokoi												│	- sterowanie po pokoju
+																	│	- sterowanie między pokojami
+	┌ ¤ Klasa [design::room]										│ ¤ Klasa [player::bot]
+	│ ¤ Generator roomDesign, wyposażenie pokoju					└ ¤ Klasa [moob::bot]
+	└ ¤ Funkcja Render. Rysowanie wszystkiego						
+																	┌ ¤ Klasa [object]
+																	│ ¤ Klasa [obstacle::object]
+																	└ ¤ Klasa [trap::object]
+																	
+																	┌ ¤ Operacje na plikach:
+																	│	- Zapis Statystyk/Wyników
+																	└	- Wypisanie ostatniego wyniku
+					
+	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■											
+	█ Could Have:  													█ Would Have:  
+	▀▀▀▀▀▀▀▀▀▀▀▀▀▀													▀▀▀▀▀▀▀▀▀▀▀▀▀▀	
+	  ¤ FEATURES (featureCreep = ON):								  ¤ Nazwa Gry
+	  	- Eventy (guziki, drzwi, mechanizmy..)						  ¤ Menu → Napisy Końcowe
+	  	- Mapa (Mnogosc zastosowan)									  ¤ Menu → Exit Button
+		- Kolorky/Poprawa roomDesignGen								  ¤ Menu → Settings, Generowanie Okna Konsoli.
+		- snakeWallsMechanics
+		- Teleports
 		
+	  ¤ Menu:
+	    - Nowa Gra
+	    - Wczytanie Gry (OperacjeNaPlikach):
+		   - Zapis Gry
+		   - Wczytanie Gry
+		- Statystyki
+		   - Wypisanie ostatnich 24 wyników.	
+	
+	■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

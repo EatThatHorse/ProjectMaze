@@ -1,0 +1,51 @@
+﻿
+
+	Symbols:
+		☺☻ ♥♦♣♠ ♂♀ ♪♫ ¶§
+	
+	Circles:
+		°• ◘ ○ ◙ ☼ ¤   Xx×
+		
+	Triangles/arrows:
+		► ◄ ↕ ↨ ↑↓ →←
+		▲ ▼ ↔      «»
+		⌂
+		
+	Other:
+		~ @#$%^&  ˇ˘ "' ˝´` ¨˙  *+ -_ ,.˛¸ /\	
+		¬ !?‼ 	  :;       <=>  ÷      ⋅
+		()[]{}		    ≈
+	
+	Quadrangle:
+		⌂ ░▒▓ ▬   ┌│┬ ┐   ╔║╦ ╗
+		∟¬       ├ ─ ┼ ┤ ╠ ═ ╬ ╣
+	   	▄ ■ ▀ █   └ ┴ ┘   ╚ ╩ ╝
+
+	Alphabet:	
+		0123456789	
+		ABCDEFGHIJKLMNOPQRSTUVWXYZ
+		abcdefghijklmnopqrstuvwxyz
+		Ąą  Ää Ăă Ââ Áá  
+			ß	
+		Ćć  Čč Çç
+		Dd  Đđ Ďď
+		Ęę  Ëë Éé Ěě
+		Ii  Îî Íí
+		Ll  Łł Ĺĺ Ľľ 
+		Nn  Ňň Ńń
+		Óó  Őő Öö Ôô 
+		Rr	Řř Ŕŕ
+		Ss  Śś Şş Šš
+		Tt	Ţţ Ťť
+		Uu  Üü Ůů Úú Űű  
+		Yy  Ýý
+		Żż  Žž Źź 
+	
+
+
+
+		─┼
+
+		═╬
+
+
