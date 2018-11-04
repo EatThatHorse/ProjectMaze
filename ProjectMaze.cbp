@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="tmp_BotStuff.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
