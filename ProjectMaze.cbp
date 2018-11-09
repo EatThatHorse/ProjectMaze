@@ -31,6 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Input.cpp" />
+		<Unit filename="PrMaze" />
+		<Unit filename="Render.cpp" />
+		<Unit filename="Update.cpp" />
+		<Unit filename="c_GreatLoop" />
 		<Unit filename="main.cpp" />
 		<Unit filename="tmp_BotStuff.cpp" />
 		<Extensions>

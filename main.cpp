@@ -1,16 +1,20 @@
 
+
+#include "c_GreatLoop"
 #include <iostream>
 using std::cout;
-using std::cin;
 
 
+    // WcisnietyLubNie KeyPressed (SprawdzanyZnak);
 
 
 int main (){
+    int ERRORS;
+    {   PrM::greatLoop GREATLOOP;
+        ERRORS = GREATLOOP.Execute();       // Wywolanie Programu.
+    }
 
-
-
-
-
-    return 0;
+    /// Ostateczna Obsluga bledow.
+    if (ERRORS == 0)
+        return 0;       // NO A SINGLE ERROR.
 }

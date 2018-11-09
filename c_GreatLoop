@@ -1,0 +1,102 @@
+
+#ifndef C_GREATLOOP
+#define C_GREATLOOP
+
+    //    #include "c_Input"
+    //    #include "c_Render"
+    //#include "ProgramCoreSystems.cpp"
+    #include "PrMaze"
+
+    #include <conio.h>      // getch / kbhit
+    #include <windows.h>    // system("");
+    #include <iostream>
+    using std::cout;
+
+
+
+    /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
+    class PrM::greatLoop{
+    public:
+        int Execute();
+    private:
+        // ZMIENNE
+        bool GLOOP = true;  // GreatLoop flag.
+
+    private:
+        // EVERY GAME VERSION:
+        int GameVer01();
+
+        // EVERY MENU VERSION:
+        //int MenuVer01();
+    };
+
+
+    /// DEFINICJE METOD KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    int PrM::greatLoop::Execute(){
+        /** Czynnosci wykonywane przez Program.
+            Obsluga wiekszosci bledow.
+            Metoda wywolywana w MAIN().
+        */
+        int ERRORS;
+        // -------------------------------
+        ERRORS = GameVer01();
+        // -------------------------------
+
+        if (ERRORS == 0)
+            return 0;   // Bez ERROROW.
+    }
+
+
+    int Update (){
+        /** - Przelicza zmiany w grze:
+               - status gracza i przeciwnikow
+               - pozycja gracza i przeciwnikow
+               - wyglad pokoju
+            - Modyfikuje Renderowana Tablice.
+            - Odpalane (tylko!) po nastapieniu zmiany w rozgrywce
+              = wcisnieciu (odpowiedniego!) Inputu.
+        */
+
+
+    }
+    int PrM::greatLoop::GameVer01() {
+        /** Jedna z pierwszych wersji Funkcji Sterującej Programem. */
+
+
+        PrM::Render();   // PreRender. Aktywowany tylko Raz, do wyświetlenia Zerowej Klatki, Frame'a.
+
+        /// GREAT LOOP - Wykonywana tak długo jak działa program.
+        while (GLOOP) {
+            /**   Jedno Wykonanie Petli =
+                = Jeden Input, Jeden Klawisz =
+                = Jedna Klatka, Jeden Frame.
+            */
+
+            //#define PRM__DEBUG_INPUT    // Comment To Disable DEBUG_INPUT
+            #ifdef PRM__DEBUG_INPUT
+            {   // When Active: No Game is runnig. Just DEBUG_INPUT.
+                unsigned char x = getch();
+                if (x != 224) {
+                    system("cls");    // Czyszczenie, Zerowanie Konsoli.
+                    cout << "Key Pressed:\n"
+                         << " (unsigned char): " << x
+                         << " (int): "           << (int)x
+                         << "\n";
+                }
+            }
+            #else
+            {   // When Active: No DEBUG_INPUT. Just Regular Game is runnig.
+                if (PrM::Input() != 224) {   // Wyswietlamy w konsoli na Nowo tylko jak Nie jest zdarzenie 224.
+                    system("cls");      // Czyszczenie, Zerowanie Konsoli.
+
+                    Render();           // Render. Aktywowany Tyle razy ile cokolwiek się zmieni na ekranie.
+                }
+            }
+            #endif
+        }
+        return 0;
+    }
+
+
+    /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
+#endif // C_GREATLOOP

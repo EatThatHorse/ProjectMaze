@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1541790377 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
+	"c_GreatLoop"
+	<iostream>
+
+1541763027 source:c:\users\ptysiek\desktop\projectmaze\tmp_botstuff.cpp
+
+1541797206 c:\users\ptysiek\desktop\projectmaze\c_greatloop
+	"PrMaze"
+	<conio.h>
+	<windows.h>
+	<iostream>
+
+1541788212 c:\users\ptysiek\desktop\projectmaze\c_programsettings
+
+1541789486 c:\users\ptysiek\desktop\projectmaze\programcoresystems.cpp
+	<conio.h>
+
+1541789058 c:\users\ptysiek\desktop\projectmaze\programcoresystems
+	<conio.h>
+
+1541795434 source:c:\users\ptysiek\desktop\projectmaze\programcoresystems.cpp
+
+1541797176 c:\users\ptysiek\desktop\projectmaze\prmaze
+
+1541796702 c:\users\ptysiek\desktop\projectmaze\render.cpp
+
+1541797218 source:c:\users\ptysiek\desktop\projectmaze\render.cpp
+	"PrMaze"
+	<iostream>
+
+1541796933 source:c:\users\ptysiek\desktop\projectmaze\input.cpp
+	"PrMaze"
+	<conio.h>
+
+1541797194 source:c:\users\ptysiek\desktop\projectmaze\update.cpp
+	"PrMaze"
+
