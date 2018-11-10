@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="c_hotel" />
+		<Unit filename="c_room" />
+		<Unit filename="c_room.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
