@@ -1,0 +1,15 @@
+#ifndef c_hotel
+#define c_hotel
+
+#include <iostream>
+using namespace std;
+
+class hotel {
+    public:
+
+        hotel* root;
+};
+
+#endif // c_hotel
+
+
