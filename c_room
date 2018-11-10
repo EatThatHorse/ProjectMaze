@@ -39,7 +39,7 @@ class room {
 
 	room MakeRoom(int ,int ,room*,room*,room*,room*) ; ///tworzenie pojedynczego pokoju
 	void PrintRoom(room);
-	room SetRoom(room); /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj
+	hotel SetRoom(room); /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj
 
 
 };
