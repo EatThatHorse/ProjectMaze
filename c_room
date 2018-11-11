@@ -1,49 +1,77 @@
+
 #ifndef c_room
 #define c_room
+//#ifndef C_ROOM
+//#define C_ROOM
+    /* [Kacu]
+        Przyjelo sie aby nazwy preprocesora pisano z UpperCasem.
+        NIE WYMAGANE. NIE JAKIES BARDZO WAZNE.
+    */
+
+    #include <time.h>
+    #include <iostream>
+    using namespace std;    // [Kacu] tutaj jest jego miejsce.
+
+    //#include "c_hotel"
+    /* [Kacu]
+        Pudelko czekoladek z musztardo:
+        ╔═══════════════════════╗
+        ║   ■   ■   ■   ■   ■   ║<── Pudelko to Hotel.
+        ║                       ║
+        ║   ■   ■   ■   ■   ■<──╬─── Czekolada to Room. Room jest w Hotelu.
+        ║                       ║
+        ║   ■   ■   ■   ■   ■   ║
+        ╚═══════════════════════╝
+        - Zmienilem metode [room::SetRoom(room)] na metode [hotel::SetRoom(room)]
+          Ta metoda operuje na obiektach hotel, wiec laduje w klasie hotel.
+        - Obiekty room sa uzywane W klasie hotel. Nie musza wiedziec o klasie hotel.
+    */
+
+    //using namespace std;
+    /* [Kacu]
+        Posprzatalem. Jedno dotyczy drugiego, Jedno wplywa na drugie. Obok siebie.
+    */
+
+    class room {
+        public:
+        /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        ///     KONSTRUKTORY
+        /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        ///     DEKONSTRUKTORY
+        /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 
-#include <iostream>
-#include <time.h>
-#include "c_hotel"
+        /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        ///    ZMIENNE
+        /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-using namespace std;
+        int lvl; ///poziom w pionie
+        int wid; ///szerokosc
+        room* Me;
+        room* north;
+        room* east;
+        room* south;
+        room* west;
 
-class room {
-    public:
-	/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-	///     KONSTRUKTORY
-	/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        ///     METODY
+        /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-	/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-	///     DEKONSTRUKTORY
-	/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        //room MakeRoom(int,int,room*,room*,room*,room*);
+        room MakeRoom(int ,int ,room*,room*,room*,room*) ; ///tworzenie pojedynczego pokoju
+        void PrintRoom(room);
 
+        //hotel SetRoom(room); /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj
+        /* [Kacu]
+            - Zagwozdka, Bedzie dzialac lepiej Jak bedzie to metoda klasy hotel.
+            - Czekolada nie musi wiedziec czym jest pudelko. Ani ze w nim sie znajduje.
+        */
+    };
+    //#include "c_room.cpp"
+    /* [Kacu] - przemiescilem do c_room.cpp */
 
-	/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-	///    ZMIENNE
-	/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-    int lvl; ///poziom w pionie
-    int wid; ///szerokosc
-    room* Me;
-    room* north;
-    room* east;
-    room* south;
-    room* west;
-
-	/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-	///     METODY
-	/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-	//room MakeRoom(int,int,room*,room*,room*,room*);
-
-	room MakeRoom(int ,int ,room*,room*,room*,room*) ; ///tworzenie pojedynczego pokoju
-	void PrintRoom(room);
-	hotel SetRoom(room); /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj
-
-
-};
-#include "c_room.cpp"
 #endif // c_room
 
 
