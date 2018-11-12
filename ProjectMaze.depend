@@ -21,14 +21,17 @@
 	"c_room"
 	<iostream>
 
-1541957338 c:\users\dell\desktop\maze\projectmaze\c_hotel
+1541962100 c:\users\dell\desktop\maze\projectmaze\c_hotel
 	"c_room"
 	<iostream>
 
-1541922629 c:\users\dell\desktop\maze\projectmaze\c_room
+1542019407 c:\users\dell\desktop\maze\projectmaze\c_room
 	<time.h>
 	<iostream>
 
-1541923486 source:c:\users\dell\desktop\maze\projectmaze\c_room.cpp
+1542019642 source:c:\users\dell\desktop\maze\projectmaze\c_room.cpp
 	"c_room"
+
+1542019511 source:c:\users\dell\desktop\maze\projectmaze\c_hotel.cpp
+	"c_hotel"
 

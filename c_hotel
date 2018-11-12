@@ -35,9 +35,11 @@
     public:
         //hotel MakeHotel(room* = NULL, room* = NULL, room* = NULL, room* = NULL, room* = NULL,room* = NULL);
 
-        hotel SetRoom(room );
-        void PrintHotel(hotel h);
-        hotel MakeHotel(room*,room*,room*,room*,room*,room*);
+
+
+        hotel SetRoom(room);
+        void PrintHotel(hotel);
+        hotel MakeHotel(room* = NULL,room* = NULL,room* = NULL,room* = NULL,room* = NULL,room* = NULL);
       /*  hotel MakeHotel(room* pok1, room* pok2, room* pok3, room* pok4, room* pok5,room* pok6){
             hotel h;
             h.r1 = pok1;

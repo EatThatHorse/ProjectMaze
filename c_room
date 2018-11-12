@@ -61,7 +61,7 @@
 
         //room MakeRoom(int,int,room*,room*,room*,room*);
         room MakeRoom(int ,int ,room*,room*,room*,room*) ; ///tworzenie pojedynczego pokoju
-        void PrintRoom(room);
+        void PrintRoom();
 
         //hotel SetRoom(room); /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj
         /* [Kacu]

@@ -14,7 +14,7 @@ hotel MakeHotel(room* pok1, room* pok2, room* pok3, room* pok4, room* pok5,room*
 
 
 
-hotel hotel::SetRoom(room tmpRroom){ /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj, zwraca pudelo z pokojami w srodku
+hotel hotel::SetRoom(room tmpRoom){ /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj, zwraca pudelo z pokojami w srodku
 
 
 
@@ -24,26 +24,20 @@ hotel hotel::SetRoom(room tmpRroom){ /// tworzenie nowych roomow, losowanie jaki
         if (x==0) {
             hotel h;
             room room0;
-            room0.MakeRoom(tmpRroom.lvl + 1,tmpRroom.wid,NULL,NULL,tmpRroom.Me,NULL);
-            h.MakeHotel(room0);
+            room0.MakeRoom(tmpRoom.lvl + 1,tmpRoom.wid,NULL,NULL,tmpRoom.Me,NULL);
+            h->MakeHotel(&room0,NULL,NULL,NULL,NULL,NULL);
             return h;
         }
-        /*
-        [GRZYBO]
-        Po probie kompilacji pokzauje mi bledy:
-        - nie zadeklarowano room0, room1 itd.
-        - nie zadeklarowano MakeRoom
-        Szczerze nie wiem o co chodzi
-
-        */
         if(x==1) {
             hotel h;
-            room room0 = MakeRoom(room.lvl,room.wid + 1,NULL,NULL,NULL,room.Me);
-            room room1 = MakeRoom(room.lvl + 1,room.wid + 1,NULL,NULL,room0.Me,NULL);
-            h = MakeHotel(&room0,&room1);
+            room room0;
+            room room1;
+            room0.MakeRoom(tmpRoom.lvl,tmpRoom.wid + 1,NULL,NULL,NULL,tmpRoom.Me);
+            room1.MakeRoom(tmpRoom.lvl + 1,tmpRoom.wid + 1,NULL,NULL,room0.Me,NULL);
+            h.MakeHotel(&room0,&room1);
             return h;
             }
-        if (x==2) {
+      /*  if (x==2) {
             hotel h;
             room room0 = MakeRoom(room.lvl,room.wid + 1,NULL,NULL,NULL,room.Me);
             room room1 = MakeRoom(room.lvl,room.wid + 2,NULL,NULL,NULL,room0.Me);
@@ -108,16 +102,17 @@ hotel hotel::SetRoom(room tmpRroom){ /// tworzenie nowych roomow, losowanie jaki
         if (x==-6) {
 
         }
+        */
     }
 
-void hotel::PrintHotel(hotel h){ ///[GRZYBO] wypisywanie zaw hotelu
-        PrintRoom(h.r1);
-        PrintRoom(h.r2);
-        PrintRoom(h.r3);
-        PrintRoom(h.r4);
-        PrintRoom(h.r5);
-        PrintRoom(h.r6);
+void hotel::PrintHotel(hotel h){ ///[GRZYBO] wypisywanie za hotelu
 
+        h.r1->PrintRoom();
+        h.r2->PrintRoom();
+        h.r3->PrintRoom();
+        h.r4->PrintRoom();
+        h.r5->PrintRoom();
+        h.r6->PrintRoom();
 }
 
 
