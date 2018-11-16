@@ -49,8 +49,53 @@ Wymiary okien:
                                     ▄*/
 
 
-// [Kacu] Oj tabulacja motzno.
-int main (){
+void AsciiBox (int width, int height, string odstep){
+
+    char ppo = 196;     //ppo  - pojedynzca pozioma
+    char ppi = 179;     //ppi - pojedyncza pionowa
+    char lgr = 218;     //lgr - lewy górny róg
+    char pgr = 191;     //pgr - prawy górny róg
+    char ldr = 192;     //ldr - lewy dolny róg
+    char pdr = 217;     //pdr - prawy dolny róg
+
+
+    /// górna kreska------------------------------------
+    cout << odstep
+         << lgr;            //lewy górny róg
+
+    for (int x=0; x<(width - 2); ++x) {
+        cout << ppo;        //pojedyncza pozioma
+    }
+    cout << pgr             //prawy górny róg
+         << "\n";           //debug pierwszego wiersza bocznych kresek
+
+
+
+    for (int x=0 ;x<height ;++x) {       //boczne kreski górnej ramki
+        cout << odstep
+             << ppi;        //pojedyncza pionowa
+        for (int x=0; x<(width -2) ;x++) {
+            cout << " ";
+        }
+        cout << ppi         //pojedyncza pionowa
+             << "\n";
+    }
+
+    ///dolna kreska------------------------------------
+    cout << odstep
+         << ldr;            //lewy górndolny róg
+
+    for (int x=0; x<(width - 2); ++x) {
+        cout << ppo;    //pojedyncza pozioma
+    }
+    cout << pdr         //prawy dolny róg
+         << "\n";       //debug pierwszego wiersza bocznych kresek
+
+    return;
+}
+
+///AsciRoom-------------------------------------------------------------------------------
+void AsciiRoom (){
     char ppo = 196;     //ppo  - pojedynzca pozioma
     char ppi = 179;     //ppi - pojedyncza pionowa
     char lgr = 218;     //lgr - lewy górny róg
@@ -59,23 +104,92 @@ int main (){
     char pdr = 217;     //pdr - prawy dolny róg
 
     string margin29 = "                             ";
+///gorne drzwi----------------------------------------------
 
-    /// górna kreska górnej ramki ------------------------------------
+
     cout << margin29;
 
+    for (int x=0; x<32; ++x)
+        cout << " ";
+        cout << ppi;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+        cout << ppi;
+
+    for (int x=0; x<32; ++x)
+        cout << " ";
+
+    cout << margin29;
+
+    cout << "\n";
+///krawedz gorna + drzwi----------------------------------------------
+
+    cout << margin29
+         << lgr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+        cout << pdr;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+        cout << ldr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+        cout << pgr
+             << margin29;
+
+    cout << "\n";
+
+///sciany----------------------------------------------
+
+    for (int x=0; x<31; ++x){
+        cout << margin29
+             << ppi;
+
+         for (int x=0; x<66; ++x)
+            cout << " ";
+
+         cout << ppi
+              << margin29;
+         cout << "\n";
+    }
+
+}
+
+// [Kacu] Oj tabulacja motzno.
+int main (){
+/*    char ppo = 196;     //ppo  - pojedynzca pozioma
+    char ppi = 179;     //ppi - pojedyncza pionowa
+    char lgr = 218;     //lgr - lewy górny róg
+    char pgr = 191;     //pgr - prawy górny róg
+    char ldr = 192;     //ldr - lewy dolny róg
+    char pdr = 217;     //pdr - prawy dolny róg
+
+    string margin29 = "                             ";
+*/
+    string margin29 = "                             ";
+
+//   AsciiBox(70,8, margin29);
+//    AsciiBox(70,30, margin29);
+    AsciiRoom();
+
+/*
+/// górna kreska górnej ramki ------------------------------------
+    cout << margin29;
     cout << lgr;        //lewy górny róg
+
     for (int x=0 ;x<68 ;++x) {
         cout << ppo;    //pojedyncza pozioma
     }
     cout << pgr;        //prawy górny róg
 
-
-
     cout << "\n";       //debug pierwszego wiersza bocznych kresek
 
     for (int x=0 ;x<8 ;++x) {       //boczne kreski górnej ramki
         cout << margin29;
-
         cout << ppi;    //pojedyncza pionowa
         for (int x=0; x<68 ;x++) {
             cout << " ";
@@ -84,19 +198,18 @@ int main (){
         cout << "\n";
     }
 
-    /// dolna kreska górnej ramki ------------------------------------
+/// dolna kreska górnej ramki ------------------------------------
     cout << margin29;
-
     cout << ldr;        //lewy dolny róg
     for (int x=0 ;x<68 ;++x) {
-        cout << ppo;    //pojedyncza pionowa
+        cout << ppo;    //pojedyncza pozioma
     }
     cout << pdr;        //prawy dolny róg
-
     cout << "\n";       //przerwa między ramkami
 
 //####################################################################################################################
-
+*/
+/*
     /// górna kreska dolnej ramki ------------------------------------
     cout << margin29;
     cout << (char) lgr; //lewy górny róg
@@ -105,17 +218,16 @@ int main (){
     }
     cout << pgr;        //prawy górny róg
 
-
     cout << "\n";       //debug pierwszego wiersza bocznych kresek
 
     for (int x=0 ;x<30 ;++x) {      //boczne kreski dolnej ramki
         cout << margin29;
-
         cout << ppi;    //pojedyncza pionowa
         for (int x=0; x<68 ;x++) {
             cout << " ";
         }
         cout << ppi;    //pojedyncza pionowa
+
         cout << "\n";
     }
 
@@ -127,10 +239,10 @@ int main (){
         cout << ppo;    //pojedyncza pozioma
     }
     cout << pdr;        //prawy dolny róg
+
     cout << "\n";
 
-
-
+*/
     system("pause");
     return 0;
 }
