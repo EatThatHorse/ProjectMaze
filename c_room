@@ -10,7 +10,7 @@
 
     #include <time.h>
     #include <iostream>
-    using namespace std;    // [Kacu] tutaj jest jego miejsce.
+    using namespace std;    // [Kacu] tutaj jest jego miejsce. Pod includem biblioteki do ktorej sie odnosi.
 
     //#include "c_hotel"
     /* [Kacu]
