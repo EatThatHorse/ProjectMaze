@@ -92,7 +92,11 @@
 */
 
 
-
+/** [Kacu]
+    DOBRZE!!!
+    Ale da sie lepiej!  ^^
+    Metode MakeRoom przerobic na konstruktor.
+*/
 room room::MakeRoom(int lvl,int wid ,room* n,room* e,room* s,room* w ) { ///tworzy jeden pokoj, jesli bez argumentow - pokoj 00
     room room;
 

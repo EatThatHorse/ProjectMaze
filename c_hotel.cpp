@@ -25,7 +25,7 @@ hotel hotel::SetRoom(room tmpRoom){ /// tworzenie nowych roomow, losowanie jakic
             hotel h;
             room room0;
             room0.MakeRoom(tmpRoom.lvl + 1,tmpRoom.wid,NULL,NULL,tmpRoom.Me,NULL);
-            h->MakeHotel(&room0,NULL,NULL,NULL,NULL,NULL);
+//            h.MakeHotel(&room0,NULL,NULL,NULL,NULL,NULL);
             return h;
         }
         if(x==1) {
@@ -34,7 +34,7 @@ hotel hotel::SetRoom(room tmpRoom){ /// tworzenie nowych roomow, losowanie jakic
             room room1;
             room0.MakeRoom(tmpRoom.lvl,tmpRoom.wid + 1,NULL,NULL,NULL,tmpRoom.Me);
             room1.MakeRoom(tmpRoom.lvl + 1,tmpRoom.wid + 1,NULL,NULL,room0.Me,NULL);
-            h.MakeHotel(&room0,&room1);
+//            h.MakeHotel(&room0,&room1);
             return h;
             }
       /*  if (x==2) {
