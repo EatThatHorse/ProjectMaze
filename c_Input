@@ -1,0 +1,57 @@
+
+
+#ifndef INPUT__PRMAZE
+#define INPUT__PRMAZE
+
+    #include <conio.h>      // getch / kbhit
+    #include "c_Bot"
+
+    class Input {
+
+    public:
+        int Run(player& HERO){
+            /** Zakaz Uzywania Cout, Nie zadziala
+                Wynika to z sposobu dzialania getch() i system("cls")   */
+
+            unsigned char znak;
+            znak = getch();   // Oczekiwanie na Input.
+            if (znak == 224) return 224;    // PUNKT KONTROLNY - Wynika z dzialania getch().
+
+            // Obsluga Input Eventow: -------------------------------------
+            if (znak == 27) {       // ESCAPE
+                return znak;
+            }
+            if (znak == 32) {       // SPACJA
+                return znak;
+            }
+            if (znak == 13) {       // ENTER
+                return znak;
+            }
+            if (znak == 75){        // ← (left)
+                HERO.SET_X((HERO.XPOS()-HERO.SPEED()));
+                HERO.Change_image((char)27);    // [←]
+                return znak;
+            }
+            if (znak == 77){        // → (right)
+                HERO.SET_X((HERO.XPOS()+HERO.SPEED()));
+                HERO.Change_image((char)26);    // [→]
+                return znak;
+            }
+            if (znak == 72){        // ↑ (up)
+                HERO.SET_Y((HERO.YPOS()-(HERO.SPEED()/2)));
+                HERO.Change_image((char)24);    // [↑]
+                return znak;
+            }
+            if (znak == 80) {       // ↓ (down)
+                HERO.SET_Y((HERO.YPOS()+(HERO.SPEED()/2)));
+                HERO.Change_image((char)25);    // [↓]
+                return znak;
+            }
+
+            return 224;     // 224 - z decyzji [Kacu]: kod bledu nakazujacy robic nic.
+        }
+
+    };
+
+#endif // INPUT__PRMAZE
+

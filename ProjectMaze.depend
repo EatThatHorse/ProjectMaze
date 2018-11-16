@@ -1,12 +1,15 @@
 # depslib dependency file v1.0
-1541790377 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
+1542387150 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
 	"c_GreatLoop"
 	<iostream>
 
-1541763027 source:c:\users\ptysiek\desktop\projectmaze\tmp_botstuff.cpp
+1542383621 source:c:\users\ptysiek\desktop\projectmaze\tmp_botstuff.cpp
 
-1541797206 c:\users\ptysiek\desktop\projectmaze\c_greatloop
-	"PrMaze"
+1542402109 c:\users\ptysiek\desktop\projectmaze\c_greatloop
+	"c_Input"
+	"c_Update"
+	"c_Render"
+	"c_Bot"
 	<conio.h>
 	<windows.h>
 	<iostream>
@@ -21,18 +24,35 @@
 
 1541795434 source:c:\users\ptysiek\desktop\projectmaze\programcoresystems.cpp
 
-1541797176 c:\users\ptysiek\desktop\projectmaze\prmaze
+1542401288 c:\users\ptysiek\desktop\projectmaze\prmaze
 
 1541796702 c:\users\ptysiek\desktop\projectmaze\render.cpp
 
-1541797218 source:c:\users\ptysiek\desktop\projectmaze\render.cpp
+1542385724 source:c:\users\ptysiek\desktop\projectmaze\render.cpp
 	"PrMaze"
+	"c_Render"
 	<iostream>
 
-1541796933 source:c:\users\ptysiek\desktop\projectmaze\input.cpp
+1542385708 source:c:\users\ptysiek\desktop\projectmaze\input.cpp
 	"PrMaze"
 	<conio.h>
 
-1541797194 source:c:\users\ptysiek\desktop\projectmaze\update.cpp
+1542385753 source:c:\users\ptysiek\desktop\projectmaze\update.cpp
 	"PrMaze"
+
+1542404315 c:\users\ptysiek\desktop\projectmaze\c_render
+	"c_Bot"
+	<iostream>
+
+1542403756 c:\users\ptysiek\desktop\projectmaze\c_input
+	<conio.h>
+	"c_Bot"
+
+1542403482 c:\users\ptysiek\desktop\projectmaze\c_update
+	"c_Render"
+
+1542403662 c:\users\ptysiek\desktop\projectmaze\c_bot
+
+1542403338 source:c:\users\ptysiek\desktop\projectmaze\greatloop.cpp
+	"c_GreatLoop"
 

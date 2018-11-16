@@ -1,7 +1,10 @@
 
-#ifdef Enything
 
-    // #include "c_room"
+
+#ifndef BOT__PRMAZE
+#define BOT__PRMAZE
+
+
 
     class bot {
         /** Klasa Bazowa dla:
@@ -15,6 +18,16 @@
         // ^- Need to include c_room
 
         // In Room Position And Movement
+    public:
+        int XPOS () {return xpos;}
+        int YPOS () {return ypos;}
+        int SPEED () {return speed;}
+
+        void SET_X (int value) {this->xpos=value;}
+        void SET_Y (int value) {this->ypos=value;}
+
+
+    protected:
         int xpos;
         int ypos;
 
@@ -22,7 +35,15 @@
     };
 
 
-    class player::bot {
+    class player : public bot {
+    public:
+        player (){
+            xpos = 45;
+            ypos = 10;
+
+            speed = 5;
+
+        }
 
     private: /// ZMIENNE
         // Ranked / Status
@@ -34,14 +55,24 @@
         char a_down = 25;       // [↓]
         char a_left = 27;       // [←]
         char a_right = 26;      // [→]
-        char a_lastPos;         // Used for Player Render
+        char a_image;         // Used for Player Render
 
     public: /// METODY
         void Input ();      // Left in the render-function. Checks for input for player. Also Moves Player?
-        void ChangeCharacter (char a_newPos);
+        void AnimateCharacter (char a_newPos){
+
+
+        }
         void Render ();     // Used int drawRoom-function. It Draws current Animation Char.
+
+        char IMAGE () {return a_image;}
+        void Change_image (char value) {this->a_image = value;}
+
 
     };
 
-#endif // Enything
+
+#endif // BOT__PRMAZE
+
+
 

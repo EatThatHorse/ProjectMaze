@@ -31,13 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Input.cpp" />
-		<Unit filename="PrMaze" />
-		<Unit filename="Render.cpp" />
-		<Unit filename="Update.cpp" />
+		<Unit filename="GreatLoop.cpp" />
+		<Unit filename="c_Bot" />
 		<Unit filename="c_GreatLoop" />
+		<Unit filename="c_Input" />
+		<Unit filename="c_Render" />
+		<Unit filename="c_Update" />
 		<Unit filename="main.cpp" />
-		<Unit filename="tmp_BotStuff.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

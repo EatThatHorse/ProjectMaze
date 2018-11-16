@@ -1,0 +1,43 @@
+
+
+#ifndef UPDATE__PRMAZE
+#define UPDATE__PRMAZE
+
+    #include "c_Render"
+
+
+    class Update {
+        /** - Przelicza zmiany w grze:
+               - status gracza i przeciwnikow
+               - pozycja gracza i przeciwnikow
+               - wyglad pokoju
+            - Modyfikuje Renderowana Tablice.
+            - Odpalane (tylko!) po nastapieniu zmiany w rozgrywce
+              = wcisnieciu (odpowiedniego!) Inputu.
+        */
+    public:
+        int Run(Render& RENDER, player HERO){
+
+
+
+
+            /// FINAL UPDATE OF RENDER_TAB:
+            for (int col=0; col<30; ++col) {
+                for (int verse=0; verse<70; ++verse){
+                    RENDER.renderTab[verse][col]= NULL;
+                }
+            }
+
+            RENDER.renderTab [HERO.XPOS()][HERO.YPOS()] = HERO.IMAGE();
+
+
+            return 0;
+        }
+
+
+    };
+
+
+
+#endif // UPDATE__PRMAZE
+

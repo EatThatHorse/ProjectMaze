@@ -7,10 +7,15 @@ using std::cout;
 
     // WcisnietyLubNie KeyPressed (SprawdzanyZnak);
 
+    // 25 ↓
+    // 24 ↑
+    // 26 →
+    // 27 ←
+
 
 int main (){
     int ERRORS;
-    {   PrM::greatLoop GREATLOOP;
+    {   GreatLoop GREATLOOP;
         ERRORS = GREATLOOP.Execute();       // Wywolanie Programu.
     }
 
