@@ -116,13 +116,14 @@ room room::MakeRoom(int lvl,int wid ,room* n,room* e,room* s,room* w ) { ///twor
 //}
 
 
-void room::PrintRoom(room room){
-    cout << room.lvl   << "\n"
-         << room.wid   << "\n"
-         << room.north << "\n"
-         << room.east  << "\n"
-         << room.south << "\n"
-         << room.west  << "\n";
+void room::PrintRoom(){///[GRZYBO] to tylko pomocnicza metoda, moze sie przydac ale nie musi.
+    cout << lvl   << "\n"
+         << wid   << "\n"
+         << north << "\n"
+         << east  << "\n"
+         << south << "\n"
+         << west  << "\n";
+}
     /* [Kacu]
       - endl to funkcja. Wywolanie kazdej funkcji kosztuje.
       - NORMALNIE NIE MA Z TYM PROBLEMU !!!
@@ -137,7 +138,7 @@ void room::PrintRoom(room room){
         Z drugiej jednak: wymyslilem sobie by kazdy [<<] byl w nowej lini.
       - Zasada jest jedna: PISAC TAK, ABY ULATWIC INNYM I SOBIE PRACE NAD KODEM.
     */
-}
+
 
 /** [Kacu] Zakomentowalem tymczasowo, aby ominac errory i skompilowac.
 
