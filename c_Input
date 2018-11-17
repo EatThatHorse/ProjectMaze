@@ -4,7 +4,7 @@
 #define INPUT__PRMAZE
 
     #include <conio.h>      // getch / kbhit
-    #include "c_Bot"
+    #include "c_Player"
 
     class Input {
 
@@ -28,26 +28,21 @@
                 return znak;
             }
             if (znak == 75){        // ← (left)
-                HERO.SET_X((HERO.XPOS()-HERO.SPEED()));
-                HERO.Change_image((char)27);    // [←]
+                HERO.Move(LEFT);
                 return znak;
             }
             if (znak == 77){        // → (right)
-                HERO.SET_X((HERO.XPOS()+HERO.SPEED()));
-                HERO.Change_image((char)26);    // [→]
+                HERO.Move(RIGHT);
                 return znak;
             }
             if (znak == 72){        // ↑ (up)
-                HERO.SET_Y((HERO.YPOS()-(HERO.SPEED()/2)));
-                HERO.Change_image((char)24);    // [↑]
+                HERO.Move(UP);
                 return znak;
             }
             if (znak == 80) {       // ↓ (down)
-                HERO.SET_Y((HERO.YPOS()+(HERO.SPEED()/2)));
-                HERO.Change_image((char)25);    // [↓]
+                HERO.Move(DOWN);
                 return znak;
             }
-
             return 224;     // 224 - z decyzji [Kacu]: kod bledu nakazujacy robic nic.
         }
 

@@ -18,18 +18,13 @@
     public:
         int Run(Render& RENDER, player HERO){
 
-
-
-
             /// FINAL UPDATE OF RENDER_TAB:
             for (int col=0; col<30; ++col) {
                 for (int verse=0; verse<70; ++verse){
                     RENDER.renderTab[verse][col]= NULL;
                 }
             }
-
             RENDER.renderTab [HERO.XPOS()][HERO.YPOS()] = HERO.IMAGE();
-
 
             return 0;
         }

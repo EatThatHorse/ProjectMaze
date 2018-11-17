@@ -1,76 +1,24 @@
 
-
-
 #ifndef BOT__PRMAZE
 #define BOT__PRMAZE
-
-
 
     class bot {
         /** Klasa Bazowa dla:
                 - class: player
                 - class: moob
             Znajduja sie w niej informacje niezbedne dla
-            wszystkiego co dowolnie skacze po pokoju.
+            wszystkiego co swobodnie skacze po pokoju.
         */
-
-        //designedRoom* obstacles;          // Jakie przeszkody w pokoju/jak ma skakać + W ktorym pokoju się znajduje.
-        // ^- Need to include c_room
-
-        // In Room Position And Movement
-    public:
-        int XPOS () {return xpos;}
-        int YPOS () {return ypos;}
-        int SPEED () {return speed;}
-
-        void SET_X (int value) {this->xpos=value;}
-        void SET_Y (int value) {this->ypos=value;}
-
+    public: // PUBLICZNE, CZYLI TYLKO DO ODCZYTU:
+        int XPOS () {return this->xpos;}
+        int YPOS () {return this->ypos;}
+        int SPEED () {return this->speed;}
 
     protected:
         int xpos;
         int ypos;
-
         int speed;              // X steps/jumps per turn.
     };
-
-
-    class player : public bot {
-    public:
-        player (){
-            xpos = 45;
-            ypos = 10;
-
-            speed = 5;
-
-        }
-
-    private: /// ZMIENNE
-        // Ranked / Status
-        int score;              // def.[0]
-        int hp;                 // Need to test for Optimalization.
-
-        // Animation Char's:
-        char a_up = 24;         // [↑]
-        char a_down = 25;       // [↓]
-        char a_left = 27;       // [←]
-        char a_right = 26;      // [→]
-        char a_image;         // Used for Player Render
-
-    public: /// METODY
-        void Input ();      // Left in the render-function. Checks for input for player. Also Moves Player?
-        void AnimateCharacter (char a_newPos){
-
-
-        }
-        void Render ();     // Used int drawRoom-function. It Draws current Animation Char.
-
-        char IMAGE () {return a_image;}
-        void Change_image (char value) {this->a_image = value;}
-
-
-    };
-
 
 #endif // BOT__PRMAZE
 

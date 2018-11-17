@@ -2,14 +2,9 @@
 #include "c_GreatLoop"
 
 
-
 void DEBUG_INPUT ();
 
 
-
-
-
-/// DEFINICJE METOD KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 int GreatLoop::Execute(){
     /** Czynnosci wykonywane przez Program.
         Obsluga wiekszosci bledow.

@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1542387150 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
+1542404863 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
 	"c_GreatLoop"
 	<iostream>
 
 1542383621 source:c:\users\ptysiek\desktop\projectmaze\tmp_botstuff.cpp
 
-1542402109 c:\users\ptysiek\desktop\projectmaze\c_greatloop
+1542494661 c:\users\ptysiek\desktop\projectmaze\c_greatloop
 	"c_Input"
 	"c_Update"
 	"c_Render"
@@ -40,19 +40,22 @@
 1542385753 source:c:\users\ptysiek\desktop\projectmaze\update.cpp
 	"PrMaze"
 
-1542404315 c:\users\ptysiek\desktop\projectmaze\c_render
+1542493919 c:\users\ptysiek\desktop\projectmaze\c_render
 	"c_Bot"
 	<iostream>
 
-1542403756 c:\users\ptysiek\desktop\projectmaze\c_input
+1542493944 c:\users\ptysiek\desktop\projectmaze\c_input
 	<conio.h>
-	"c_Bot"
+	"c_Player"
 
-1542403482 c:\users\ptysiek\desktop\projectmaze\c_update
+1542494648 c:\users\ptysiek\desktop\projectmaze\c_update
 	"c_Render"
 
-1542403662 c:\users\ptysiek\desktop\projectmaze\c_bot
+1542493831 c:\users\ptysiek\desktop\projectmaze\c_bot
 
-1542403338 source:c:\users\ptysiek\desktop\projectmaze\greatloop.cpp
+1542494681 source:c:\users\ptysiek\desktop\projectmaze\greatloop.cpp
 	"c_GreatLoop"
+
+1542493813 c:\users\ptysiek\desktop\projectmaze\c_player
+	"c_Bot"
 

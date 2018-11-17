@@ -35,6 +35,7 @@
 		<Unit filename="c_Bot" />
 		<Unit filename="c_GreatLoop" />
 		<Unit filename="c_Input" />
+		<Unit filename="c_Player" />
 		<Unit filename="c_Render" />
 		<Unit filename="c_Update" />
 		<Unit filename="main.cpp" />

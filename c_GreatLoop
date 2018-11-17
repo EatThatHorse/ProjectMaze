@@ -2,14 +2,11 @@
 #ifndef C_GREATLOOP
 #define C_GREATLOOP
 
-
-
     #include "c_Input"
     #include "c_Update"
     #include "c_Render"
 
     #include "c_Bot"
-
 
     #include <conio.h>      // getch / kbhit
     #include <windows.h>    // system("");
