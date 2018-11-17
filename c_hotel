@@ -15,6 +15,7 @@
         ///     KONSTRUKTORY
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         ///     DEKONSTRUKTORY
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -42,7 +43,7 @@
 
 
 
-        void PrintHotel(hotel h);
+        void PrintHotel();
         hotel MakeHotel(room* = NULL, room* = NULL, room* = NULL, room* = NULL, room* = NULL,room* = NULL);
         hotel SetRoom(room tmpRoom);
 
@@ -81,7 +82,7 @@
               jednej wiekszej a nastepnie podzielic ja na mniejsze.
               (nie wszystko da sie od razu zaplanowac)
         */
-        void AddFloor (hotel& HeadHotel){
+        void AddFloor (hotel& HeadHotel);
             /** - Metoda zajmuje sie dodaniem calego pietra na raz.
                   Rozpoczynamy gre → Dodajemy poczotkowe pietro →
                   gracz je przechodzi → dodajemy kolejne pietro →
@@ -164,14 +165,14 @@
                   Wszystko to powyzej jest jedynie moja propozycja. Jak znajdziesz wygodniejszy dla siebie
                   rozklad scenariuszy, uzywaj swojego. Liczby nie musza tez byc ujemne, jak wolisz by wszystkie byly dodatnie.
             */
-        }
-        int RandomSet(int Rmin, int Rmax){
+
+        int RandomSet(int Rmin, int Rmax);
             /** - Metoda losuje liczbe z przedzialu [-6 ; 6] ← Na razie starczy.
                   Bedziesz mial ochote zrobisz [-12 ; 12] albo [-36 ; 36]...
                 - Zwraca wynik.
                 - Argumenty to zakres losowanych liczb. Przyda sie ci do testowania scenariuszy.
-            */
-        }
+        }    */
+
     };
 
 #endif // c_hotel

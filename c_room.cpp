@@ -118,7 +118,9 @@ room room::MakeRoom(int lvl,int wid ,room* n,room* e,room* s,room* w ) { ///twor
 
 void room::PrintRoom(){///[GRZYBO] to tylko pomocnicza metoda, moze sie przydac ale nie musi.
     cout << lvl   << "\n"
-         << wid   << "\n"
+         << wid   << "\n";
+}
+         /*
          << north << "\n"
          << east  << "\n"
          << south << "\n"

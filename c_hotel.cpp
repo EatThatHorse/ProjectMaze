@@ -1,7 +1,8 @@
 
 #include "c_hotel"
 //#include "c_room"
-hotel MakeHotel(room* pok1, room* pok2, room* pok3, room* pok4, room* pok5,room* pok6){
+
+ /*hotel MakeHotel(room* pok1, room* pok2, room* pok3, room* pok4, room* pok5,room* pok6){
             hotel h;
             h.r1 = pok1;
             h.r2 = pok2;
@@ -13,8 +14,8 @@ hotel MakeHotel(room* pok1, room* pok2, room* pok3, room* pok4, room* pok5,room*
        }
 
 
-
-hotel hotel::SetRoom(room tmpRoom){ /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj, zwraca pudelo z pokojami w srodku
+*/
+/*hotel hotel::SetRoom(room tmpRoom){ /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj, zwraca pudelo z pokojami w srodku
 
 
 
@@ -101,18 +102,54 @@ hotel hotel::SetRoom(room tmpRoom){ /// tworzenie nowych roomow, losowanie jakic
         }
         if (x==-6) {
 
-        }
+    }    }
         */
+
+
+void hotel::PrintHotel(){ ///[GRZYBO] wypisywanie za hotelu
+
+        r1->PrintRoom();
+        r2->PrintRoom();
+        r3->PrintRoom();
+        r4->PrintRoom();
+        r5->PrintRoom();
+        r6->PrintRoom();
+}
+
+int RandomSet(int Rmin, int Rmax) {
+
+        int r = Rmax - Rmin;
+        srand(time(NULL));
+        return std::rand()%r + Rmin;
+}
+
+void AddFloor (hotel& HeadHotel){
+
+        int x = RandomSet(0,1);
+
+    switch (x) {
+
+        case 0:
+        room newRoom;
+
+        HeadHotel.lastRoom->north = &newRoom;
+        HeadHotel.lastRoom = &newRoom;
+
+        break;
+
+        case 1:
+        room newRoom0;
+        room newRoom1;
+
+        HeadHotel.lastRoom->north = &newRoom0;
+        newRoom0.east->west = &newRoom1;
+
+        break;
+
+
     }
 
-void hotel::PrintHotel(hotel h){ ///[GRZYBO] wypisywanie za hotelu
 
-        h.r1->PrintRoom();
-        h.r2->PrintRoom();
-        h.r3->PrintRoom();
-        h.r4->PrintRoom();
-        h.r5->PrintRoom();
-        h.r6->PrintRoom();
 }
 
 

@@ -69,6 +69,27 @@ int main (){
     */
     // End.[Kacu] ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ───
 
+
+ ///[GRZYBO] testy OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+// hotel HeadHotel;
+
+hotel hHotel;
+
+hHotel.r1->lvl = 1;
+hHotel.r1->wid = 2;
+
+hHotel.r1->PrintRoom();
+
+ //HeadHotel.AddFloor();
+
+//HeadHotel.PrintHotel();
+
+
+
+
+
+
     return 0;
 }
 
