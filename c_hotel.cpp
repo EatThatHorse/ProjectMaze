@@ -123,14 +123,91 @@ int RandomSet(int Rmin, int Rmax) {
         return std::rand()%r + Rmin;
 }
 
-void AddFloor (hotel& HeadHotel){
+///Egzekucja Gryficy Gnildy
+///[Grzybo]----- Metoda ktora tworzy wlasciwa siezke labiryntu, (bez slepyhc uliczek)
 
-        int x = RandomSet(0,1);
+room* Path(hotel& HeadHotel,int ile,int RoL){
+
+
+    room* LastRoom = &HeadHotel.lastRoom; /// wedrowny wskaznik
+
+    room* tmp; /// wedrowny pokoj pomocniczy do tworzenia pokoiiiii
+
+    tmp = (new room(LastRoom,NULL,NULL,LastRoom.lvl+1,LastRoom.wid)); /// tu tworze pierwszy pokoj , zawcze jest jeden w gore wiec poza petla
+
+    LastRoom = tmp;
+
+    if(RoL>0){ /// RoL od Right or Left, znak tej zminnej decyduje gdzie idzue labirynt, musialem to rozdzielic bo nie da sie w pentli wybierac czy lastroom idzie do westczy east
+                /// za RoL mysle ze bd slurzyl x od switcha i scenariusz bd tak ze jak x>0 to w prawo (RandomSet)
+    for (int i=1;i<=ile;i++){
+
+                tmp = (new room(NULL,NULL,LastRoom,LastRoom.lvl,LastRoom.wid+1));///nowy pokoj z wid o jeden wiekszy bo w prawo
+                LastRoom = tmp;
+    }
+    }
+
+    if(RoL<0){
+
+    for (int i=1;i<=ile;i++){
+
+                tmp = (new room(NULL,LastRoom,NULL,LastRoom.lvl,LastRoom.wid-1)); ///nowy pokoj z wid o jeden mniejszy bo w lewo
+                LastRoom = tmp;
+    }
+    }
+
+    tmp = (new room(LastRoom,NULL,NULL,LastRoom.lvl+1,LastRoom.wid));
+///ostatni pokoj tez zawsze w gore wiec ten tez poza petla
+    LastRoom = tmp;
+
+
+
+    return LastRoom; ///zwracamy lastroom ¿eby wiadomobylo o co chodzi, gdzie jestesmy, i dokonddd zmierzamy
+
+
+
+
+}
+
+///EGZEKUCJA GRYFICY GNILDY [KONIEC]
+
+/// ProstowSciane
+
+void Blind(hotel& HeadHotel,int ile, int RoL){ /// tworzenie zaulkow slepych, mam w glowie tak ze najpierw jest tworzone to a potem wlasciwa scierzka
+/// bo tu LastRoom nam sie nie zmienia po zakonczeniu pracy metody
+     room* LastRoom = &HeadHotel.lastRoom;
+     room* tmp;
+
+     if(RoL>0){
+    for (int i=1;i<=ile;i++){
+
+                tmp = (new room(NULL,NULL,LastRoom,LastRoom.lvl,LastRoom.wid+i));
+                LastRoom = tmp;
+    }
+    }
+
+    if(RoL<0){
+
+    for (int i=1;i<=ile;i++){
+LastRoom = tmp;
+                tmp = (new room(NULL,LastRoom,NULL,LastRoom.lvl,LastRoom.wid-i));
+                LastRoom = tmp;
+    }
+    }
+
+/// i teraz dylemat mam ale mysle ze bd gitara
+/// bo jak nie zwroce Last Rooma to na zewnatrz metody bd taki sam jak wczesniej, i tak ma byc, dlatego void :)
+///PROSTOWSCIANE [KONIEC]
+}
+
+
+void AddFloor (hotel& HeadHotel,int x){///nowy pokoj z wid o jeden wiekszy bo w prawo
+
+
 
     switch (x) {
 
         case 0:
-        room newRoom;
+        room room0(LastRoom,LastRoom.lvl+1,LastRoom.wid);
 
         HeadHotel.lastRoom->north = &newRoom;
         HeadHotel.lastRoom = &newRoom;

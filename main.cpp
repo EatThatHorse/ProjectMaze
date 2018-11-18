@@ -11,6 +11,7 @@ using std::cin;
 
 
 
+
 // [Kacu] ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ───
 /*  class HOTEL
       - [room*] wskaznik do pokazywania na zerowy pokoj.
@@ -93,7 +94,7 @@ public: /// METODY
 };
 
 class container {
-public:
+ public:
     unit* first;
     unit* last;
 };
@@ -146,7 +147,7 @@ int main (){
     int iloscUnitow = 1;    // Pokazuje ile unitow powstalo. Jak na razie mamy tylko zerowy wiec 1.
 
     // Dodajmy teraz 7 Unitow.
-    for (int i=1; i<=7; ++i){
+    for (int i=1; i<=1; ++i){
         // (new int) W ten sposob tworze obiekt typu int. Nie ma on nazwy ani wartosci.
         //           Ale nadal fizycznie istnieje w pamieci. Posiada swoj adres,
         //           wiec jezeli go znasz to jestes w stanie operowac tym obiektem tak jak by mial nazwe.
@@ -173,8 +174,8 @@ int main (){
          << "Wypisz wszystkie unity co masz!\n";
 
     for (int i=1; i <= iloscUnitow; ++i){   // moglem zaczac od 0, ale jakos mi tutaj logiczniej jak zaczne od [1] i [<=]
-        currentUnit->Show();                // wyswietlamy to gdzie jestesmy.
-        ///currentUnit->ShowALL();          // Odkomentuj jedno, zakomentuj drugie. Mozesz porownac adresy  :D.
+       // currentUnit->Show();                // wyswietlamy to gdzie jestesmy.
+        currentUnit->ShowALL();          // Odkomentuj jedno, zakomentuj drugie. Mozesz porownac adresy  :D.
 
         if (i<iloscUnitow) cout << "\n " << (char)18 << "\n";   // Maly zabieg estetyczny.
         else cout << "\n\n\n";
@@ -192,6 +193,15 @@ int main (){
 
     // ◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘ end: [Kacu]
      #endif // End: KACU_MADE_CODE_DIRTYY
+
+     ///[GRZYBO] MOJE PIERDOLY ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        hotel HeadHotel;
+        room zero_Room(NULL,0,0);
+        room* LastRoom;
+        LastRoom = &zero_Room;
+
+        HeadHotel.currentRoom = &LastRoom;
+        HeadHotel.lastRoom = &LastRoom;
 
 
     return 0;

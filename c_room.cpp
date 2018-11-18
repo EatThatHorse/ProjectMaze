@@ -179,3 +179,17 @@ void room::PrintRoom(){///[GRZYBO] to tylko pomocnicza metoda, moze sie przydac 
         }
     }
 */
+
+void Show(){
+        cout << " " << (char)254
+             << " lvl: " << this->lvl;
+    }
+void ShowALL(){
+        cout << " "                 << (char)254
+             << " lvl: "            << this->lvl
+             << "        "
+             << "  adresUnitu: ["   << this
+             << "] North: ["        << this->north
+             << "] South: ["        << this->south
+             << "]";
+    }

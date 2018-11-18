@@ -38,6 +38,19 @@
         ///     KONSTRUKTORY
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+        room (room* t_south,room* t_east,room* t_west ,int t_lvl,int t_wid){
+            this->south = t_south;
+            this->north = NULL;
+            this->east = NULL;
+            this->west = NULL;
+            this->lvl = t_lvl;
+            this->wid = t_wid;
+
+
+            if (t_north != NULL)
+                t_north->south = this;
+        }
+
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         ///     DEKONSTRUKTORY
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -49,7 +62,7 @@
 
         int lvl; ///poziom w pionie
         int wid; ///szerokosc
-        room* Me;
+
         room* north;
         room* east;
         room* south;
@@ -59,6 +72,14 @@
         ///     METODY
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+        void Show();
+        void ShowALL();
+
+
+
+
+
+/*
         //room MakeRoom(int,int,room*,room*,room*,room*);
         room MakeRoom(int ,int ,room*,room*,room*,room*) ; ///tworzenie pojedynczego pokoju
         void PrintRoom();
