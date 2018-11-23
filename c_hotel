@@ -36,6 +36,13 @@
     public:
         //hotel MakeHotel(room* = NULL, room* = NULL, room* = NULL, room* = NULL, room* = NULL,room* = NULL);
 
+        void Ok_Path(int , int);
+        void Blind_Path(int , int);
+
+        int RandomSet(int,int);
+
+        void AddFloor();
+
 
 
         void PrintHotel();
@@ -43,7 +50,7 @@
         hotel SetRoom(room tmpRoom);
 
     private:
-        int RabdomSet(int,int);
+
 
 
         /// [Kacu]  Hmmmm
@@ -162,7 +169,7 @@
                   rozklad scenariuszy, uzywaj swojego. Liczby nie musza tez byc ujemne, jak wolisz by wszystkie byly dodatnie.
             */
 
-        int RandomSet(int Rmin, int Rmax);
+    //    int RandomSet(int Rmin, int Rmax);
             /** - Metoda losuje liczbe z przedzialu [-6 ; 6] ← Na razie starczy.
                   Bedziesz mial ochote zrobisz [-12 ; 12] albo [-36 ; 36]...
                 - Zwraca wynik.

@@ -4,6 +4,8 @@ using std::cout;
 using std::cin;
 
 
+
+
 // [Kacu] ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ───
 #include "c_hotel"
 #include "c_room"
@@ -112,7 +114,7 @@ int main (){
 
 
  ///[GRZYBO] testy OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-
+/*
     #define KACU_MADE_CODE_DIRTYY     // UnComment To Run some Kacu Code. Comment To Run Grzybo Code.
     #ifndef KACU_MADE_CODE_DIRTYY
 
@@ -131,7 +133,7 @@ int main (){
 
     #else
     // ◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘ [Kacu]   2/2
-    /** Walczysz dzielnie!
+     Walczysz dzielnie!
         Wkrada ci sie blad logiczny ktory nie wiesz jak przeskoczyc. (tak sie domyslam patrzac na kod..)
             Klasa hotel posiada w sobie wskazniki do 6 pokoi.
             Oznacza to ze jeden obiekt typu hotel moze trzymac w sobie 6 obiektow typu room.
@@ -139,6 +141,11 @@ int main (){
             Pokaze ci jak sprawic by jeden obiekt typu hotel trzymal w sobie [ 0 ; +oo ) obiektow typu room.
             Korzystam z dwoch klas zdefiniowanych nad mainem. [container]-hotel,  [unit]-pokoj.
      */
+
+
+     /*
+
+
     // VER_1: Only Units.   ---------------------------------------------------------------------------------
     unit zero (NULL, 0);    // Zerowy unit. Ma nazwe. Wiec bede mogl z niego korzystac wiele razy.
     cout << "test czy wypisuje pokoj zero:    "; zero.Show();
@@ -194,14 +201,40 @@ int main (){
     // ◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘ end: [Kacu]
      #endif // End: KACU_MADE_CODE_DIRTYY
 
+     */
+
+
      ///[GRZYBO] MOJE PIERDOLY ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         hotel HeadHotel;
-        room zero_Room(NULL,0,0);
-        room* LastRoom;
-        LastRoom = &zero_Room;
+        room zero_Room(NULL,NULL,NULL,0,0);
 
-        HeadHotel.currentRoom = &LastRoom;
-        HeadHotel.lastRoom = &LastRoom;
+        zero_Room.ShowALL();
+
+        HeadHotel.lastRoom = &zero_Room;
+
+        HeadHotel.AddFloor();
+
+
+
+
+
+
+
+        //HeadHotel.lastRoom->ShowALL();
+
+        //HeadHotel.currentRoom->ShowALL();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     return 0;

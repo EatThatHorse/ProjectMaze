@@ -97,6 +97,7 @@
     Ale da sie lepiej!  ^^
     Metode MakeRoom przerobic na konstruktor.
 */
+/*
 room room::MakeRoom(int lvl,int wid ,room* n,room* e,room* s,room* w ) { ///tworzy jeden pokoj, jesli bez argumentow - pokoj 00
     room room;
 
@@ -179,17 +180,22 @@ void room::PrintRoom(){///[GRZYBO] to tylko pomocnicza metoda, moze sie przydac 
         }
     }
 */
-
+/*
 void Show(){
         cout << " " << (char)254
              << " lvl: " << this->lvl;
     }
-void ShowALL(){
-        cout << " "                 << (char)254
+    */
+void room ::ShowALL(){
+        cout << "  "                 << (char)254
              << " lvl: "            << this->lvl
+             << " wid: "            << this->wid
              << "        "
-             << "  adresUnitu: ["   << this
+             << "  adresRoomu: ["   << this
              << "] North: ["        << this->north
              << "] South: ["        << this->south
-             << "]";
+             << "] East: ["        << this->east
+             << "] West: ["        << this->west
+             << "]\n ";
     }
+

@@ -106,17 +106,9 @@
         */
 
 
-void hotel::PrintHotel(){ ///[GRZYBO] wypisywanie za hotelu
 
-        r1->PrintRoom();
-        r2->PrintRoom();
-        r3->PrintRoom();
-        r4->PrintRoom();
-        r5->PrintRoom();
-        r6->PrintRoom();
-}
 
-int RandomSet(int Rmin, int Rmax) {
+int hotel::RandomSet(int Rmin, int Rmax) {
 
         int r = Rmax - Rmin;
         srand(time(NULL));
@@ -124,73 +116,98 @@ int RandomSet(int Rmin, int Rmax) {
 }
 
 ///Egzekucja Gryficy Gnildy
-///[Grzybo]----- Metoda ktora tworzy wlasciwa siezke labiryntu, (bez slepyhc uliczek)
-
-room* Path(hotel& HeadHotel,int ile,int RoL){
 
 
-    room* LastRoom = &HeadHotel.lastRoom; /// wedrowny wskaznik
+void hotel :: Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wlasciwa siezke labiryntu, (bez slepyhc uliczek)
+
+    room* LastRoom;  /// wedrowny wskaznik
+
+    LastRoom = lastRoom; ///przekazanie do zmiennej wartosci z Heada
+
+
+
 
     room* tmp; /// wedrowny pokoj pomocniczy do tworzenia pokoiiiii
 
-    tmp = (new room(LastRoom,NULL,NULL,LastRoom.lvl+1,LastRoom.wid)); /// tu tworze pierwszy pokoj , zawcze jest jeden w gore wiec poza petla
+    tmp = (new room(LastRoom,NULL,NULL,LastRoom->lvl+1,LastRoom->wid)); /// tu tworze pierwszy pokoj , zawcze jest jeden w gore wiec poza petla
 
     LastRoom = tmp;
+
+    LastRoom->ShowALL(); // wyswietlenie pomocnicze
+
+    lastRoom = LastRoom; //aktualizacja lastRoom z Head'a
+
+    if(RoL != 0){
+
+
 
     if(RoL>0){ /// RoL od Right or Left, znak tej zminnej decyduje gdzie idzue labirynt, musialem to rozdzielic bo nie da sie w pentli wybierac czy lastroom idzie do westczy east
                 /// za RoL mysle ze bd slurzyl x od switcha i scenariusz bd tak ze jak x>0 to w prawo (RandomSet)
     for (int i=1;i<=ile;i++){
 
-                tmp = (new room(NULL,NULL,LastRoom,LastRoom.lvl,LastRoom.wid+1));///nowy pokoj z wid o jeden wiekszy bo w prawo
+                tmp = (new room(NULL,NULL,LastRoom,LastRoom->lvl,LastRoom->wid+1));///nowy pokoj z wid o jeden wiekszy bo w prawo
                 LastRoom = tmp;
-    }
+                LastRoom->ShowALL();
+                lastRoom = LastRoom;
+     }
     }
 
     if(RoL<0){
 
-    for (int i=1;i<=ile;i++){
+    for (int i=1;i<ile;i++){
 
-                tmp = (new room(NULL,LastRoom,NULL,LastRoom.lvl,LastRoom.wid-1)); ///nowy pokoj z wid o jeden mniejszy bo w lewo
+                tmp = (new room(NULL,LastRoom,NULL,lastRoom->lvl,lastRoom->wid-1)); ///nowy pokoj z wid o jeden mniejszy bo w lewo
                 LastRoom = tmp;
-    }
+                LastRoom->ShowALL();
+                lastRoom = LastRoom;
+
+
     }
 
-    tmp = (new room(LastRoom,NULL,NULL,LastRoom.lvl+1,LastRoom.wid));
+    }
+
+    tmp = (new room(LastRoom,NULL,NULL,LastRoom->lvl+1,LastRoom->wid));
 ///ostatni pokoj tez zawsze w gore wiec ten tez poza petla
-    LastRoom = tmp;
+    currentRoom = tmp;
+    }
 
 
-
-    return LastRoom; ///zwracamy lastroom ¿eby wiadomobylo o co chodzi, gdzie jestesmy, i dokonddd zmierzamy
-
-
-
-
+    currentRoom = tmp; /// w sumie currentRoom tutaj nie jest potrzebny ale poza metoda bedzie wiec A K T U A L I Z A C J A
+                        ///tu akurat dla scenariusza 0 XD
+    currentRoom->ShowALL();
 }
 
 ///EGZEKUCJA GRYFICY GNILDY [KONIEC]
 
 /// ProstowSciane
 
-void Blind(hotel& HeadHotel,int ile, int RoL){ /// tworzenie zaulkow slepych, mam w glowie tak ze najpierw jest tworzone to a potem wlasciwa scierzka
+void hotel :: Blind_Path(int ile, int RoL){ /// tworzenie zaulkow slepych, mam w glowie tak ze najpierw jest tworzone to a potem wlasciwa scierzka
 /// bo tu LastRoom nam sie nie zmienia po zakonczeniu pracy metody
-     room* LastRoom = &HeadHotel.lastRoom;
+
+     room* LastRoom;
+
+     LastRoom = lastRoom;
+
      room* tmp;
 
      if(RoL>0){
     for (int i=1;i<=ile;i++){
 
-                tmp = (new room(NULL,NULL,LastRoom,LastRoom.lvl,LastRoom.wid+i));
+                tmp = (new room(NULL,NULL,LastRoom,LastRoom->lvl,LastRoom->wid+1));
                 LastRoom = tmp;
+                LastRoom->ShowALL();
+
     }
     }
 
     if(RoL<0){
 
     for (int i=1;i<=ile;i++){
-LastRoom = tmp;
-                tmp = (new room(NULL,LastRoom,NULL,LastRoom.lvl,LastRoom.wid-i));
+
+                tmp = (new room(NULL,LastRoom,NULL,LastRoom->lvl,LastRoom->wid-1));
                 LastRoom = tmp;
+                LastRoom->ShowALL();
+
     }
     }
 
@@ -200,33 +217,68 @@ LastRoom = tmp;
 }
 
 
-void AddFloor (hotel& HeadHotel,int x){///nowy pokoj z wid o jeden wiekszy bo w prawo
 
+void hotel :: AddFloor (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i blindPath i Randoma
+
+    int x ;
+    x = RandomSet(-6,6);
+
+    cout<<x<<"\n";
 
 
     switch (x) {
 
         case 0:
-        room room0(LastRoom,LastRoom.lvl+1,LastRoom.wid);
-
-        HeadHotel.lastRoom->north = &newRoom;
-        HeadHotel.lastRoom = &newRoom;
-
-        break;
-
+            Ok_Path(x,x);
+            break;
         case 1:
-        room newRoom0;
-        room newRoom1;
+            Ok_Path(1,x);
+           break;
+        case -1:
+            Ok_Path(2,x);
+            break;
+        case 2:
+            Ok_Path(2,x);
+            break;
+        case -2:
+            Ok_Path(2,x); /// JAKIE TO JEST KURWA DOOOOOOBRE!!!!!!
+            break;          ///KUTASY Z NIEBA LECA!!!!!!!!!
+        case 3:
+            Ok_Path(3,x);
+            break;
+        case -3:
+            Ok_Path(3,x);
+            break;
+        case 4:
+            Ok_Path(4,x);
+            break;
+        case -4:
+            Ok_Path(4,x);
+            break;
+        case 5:
+            Blind_Path(1,1);
+            Ok_Path(1,0);
+            break;
+        case -5:
+            Blind_Path(1,-1);
+            Ok_Path(1,0);
+            break;
+        case 6:
+            Blind_Path(1,1);
+            Ok_Path(2,1);
+            break;
+        case -6:
+            Blind_Path(1,-1);
+            Ok_Path(2,-1);
+            break;
+///na razie napisaÅ‚em tyle ale moge jeszce duuuuuuuzo wiecej dodac dla urozmaicenia :]
 
-        HeadHotel.lastRoom->north = &newRoom0;
-        newRoom0.east->west = &newRoom1;
-
-        break;
 
 
     }
-
-
 }
+
+
+
 
 

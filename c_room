@@ -41,14 +41,14 @@
         room (room* t_south,room* t_east,room* t_west ,int t_lvl,int t_wid){
             this->south = t_south;
             this->north = NULL;
-            this->east = NULL;
-            this->west = NULL;
+            this->east = t_east;
+            this->west = t_west;
             this->lvl = t_lvl;
             this->wid = t_wid;
 
 
-            if (t_north != NULL)
-                t_north->south = this;
+            if (t_south != NULL)
+                t_south->north = this;
         }
 
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -85,7 +85,7 @@
         void PrintRoom();
 
         //hotel SetRoom(room); /// tworzenie nowych roomow, losowanie jakich i ilu, argumenty to obecny pokoj
-        /* [Kacu]
+         [Kacu]
             - Zagwozdka, Bedzie dzialac lepiej Jak bedzie to metoda klasy hotel.
             - Czekolada nie musi wiedziec czym jest pudelko. Ani ze w nim sie znajduje.
         */
