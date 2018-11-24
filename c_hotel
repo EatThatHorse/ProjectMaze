@@ -28,7 +28,8 @@
 
         /// [Kacu]:
         room* lastRoom;     // Umozliwi dodawanie pokoi.
-        room* currentRoom;  // Na starcie wskazuje na zeroRoom. Umozliwi poruszanie sie gracza miedzy pokojami.
+        room* currentRoom; // Na starcie wskazuje na zeroRoom. Umozliwi poruszanie sie gracza miedzy pokojami.
+        int nr;
 
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         ///     METODY

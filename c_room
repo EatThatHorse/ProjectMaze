@@ -38,13 +38,15 @@
         ///     KONSTRUKTORY
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-        room (room* t_south,room* t_east,room* t_west ,int t_lvl,int t_wid){
+        room (room* t_south,room* t_east,room* t_west ,int t_lvl,int t_wid,int t_nr){
             this->south = t_south;
             this->north = NULL;
             this->east = t_east;
             this->west = t_west;
             this->lvl = t_lvl;
             this->wid = t_wid;
+            this->nr = t_nr;
+
 
 
             if (t_south != NULL)
@@ -62,11 +64,13 @@
 
         int lvl; ///poziom w pionie
         int wid; ///szerokosc
+        int nr;
 
         room* north;
         room* east;
         room* south;
         room* west;
+
 
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         ///     METODY

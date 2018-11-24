@@ -206,13 +206,23 @@ int main (){
 
      ///[GRZYBO] MOJE PIERDOLY ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         hotel HeadHotel;
-        room zero_Room(NULL,NULL,NULL,0,0);
+        room zero_Room(NULL,NULL,NULL,0,0,1);
+        HeadHotel.nr = 1;
 
         zero_Room.ShowALL();
 
         HeadHotel.lastRoom = &zero_Room;
 
         HeadHotel.AddFloor();
+
+        getchar(); /// dodalem to bo w obu wywolaniach AddFloor byly te same liczby wylosowane
+
+        HeadHotel.AddFloor();
+
+
+        ///numerowanie pokoi dziala dobrze!!!!!!
+
+
 
 
 
