@@ -45,11 +45,11 @@
         void AddFloor();
 
 
-
+    /*
         void PrintHotel();
         hotel MakeHotel(room* = NULL, room* = NULL, room* = NULL, room* = NULL, room* = NULL,room* = NULL);
         hotel SetRoom(room tmpRoom);
-
+    */
     private:
 
 
@@ -86,7 +86,7 @@
               jednej wiekszej a nastepnie podzielic ja na mniejsze.
               (nie wszystko da sie od razu zaplanowac)
         */
-        void AddFloor (hotel& HeadHotel);
+    //    void AddFloor (hotel& HeadHotel);
             /** - Metoda zajmuje sie dodaniem calego pietra na raz.
                   Rozpoczynamy gre → Dodajemy poczotkowe pietro →
                   gracz je przechodzi → dodajemy kolejne pietro →

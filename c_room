@@ -64,7 +64,7 @@
 
         int lvl; ///poziom w pionie
         int wid; ///szerokosc
-        int nr;
+        int nr; ///nrumer pokoju (room 0,0 - nr 1)
 
         room* north;
         room* east;

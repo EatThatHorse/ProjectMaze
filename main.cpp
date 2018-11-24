@@ -61,7 +61,7 @@ using std::cin;
 // ◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘ [Kacu]   1/2
 #include <iostream>
 using std::cout;
-
+/*
 class unit {
 public: /// KONSTRUKTOR
     unit (unit* t_north, int t_lvl){
@@ -100,6 +100,7 @@ class container {
     unit* first;
     unit* last;
 };
+*/
 // ◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘◙◘ end: [Kacu]
 
 int main (){
@@ -225,14 +226,21 @@ int main (){
 
 
 
+///---------------------------------------------------------------------------------------------------
+        /// mysle ze to wszytsko, dodam potem wiecej scenariuszy dla pieter do AddFloor ale
+        /// na razie moze sprobujmy to zaimplementowac do reszty i zobaczyc co nie dziala
+        /// trzeba jeszce pousowac ShowALL z metod ale na razie zostawiam
+        /// noooooo i trzeba posprzatac i dodac ladne opisy
+///---------------------------------------------------------------------------------------------------
 
 
 
 
 
-        //HeadHotel.lastRoom->ShowALL();
 
-        //HeadHotel.currentRoom->ShowALL();
+
+
+
 
 
 
