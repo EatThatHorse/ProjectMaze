@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1543066814 source:c:\users\dell\desktop\maze\projectmaze\main.cpp
+1543261649 source:c:\users\dell\desktop\maze\projectmaze\main.cpp
 	<iostream>
 	"c_hotel"
 	"c_room"
@@ -26,18 +26,18 @@
 	<cstdlib>
 	<iostream>
 
-1543011526 c:\users\dell\desktop\maze\projectmaze\c_hotel
+1543262474 c:\users\dell\desktop\maze\projectmaze\c_hotel
 	"c_room"
 	<cstdlib>
 	<iostream>
 
-1543013155 c:\users\dell\desktop\maze\projectmaze\c_room
+1543074163 c:\users\dell\desktop\maze\projectmaze\c_room
 	<time.h>
 	<iostream>
 
-1543013402 source:c:\users\dell\desktop\maze\projectmaze\c_room.cpp
+1543257894 source:c:\users\dell\desktop\maze\projectmaze\c_room.cpp
 	"c_room"
 
-1543066863 source:c:\users\dell\desktop\maze\projectmaze\c_hotel.cpp
+1543265415 source:c:\users\dell\desktop\maze\projectmaze\c_hotel.cpp
 	"c_hotel"
 

@@ -42,6 +42,10 @@
 
         int RandomSet(int,int);
 
+        void  ShowHotel(room*);
+        void  ShowEAST(room* );
+        void  ShowWEST(room* );
+
         void AddFloor();
 
 

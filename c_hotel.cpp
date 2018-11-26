@@ -31,11 +31,12 @@ void hotel :: Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wla
 
     tmp = (new room(LastRoom,NULL,NULL,LastRoom->lvl+1,LastRoom->wid,lastRoom->nr+1)); /// tu tworze pierwszy pokoj , zawcze jest jeden w gore wiec poza petla
 
-
+    LastRoom->north = tmp;
+  //  LastRoom->ShowALL();
 
     LastRoom = tmp;
 
-    LastRoom->ShowALL(); // wyswietlenie pomocnicze
+  //  LastRoom->ShowALL(); // wyswietlenie pomocnicze
 
     lastRoom = LastRoom; //aktualizacja lastRoom z Head'a
 
@@ -48,9 +49,13 @@ void hotel :: Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wla
     for (int i=1;i<=ile;i++){
 
                 tmp = (new room(NULL,NULL,LastRoom,LastRoom->lvl,LastRoom->wid+1,lastRoom->nr+1));///nowy pokoj z wid o jeden wiekszy bo w prawo
+
+                LastRoom->west = tmp;
+            //    LastRoom->ShowALL();
+
                 LastRoom = tmp;
 
-                LastRoom->ShowALL();
+             //   LastRoom->ShowALL();
                 lastRoom = LastRoom;
 
      }
@@ -61,9 +66,13 @@ void hotel :: Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wla
     for (int i=1;i<=ile;i++){
 
                 tmp = (new room(NULL,LastRoom,NULL,lastRoom->lvl,lastRoom->wid-1,lastRoom->nr+1)); ///nowy pokoj z wid o jeden mniejszy bo w lewo
+
+                LastRoom->east = tmp;
+              //  LastRoom->ShowALL();
+
                 LastRoom = tmp;
 
-                LastRoom->ShowALL();
+            //    LastRoom->ShowALL();
                 lastRoom = LastRoom;
 
 
@@ -73,7 +82,9 @@ void hotel :: Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wla
     }
 
     tmp = (new room(LastRoom,NULL,NULL,LastRoom->lvl+1,LastRoom->wid,lastRoom->nr+1));
-///ostatni pokoj tez zawsze w gore wiec ten tez poza petla
+    LastRoom->north = tmp;
+   // LastRoom->ShowALL();                                                                                   ///ostatni pokoj tez zawsze w gore wiec ten tez poza petla
+
     LastRoom = tmp;
     lastRoom = LastRoom;
 
@@ -83,7 +94,7 @@ void hotel :: Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wla
     lastRoom = LastRoom;
     currentRoom = tmp; /// w sumie currentRoom tutaj nie jest potrzebny ale poza metoda bedzie wiec A K T U A L I Z A C J A
                         ///tu akurat dla scenariusza 0 XD
-    LastRoom->ShowALL();
+ //   LastRoom->ShowALL();
 }
 
 ///EGZEKUCJA GRYFICY GNILDY [KONIEC]
@@ -106,11 +117,14 @@ void hotel :: Blind_Path(int ile, int RoL){ /// tworzenie zaulkow slepych, mam w
      room* tmp;
 
      tmp = (new room(NULL,NULL,LastRoom,LastRoom->lvl+1,LastRoom->wid,lastRoom->nr+1));
+                LastRoom->north = tmp;
+              //  LastRoom->ShowALL();
+
                 LastRoom = tmp;
 
                 lastRoom->nr = lastRoom->nr+1;
 
-                LastRoom->ShowALL();
+            //    LastRoom->ShowALL();
 
                 lastRoom =LastRoom;
 
@@ -119,10 +133,13 @@ void hotel :: Blind_Path(int ile, int RoL){ /// tworzenie zaulkow slepych, mam w
     for (int i=1;i<=ile;i++){
 
                 tmp = (new room(NULL,NULL,LastRoom,LastRoom->lvl,LastRoom->wid+1,lastRoom->nr+1));
+                LastRoom->west = tmp;
+              //  LastRoom->ShowALL();
+
                 LastRoom = tmp;
                 lastRoom->nr = lastRoom->nr+1;
 
-                LastRoom->ShowALL();
+              //  LastRoom->ShowALL();
 
     }
     }
@@ -132,10 +149,14 @@ void hotel :: Blind_Path(int ile, int RoL){ /// tworzenie zaulkow slepych, mam w
     for (int i=1;i<=ile;i++){
 
                 tmp = (new room(NULL,LastRoom,NULL,LastRoom->lvl,LastRoom->wid-1,lastRoom->nr+1));
+
+                LastRoom->east = tmp;
+             //   LastRoom->ShowALL();
+
                 LastRoom = tmp;
                 lastRoom->nr = lastRoom->nr+1;
 
-                LastRoom->ShowALL();
+              //  LastRoom->ShowALL();
 
     }
     }
@@ -144,13 +165,111 @@ void hotel :: Blind_Path(int ile, int RoL){ /// tworzenie zaulkow slepych, mam w
 ///PROSTOWSCIANE [KONIEC]
 }
 
+void hotel:: ShowEAST(room* R){
+
+        room* CurrentRoom;
+
+        CurrentRoom = R;
+
+        while ( CurrentRoom->east != NULL)
+        {
+             CurrentRoom->ShowALL();
+             CurrentRoom = CurrentRoom->east;
+        }
+}
+void hotel:: ShowWEST(room* R){
+
+        room* CurrentRoom;
+
+
+        CurrentRoom = R;
+
+        while ( CurrentRoom->west != NULL)
+        {
+             CurrentRoom->ShowALL();
+             CurrentRoom = CurrentRoom->west;
+        }
+}
+
+
+void hotel :: ShowHotel(room* zero){
+        room* CurrentRoom;
+        room* tmp;
+        int w,e;
+
+        while (CurrentRoom != lastRoom )
+        {
+                CurrentRoom->ShowALL();
+        if (CurrentRoom->north != NULL){
+                tmp = CurrentRoom;
+            if (CurrentRoom->east != NULL ){
+                while ( CurrentRoom->east != NULL )
+                    {   CurrentRoom->ShowALL();
+                        CurrentRoom = CurrentRoom->east;
+                    }
+            }
+             if (CurrentRoom->west != NULL ){
+                while ( CurrentRoom->west != NULL )
+                    {   CurrentRoom->ShowALL();
+                        CurrentRoom = CurrentRoom->west;
+                    }
+            }
+            CurrentRoom = tmp;
+            CurrentRoom = CurrentRoom->north;
+            }
+        if (CurrentRoom->north == NULL){
+                    CurrentRoom = tmp;
+                while ( CurrentRoom->east != NULL )
+                    {   CurrentRoom->ShowALL();
+                        if (CurrentRoom->north != NULL){
+                                e = 1;
+                        }
+                        CurrentRoom = CurrentRoom->east;
+                    }
+                     CurrentRoom = tmp;
+                while ( CurrentRoom->west != NULL )
+                    {   CurrentRoom->ShowALL();
+                         if (CurrentRoom->north != NULL){
+                                w = 1;
+                        }
+                        CurrentRoom = CurrentRoom->west;
+                    }
+                    CurrentRoom = tmp;
+
+                    if (e>w){
+                             while ( CurrentRoom->north != NULL )
+                       {
+                         CurrentRoom = CurrentRoom->east;
+
+                        }
+                        CurrentRoom = CurrentRoom->north;
+
+                    }
+                    if (w>e){
+                         while ( CurrentRoom->north != NULL )
+                    {
+                        CurrentRoom = CurrentRoom->west;
+                    }
+                    }
+
+                    }
+
+        }
+        lastRoom->ShowALL();
+        }
+
+
+
+
+
+
 
 
 void hotel :: AddFloor (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i blindPath i Randoma
 
-    int x;
+    int x =1;
 
-    x = RandomSet(-8,8);
+   // x = RandomSet(-8,8);
 
     cout<<x<<"\n";
 

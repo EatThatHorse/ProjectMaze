@@ -180,14 +180,14 @@ void room::PrintRoom(){///[GRZYBO] to tylko pomocnicza metoda, moze sie przydac 
         }
     }
 */
-
+/*
 void Show(){
         cout << " " << (char)254
              << " lvl: " << this->lvl;
              << " wid: "            << this->wid
              << " nr: "            << this->nr
     }
-
+*/
 void room ::ShowALL(){
         cout << "  "                     << (char)254
             << " lvl: "            << this->lvl
