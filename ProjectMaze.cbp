@@ -31,14 +31,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="GreatLoop.cpp" />
+		<Unit filename="PRM_Core/GreatLoop.cpp" />
+		<Unit filename="PRM_Core/Input.cpp" />
+		<Unit filename="PRM_Core/Render.cpp" />
+		<Unit filename="PRM_Core/Update.cpp" />
+		<Unit filename="PRM_Core/c_GreatLoop" />
+		<Unit filename="PRM_Core/c_Input" />
+		<Unit filename="PRM_Core/c_Render" />
+		<Unit filename="PRM_Core/c_Update" />
+		<Unit filename="PRM_Core/main.cpp" />
 		<Unit filename="c_Bot" />
-		<Unit filename="c_GreatLoop" />
-		<Unit filename="c_Input" />
 		<Unit filename="c_Player" />
-		<Unit filename="c_Render" />
-		<Unit filename="c_Update" />
-		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

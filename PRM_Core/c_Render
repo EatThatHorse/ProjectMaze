@@ -1,0 +1,19 @@
+
+#ifndef RENDER__PRMAZE
+#define RENDER__PRMAZE
+
+    #include "../c_Player"
+
+    #include <iostream>
+    using std::cout;
+    using std::string;
+
+    class Render {
+    public:
+        void Run01G (player);
+        void Run01M (int);
+
+    };
+
+#endif // RENDER__PRMAZE
+

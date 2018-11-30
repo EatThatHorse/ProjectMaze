@@ -6,35 +6,27 @@
     #include "c_Update"
     #include "c_Render"
 
-    #include "c_Bot"
-
-    #include <conio.h>      // getch / kbhit
     #include <windows.h>    // system("");
-    #include <iostream>
+    #include <iostream>     // Includowane tylko dla DEBUG_INPUT();
     using std::cout;
 
 
-
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
-    class GreatLoop : public Input, public Update {   // Zastosowanie dziedziczenia wielobazowego.
+    class GreatLoop : public Input, public Update, public Render {   // Zastosowanie dziedziczenia wielobazowego.
     public:
-        int Execute();
+        // PUBLICZNE METODY
+        void Execute();
     private:
         // ZMIENNE
         bool GLOOP;  // GreatLoop flag.
 
-
-
     private:
         // EVERY GAME VERSION:
-        int GameVer01();
+        void GameVer01();
 
         // EVERY MENU VERSION:
-        //int MenuVer01();
+        void MenuVer01();
     };
-
-
-
 
 
     /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
