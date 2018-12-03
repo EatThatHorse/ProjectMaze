@@ -206,6 +206,7 @@ int main (){
 
 
      ///[GRZYBO] MOJE PIERDOLY ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
         hotel HeadHotel;
         room* CurrentRoom;
         room* LastRoom;
@@ -213,12 +214,22 @@ int main (){
         HeadHotel.nr = 1;
 
         HeadHotel.lastRoom = &zero_Room;
+/*
+        HeadHotel.Blind_Path(3,1);
+       cout<<"***\n";
+        HeadHotel.Ok_Path(0,0);
 
-
+*/
         HeadHotel.AddFloor();
-       HeadHotel.ShowHotel(&zero_Room);
+        cout<<"\n\n\n\n\n";
 
-      //  HeadHotel.ShowHotel(&zero_Room);
+        HeadHotel.ShowHotel(&zero_Room);
+
+    //    cout<<"lastRoom : ";
+      //  HeadHotel.lastRoom->ShowALL();
+
+     //   HeadHotel.ShowHotel(&zero_Room);
+
 
       //  getchar(); /// dodalem to bo w obu wywolaniach AddFloor byly te same liczby wylosowane
 
@@ -226,6 +237,7 @@ int main (){
 
 
         ///numerowanie pokoi dziala dobrze!!!!!!
+
 
 
 

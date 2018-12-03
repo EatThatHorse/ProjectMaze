@@ -197,8 +197,8 @@ void room ::ShowALL(){
              << "  adresRoomu: ["   << this
              << "] North: ["        << this->north
              << "] South: ["        << this->south
-             << "] East: ["        << this->east
-             << "] West: ["        << this->west
+             << "] East:  ["        << this->east
+             << "] West:  ["        << this->west
              << "]\n ";
     }
 
