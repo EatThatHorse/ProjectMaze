@@ -210,7 +210,7 @@ int main (){
         hotel HeadHotel;
         room* CurrentRoom;
         room* LastRoom;
-        room zero_Room(NULL,NULL,NULL,0,0,1);
+        room zero_Room(NULL,NULL,NULL,0,0);
         HeadHotel.nr = 1;
 
         HeadHotel.lastRoom = &zero_Room;

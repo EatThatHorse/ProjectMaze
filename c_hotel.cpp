@@ -6,8 +6,6 @@
 
 
 
-
-
 int hotel::RandomSet(int Rmin, int Rmax) {
 
         srand(time(NULL));
@@ -108,35 +106,31 @@ int hotel::RandomSet(int Rmin, int Rmax) {
 */
 
  void hotel::AddRoom (roomDirection option, bool goInside=1){
-           room* tmp;
+    room* tmp;
 
+    switch (option){
+    case UP:
+        tmp = (new room(lastRoom,NULL,NULL,lastRoom->lvl+1,lastRoom->wid));        // 1) Dodaj pokoj do gory od lastRoom.
+        lastRoom->north = tmp;                                                     // 2) Ustaw wszystkie wskazniki i inne wartosci nowego pokoju, oraz lastRoom.
+        break;
 
-            switch (option){
-            case UP:
-                    tmp = (new room(lastRoom,NULL,NULL,lastRoom->lvl+1,lastRoom->wid,lastRoom->nr+1));        // 1) Dodaj pokoj do gory od lastRoom.
-                    lastRoom->north = tmp;                                                                    // 2) Ustaw wszystkie wskazniki i inne wartosci nowego pokoju, oraz lastRoom.
-                break;
+    case LEFT:
+        tmp = (new room(NULL,lastRoom,NULL,lastRoom->lvl,lastRoom->wid-1));
+        lastRoom->west = tmp;
+        break;
 
-            // 3) Wykonaj to samo dla pozostalych opcji:
-            case LEFT:
-                    tmp = (new room(NULL,lastRoom,NULL,lastRoom->lvl,lastRoom->wid-1,lastRoom->nr+1));
-                    lastRoom->west = tmp;
-                      // Dodawanie pokoju na lewo od lastRoom.
-                break;
+    case RIGHT:
+        tmp = (new room(NULL,NULL,lastRoom,lastRoom->lvl,lastRoom->wid+1));
+        lastRoom->east = tmp;
+        break;
+    }
 
-            case RIGHT:
-                    tmp = (new room(NULL,NULL,lastRoom,lastRoom->lvl,lastRoom->wid+1,lastRoom->nr+1));
-                    lastRoom->east = tmp;
-                // Dodawanie pokoju na prawo od lastRoom.
-                break;
-            }
-
-            /// PART 2
-            if (goInside){
-                lastRoom = tmp;
-                // wejdz do pokoju = ustaw lastRoom na nowy pokoj.
-            }
-        }
+    /// PART 2
+    if (goInside){
+        lastRoom = tmp;
+        // wejdz do pokoju = ustaw lastRoom na nowy pokoj.
+    }
+}
 
 
 
@@ -494,122 +488,85 @@ void hotel:: ShowFloor(room* zero){
 
 */
 
-void hotel :: ShowHotel(room* zero){ ///chyba skonczony ha ha ha
-        room* CurrentRoom;
-        room* tmp;
-        int w = 0;
-        int e = 0;
+void hotel::ShowHotel (room* zero){ ///chyba skonczony ha ha ha
+    room* CurrentRoom;
+    room* tmp;
+    int w = 0;
+    int e = 0;
 
-        CurrentRoom = zero;
-
-
-
-        while (CurrentRoom != lastRoom )
-        {    //   cout<<"START\n ";
-              //  cout<<"curr : ";
-               // CurrentRoom->ShowALL();
-                tmp = CurrentRoom;
-        if (CurrentRoom->north != NULL){
-              //  cout<<"1 :";
-                 CurrentRoom->ShowALL();
+    CurrentRoom = zero;
 
 
+    while (CurrentRoom != lastRoom ) {
+//        cout<<"START\n ";
+//        cout<<"curr : ";
+//        CurrentRoom->ShowALL();
+        tmp = CurrentRoom;
+        if (CurrentRoom->north != NULL) {
+//            cout<<"1 :";
+            CurrentRoom->ShowALL();
 
-                while ( CurrentRoom->east != NULL )
-                    {  CurrentRoom = CurrentRoom->east;
-                         CurrentRoom->ShowALL();
+            while ( CurrentRoom->east != NULL ) {
+                CurrentRoom = CurrentRoom->east;
+                CurrentRoom->ShowALL();
+//                cout<<"666";
+            }
+            CurrentRoom = tmp;
 
-                      //  cout<<"666";
-                    }
-                    CurrentRoom = tmp;
-
-                while ( CurrentRoom->west != NULL )
-                    {   CurrentRoom = CurrentRoom->west;
-                        CurrentRoom->ShowALL();
-
-                      //  cout<<"555";
-                    }
+            while ( CurrentRoom->west != NULL ) {
+                CurrentRoom = CurrentRoom->west;
+                CurrentRoom->ShowALL();
+//                cout<<"555";
+            }
 
             CurrentRoom = tmp;
             CurrentRoom = CurrentRoom->north;
+        } else {
+//            cout<<"2 \n";
+            tmp = CurrentRoom;
+            CurrentRoom->ShowALL();
+
+            while ( CurrentRoom->east != NULL ) {
+//                cout<<"444";
+                CurrentRoom = CurrentRoom->east;
+                CurrentRoom->ShowALL();
+                if (CurrentRoom->north != NULL) {
+                    e = e+1;
+                }
+            }
+            CurrentRoom = tmp;
+
+
+            while ( CurrentRoom->west != NULL ) {
+//                cout<<"333";
+                CurrentRoom = CurrentRoom->west;
+                CurrentRoom->ShowALL();
+                if (CurrentRoom->north != NULL) {
+                    w = w+1;
+                }
+            }
+            CurrentRoom = tmp;
+
+            if (e>w) {
+                while ( CurrentRoom->north == NULL ) {
+                    CurrentRoom = CurrentRoom->east;
+                }
+                CurrentRoom = CurrentRoom->north;
+//                cout<<"222";
             }
 
-      else
-        {
-        //   cout<<"2 \n";
-
-                tmp = CurrentRoom;
-
-                CurrentRoom->ShowALL();
-
-                while ( CurrentRoom->east != NULL )
-                    {  // cout<<"444";
-                        CurrentRoom = CurrentRoom->east;
-                        CurrentRoom->ShowALL();
-                        if (CurrentRoom->north != NULL){
-                                e = e+1;
-                        }
-
-
-                    }
-
-                CurrentRoom = tmp;
-
-
-
-
-
-
-                while ( CurrentRoom->west != NULL )
-                    {  // cout<<"333";
-                        CurrentRoom = CurrentRoom->west;
-                        CurrentRoom->ShowALL();
-                         if (CurrentRoom->north != NULL){
-                                w = w+1;
-                        }
-
-
-                    }
-
-
-                    CurrentRoom = tmp;
-
-
-
-                    if (e>w){
-
-                             while ( CurrentRoom->north == NULL )
-                       {
-                         CurrentRoom = CurrentRoom->east;
-
-                        }
-                        CurrentRoom = CurrentRoom->north;
-                    //   cout<<"222";
-
-                    }
-
-
-
-
-
-                    if (e<w){
-                         while ( CurrentRoom->north == NULL )
-                    {
-                        CurrentRoom = CurrentRoom->west;
-                    }
-                     CurrentRoom = CurrentRoom->north;
-                 //    cout<<"111";
-                    }
-
-                    }
-
-
-
-      //  cout<<"KONIEC\n";
+            if (e<w){
+                while ( CurrentRoom->north == NULL ) {
+                    CurrentRoom = CurrentRoom->west;
+                }
+                CurrentRoom = CurrentRoom->north;
+//                cout<<"111";
+            }
         }
-
-       // cout<<"**********";
-        lastRoom->ShowALL();
+//        cout<<"KONIEC\n";
+    }
+//    cout<<"**********";
+    lastRoom->ShowALL();
 }
 
 
@@ -694,6 +651,9 @@ void hotel :: AddFloor (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i 
 
     }
 }
+
+
+
 void hotel :: AddFloor2 (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i blindPath i Randoma
 
     room* tmpRoom;
@@ -705,7 +665,6 @@ void hotel :: AddFloor2 (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i
 
     cout<<x<<"\n";
 
-
     switch (x) {
 
         /// jeszce raz: pierwszy arg - ile w bok, drugi - na ktora strone idzie, lewo lub prawo
@@ -714,23 +673,23 @@ void hotel :: AddFloor2 (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i
             AddRoom(UP); /// jeden w gore
             break;
         case 1:
-            AddRoom(UP);
             AddRoom(RIGHT); /// up + prawko
+            AddRoom(UP);
            break;
         case -1:
-            AddRoom(UP);
             AddRoom(LEFT); /// up + lewo + up
+            AddRoom(UP);
             break;
         case 2:
-            AddRoom(UP);
             AddRoom(RIGHT);
             AddRoom(RIGHT); /// up + dwa razy w prawo
+            AddRoom(UP);
             break;
         case -2:
-            AddRoom(UP);
             AddRoom(LEFT);
             AddRoom(LEFT);  /// up + dwa razy w lewo                        /// JAKIE TO JEST KURWA DOOOOOOBRE!!!!!!
-            break;                                                              ///KUTASY Z NIEBA LECA!!!!!!!!!
+            AddRoom(UP);                                                    /// KUTASY Z NIEBA LECA!!!!!!!!!
+            break;
         case 3:
             AddRoom(RIGHT);
             AddRoom(RIGHT);
@@ -738,7 +697,6 @@ void hotel :: AddFloor2 (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i
             AddRoom(UP);  /// trzy razy prawo + up
             break;
         case -3:
-
             AddRoom(LEFT);
             AddRoom(LEFT);
             AddRoom(LEFT);
@@ -761,19 +719,16 @@ void hotel :: AddFloor2 (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i
         case 5:
             AddRoom(RIGHT,0);
             AddRoom(UP);              ///jeden w gore - zaulek w prawo z obecnego
-
             break;
         case -5:
             AddRoom(LEFT,0);
             AddRoom(UP);             ///jeden w gore - zaulek w lewo  z obecnego
-
             break;
         case 6:
             AddRoom(LEFT,0);
             AddRoom(RIGHT);
             AddRoom(RIGHT);
             AddRoom(UP);                     /// zaulek w lewo + prawo 2x + up
-
             break;
         case -6:
             AddRoom(RIGHT,0);
@@ -814,7 +769,6 @@ void hotel :: AddFloor2 (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i
             AddRoom(LEFT);
             AddRoom(LEFT);
             AddRoom(UP);                /// zaulek w prawo 2x + lewo 2x + up
-
             break;
 
 ///na razie napisałem tyle ale moge jeszce duuuuuuuzo wiecej dodac dla urozmaicenia :]
