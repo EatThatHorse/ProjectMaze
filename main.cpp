@@ -48,7 +48,15 @@ Wymiary okien:
                                     ■
                                     ▄*/
 
-int tab[30][66];
+//int tab[30][66];
+int tab[34][70];
+
+void RoomRender ()
+
+
+
+
+
 
 void AsciiBox (int width, int height, string odstep){
 
@@ -175,6 +183,7 @@ if (north){
               << margin29;
          cout << "\n";
     }
+//if (east && west){
 if (east){
 ///drzwi boczne----------------------------------------------
     if (west){
@@ -503,7 +512,29 @@ int main (){
 
 //   AsciiBox(70,8, margin29);
 //    AsciiBox(70,30, margin29);
-    AsciiRoom(true, false, true, false);
+    AsciiRoom(true, true, 0, 1);
+/*
+    int x[10];
+    for (int i=0; i<10; ++i){
+        x[i] = i;
+        cout << x[i] << "\t";
+    }*/
+
+/*
+    {
+        int x[10][10];
+        for (int j=0; j<10; ++j){
+            for (int i=0; i<10; ++i){
+                x[j][i] = j+i;
+                cout << x[j][i] << "\t";
+            }
+            cout << "\n";
+        }
+        cout << "\n\n\n\n";
+        cout << x[0][0] << "  " << x[9][9];
+        cout << "\n\n\n\n";
+    }
+*/
 
 /*
 /// górna kreska górnej ramki ------------------------------------
@@ -611,6 +642,8 @@ int main (){
 
     5) - Ulepszenie funkcji AsciiRoom. Rysuje drzwi lub nie, w zaleznosci od podanych wartosci.
          Raz beda wszystkie 4, raz tylko dwa, raz trzy... Wiecej mozliwosci customizacji.
+
+    cool cool cool, Dobrze zrobione.
 */
 
 
