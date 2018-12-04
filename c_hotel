@@ -48,6 +48,9 @@
         void  ShowWEST(room* );
         void  ShowHotel2(room*,int);
         void AddFloor();
+        void AddFloor2() ;
+
+        void AddRoom (roomDirection , bool );
 
 
     /*

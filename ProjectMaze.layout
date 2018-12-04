@@ -2,27 +2,23 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="c_room.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="c_hotel.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8369" topLine="5" />
+			<Cursor1 position="23039" topLine="796" />
 		</Cursor>
 		<Folding>
-			<Collapse line="2" />
-			<Collapse line="42" />
+			<Collapse line="10" />
 		</Folding>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="9312" topLine="46" />
+			<Cursor1 position="9568" topLine="139" />
 		</Cursor>
 		<Folding>
 			<Collapse line="17" />
 			<Collapse line="22" />
 			<Collapse line="34" />
 			<Collapse line="63" />
-			<Collapse line="108" />
-			<Collapse line="117" />
-			<Collapse line="146" />
 		</Folding>
 	</File>
 	<File name="c_room" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
@@ -37,18 +33,26 @@
 	</File>
 	<File name="c_hotel" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1146" topLine="15" />
+			<Cursor1 position="2016" topLine="33" />
 		</Cursor>
 		<Folding>
-			<Collapse line="52" />
+			<Collapse line="55" />
 		</Folding>
 	</File>
-	<File name="c_hotel.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+	<File name="c_room.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="243" topLine="30" />
+			<Cursor1 position="8369" topLine="5" />
 		</Cursor>
 		<Folding>
-			<Collapse line="10" />
+			<Collapse line="2" />
+			<Collapse line="42" />
 		</Folding>
 	</File>
+	<Target name="Debug" top="c_hotel.cpp">
+		<File name="main.cpp" />
+		<File name="c_room" />
+		<File name="c_room.cpp" />
+		<File name="c_hotel" />
+		<File name="c_hotel.cpp" />
+	</Target>
 </CodeBlocks_layout_file>

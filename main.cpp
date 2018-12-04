@@ -220,10 +220,19 @@ int main (){
         HeadHotel.Ok_Path(0,0);
 
 */
-        HeadHotel.AddFloor();
+        HeadHotel.AddFloor2();
+
+
+
+
+
+
+
+
+      //  HeadHotel.AddFloor();
         cout<<"\n\n\n\n\n";
 
-        HeadHotel.ShowHotel(&zero_Room);
+       HeadHotel.ShowHotel(&zero_Room);
 
     //    cout<<"lastRoom : ";
       //  HeadHotel.lastRoom->ShowALL();
