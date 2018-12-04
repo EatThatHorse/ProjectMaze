@@ -48,6 +48,7 @@ Wymiary okien:
                                     ■
                                     ▄*/
 
+int tab[30][66];
 
 void AsciiBox (int width, int height, string odstep){
 
@@ -95,7 +96,7 @@ void AsciiBox (int width, int height, string odstep){
 }
 
 ///AsciRoom-------------------------------------------------------------------------------
-void AsciiRoom (){
+void AsciiRoom (bool north, bool south, bool east, bool west){
     char ppo = 196;     //ppo  - pojedynzca pozioma
     char ppi = 179;     //ppi - pojedyncza pionowa
     char lgr = 218;     //lgr - lewy górny róg
@@ -104,18 +105,269 @@ void AsciiRoom (){
     char pdr = 217;     //pdr - prawy dolny róg
 
     string margin29 = "                             ";
-///gorne drzwi----------------------------------------------
 
-
+if (north){
+///gorne drzwi otwarte----------------------------------------------
     cout << margin29;
 
     for (int x=0; x<32; ++x)
         cout << " ";
-        cout << ppi;
+    cout << ppi;
 
     for (int x=0; x<2; ++x)
         cout << " ";
-        cout << ppi;
+    cout << ppi;
+
+    for (int x=0; x<32; ++x)
+        cout << " ";
+    cout << margin29;
+
+    cout << "\n";
+///krawedz gorna + drzwi----------------------------------------------
+    cout << margin29
+         << lgr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+    cout << pdr;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+    cout << ldr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+    cout << pgr
+         << margin29;
+
+    cout << "\n";
+    } else {
+///gorne drzwi zamkniete----------------------------------------------
+    cout << margin29;
+
+    for (int x=0; x<38; ++x)
+        cout << " ";
+
+    cout << margin29;
+
+    cout << "\n";
+///krawedz gorna + drzwi----------------------------------------------
+    cout << margin29
+         << lgr;
+
+    for (int x=0; x<66; ++x)
+        cout << ppo;
+    cout << pgr;
+
+    cout << margin29;
+
+    cout << "\n";
+    }
+///sciany----------------------------------------------
+    for (int x=0; x<14; ++x){
+        cout << margin29
+             << ppi;
+
+         for (int x=0; x<66; ++x)
+            cout << " ";
+
+         cout << ppi
+              << margin29;
+         cout << "\n";
+    }
+if (east){
+///drzwi boczne----------------------------------------------
+    if (west){
+        cout << "                            "
+             << ppo
+             << pdr;
+
+        for (int x=0; x<66; ++x)
+                cout << " ";
+
+        cout << ldr
+             << ppo
+             << "                            ";
+
+        for (int x=0; x<2; ++x)
+            cout << "\n";
+
+        cout << "                            "
+             << ppo
+             << pgr;
+
+        for (int x=0; x<66; ++x)
+                cout << " ";
+
+        cout << lgr
+             << ppo
+             << "                            ";
+        cout << "\n";
+    } else{
+        cout << margin29
+             << ppi;
+
+        for (int x=0; x<66; ++x)
+                cout << " ";
+
+        cout << ldr
+             << ppo
+             << "                            "
+             << "\n";
+
+        for (int x=0; x<2; ++x){
+            cout << margin29
+                 << ppi
+                 << "\n";
+        }
+
+        cout << margin29
+             << ppi;
+
+        for (int x=0; x<66; ++x)
+                cout << " ";
+
+        cout << lgr
+             << ppo
+             << "                            "
+             << "\n";
+    }
+} else {
+///drzwi boczne zamkniete----------------------------------------------
+   if (west){
+    cout << "                            "
+         << ppo
+         << pdr;
+
+    for (int x=0; x<66; ++x)
+        cout << " ";
+
+    cout << ppi
+         << margin29
+         << "\n";
+
+    for (int x=0; x<2; ++x){
+        cout << margin29;
+
+        for (int x=0; x<66; ++x)
+            cout << " ";
+
+        cout << ppi
+             << margin29
+             << "\n";
+        }
+    cout << "                            "
+         << ppo
+         << pgr;
+
+    for (int x=0; x<66; ++x)
+            cout << " ";
+
+    cout << ppi
+         << margin29
+         << "\n";
+
+    }else{
+    for (int x=0; x<4; ++x){
+        cout << margin29
+             << ppi;
+
+        for (int x=0; x<66; x++)
+            cout << " ";
+
+        cout << ppi
+             << margin29
+             << "\n";
+
+        }
+    }
+
+
+}
+///sciany----------------------------------------------
+    for (int x=0; x<14; ++x){
+        cout << margin29
+             << ppi;
+
+         for (int x=0; x<66; ++x)
+            cout << " ";
+
+         cout << ppi
+              << margin29;
+         cout << "\n";
+    }
+if (south){
+    ///krawedz dolna + drzwi otwarte----------------------------------------------
+    cout << margin29
+         << ldr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+    cout << pgr;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+    cout << lgr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+    cout << pdr
+         << margin29;
+
+    cout << "\n";
+
+///dolne drzwi----------------------------------------------
+    cout << margin29;
+
+    for (int x=0; x<32; ++x)
+        cout << " ";
+    cout << ppi;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+    cout << ppi;
+
+    for (int x=0; x<32; ++x)
+        cout << " ";
+
+    cout << margin29;
+
+    cout << "\n";
+} else {
+       ///krawedz dolna + drzwi zamkniete----------------------------------------------
+    cout << margin29
+         << ldr;
+
+    for (int x=0; x<66; ++x)
+        cout << ppo;
+
+    cout << pdr
+         << margin29;
+
+    cout << "\n";
+
+///dolne drzwi----------------------------------------------
+    cout << margin29;
+
+    for (int x=0; x<38; ++x)
+        cout << " ";
+
+    cout << margin29;
+
+    cout << "\n";
+    }
+
+
+/*///gorne drzwi otwarte----------------------------------------------
+    cout << margin29;
+
+    for (int x=0; x<32; ++x)
+        cout << " ";
+    cout << ppi;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+    cout << ppi;
 
     for (int x=0; x<32; ++x)
         cout << " ";
@@ -124,28 +376,26 @@ void AsciiRoom (){
 
     cout << "\n";
 ///krawedz gorna + drzwi----------------------------------------------
-
     cout << margin29
          << lgr;
 
     for (int x=0; x<31; ++x)
         cout << ppo;
-        cout << pdr;
+    cout << pdr;
 
     for (int x=0; x<2; ++x)
         cout << " ";
-        cout << ldr;
+    cout << ldr;
 
     for (int x=0; x<31; ++x)
         cout << ppo;
-        cout << pgr
-             << margin29;
+    cout << pgr
+         << margin29;
 
     cout << "\n";
 
 ///sciany----------------------------------------------
-
-    for (int x=0; x<31; ++x){
+    for (int x=0; x<14; ++x){
         cout << margin29
              << ppi;
 
@@ -157,6 +407,85 @@ void AsciiRoom (){
          cout << "\n";
     }
 
+
+
+///drzwi boczne----------------------------------------------
+    cout << "                            "
+         << ppo
+         << pdr;
+
+    for (int x=0; x<66; ++x)
+            cout << " ";
+
+    cout << ldr
+         << ppo
+         << "                            ";
+
+    for (int x=0; x<2; ++x)
+        cout << "\n";
+
+    cout << "                            "
+         << ppo
+         << pgr;
+
+    for (int x=0; x<66; ++x)
+            cout << " ";
+
+    cout << lgr
+         << ppo
+         << "                            ";
+    cout << "\n";
+
+///sciany----------------------------------------------
+    for (int x=0; x<14; ++x){
+        cout << margin29
+             << ppi;
+
+         for (int x=0; x<66; ++x)
+            cout << " ";
+
+         cout << ppi
+              << margin29;
+         cout << "\n";
+    }
+
+///krawedz dolna + drzwi----------------------------------------------
+    cout << margin29
+         << ldr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+    cout << pgr;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+    cout << lgr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+    cout << pdr
+         << margin29;
+
+    cout << "\n";
+
+///dolne drzwi----------------------------------------------
+    cout << margin29;
+
+    for (int x=0; x<32; ++x)
+        cout << " ";
+    cout << ppi;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+    cout << ppi;
+
+    for (int x=0; x<32; ++x)
+        cout << " ";
+
+    cout << margin29;
+
+    cout << "\n";
+*/
 }
 
 // [Kacu] Oj tabulacja motzno.
@@ -174,7 +503,7 @@ int main (){
 
 //   AsciiBox(70,8, margin29);
 //    AsciiBox(70,30, margin29);
-    AsciiRoom();
+    AsciiRoom(true, false, true, false);
 
 /*
 /// górna kreska górnej ramki ------------------------------------
@@ -220,7 +549,8 @@ int main (){
 
     cout << "\n";       //debug pierwszego wiersza bocznych kresek
 
-    for (int x=0 ;x<30 ;++x) {      //boczne kreski dolnej ramki
+    ///boczne kreski dolnej ramki ------------------------------------
+    for (int x=0 ;x<30 ;++x) {
         cout << margin29;
         cout << ppi;    //pojedyncza pionowa
         for (int x=0; x<68 ;x++) {
