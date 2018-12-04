@@ -8,6 +8,7 @@
     #include <iostream>
     using namespace std;
 
+    enum roomDirection { UP, LEFT, RIGHT };
 
     class hotel {
     public:

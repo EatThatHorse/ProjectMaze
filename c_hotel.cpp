@@ -3,6 +3,11 @@
 //#include "c_room"
 
 
+
+
+
+
+
 int hotel::RandomSet(int Rmin, int Rmax) {
 
         srand(time(NULL));
@@ -14,7 +19,103 @@ int hotel::RandomSet(int Rmin, int Rmax) {
 ///Egzekucja Gryficy Gnildy
 
 
-void hotel :: Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wlasciwa siezke labiryntu, (bez slepyhc uliczek)
+
+
+
+
+// ░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░░▒▓▓▒░
+// TUATJ JESTEM! NOWE INSTRUKCJE!  :D
+/** Dobrze bedzie napisac metode AddRoom. Bedzie to metoda klasy hotel.
+    Abys sie nie narobil, oraz aby zrobic to jeszcze ladniej! Napisalem ci globalny Enumerator:
+
+        enum nazwaEnuma { lista wyliczeniowa };     // Szablon
+        enum roomDirection { LEFT, RIGHT, UP };     // znajduje sie w c_hotel linijka [11]
+
+    Enumerator, podobnie jak int'y lub char'y, jest TYPEM danych.
+    Enum ode mnie posiada 3 wartosci, { LEFT, RIGHT, UP }. Uzyjesz ich w nowym switch case.
+    Dzialanie nowej metody:
+    - W zaleznosci od opcji podanej w argumencie, utworzy jeden pokoj do gory, lub w lewo, lub w prawo.
+    - W zaleznosci od drugiej opcji podanej w argumencie, wejdzie albo nie wejdzie do nowo utworzonego pokoju.
+      Czyli ustawi, albo nie ustawi wskaznika hotelu lastRoom.
+    Metoda wyglada tak:    [Mozesz skopiowac]
+        void hotel::AddRoom (roomDirection option, bool goInside=1){
+            /// PART 1
+            switch (option){
+            case UP:
+                // 1) Dodaj pokoj do gory od lastRoom.
+                // 2) Ustaw wszystkie wskazniki i inne wartosci nowego pokoju, oraz lastRoom.
+                break;
+
+            // 3) Wykonaj to samo dla pozostalych opcji:
+            case LEFT:
+                // Dodawanie pokoju na lewo od lastRoom.
+                break;
+
+            case RIGHT:
+                // Dodawanie pokoju na prawo od lastRoom.
+                break;
+            }
+
+            /// PART 2
+            if (goInside){
+                // wejdz do pokoju = ustaw lastRoom na nowy pokoj.
+            }
+        }
+    Switch case zostal napisany tak by dzialal bez dodatkowych modyfikacji.
+    Przyklad Metody AddFloor z uzyciem nowej metody.
+        // NOPE:
+        case 3:
+            Ok_Path(3,x); /// up + trzy razy prawo + up
+            break;
+            // Rezygnujemy z jednego up. Dowolnie, pierwszego lub tego na koncu.
+            // Jedno nowe pietro = jeden up.
+            // Inaczej co każdy poziom (bardzo często) będziemy przemieszczali się dwa razy do gory.
+
+        // YAS:
+        case 3:     /// trzy razy prawo + up
+            AddRoom(RIGHT);     // domyslnie bool goInside jest rowny 1. Wiec wchodzimy do srodka.
+            AddRoom(RIGHT);
+            AddRoom(RIGHT);
+            AddRoom(UP);
+            break;
+
+        case 7:     /// [zaulek w prawo]  dwa razy w lewo + up
+            AddRoom(RIGHT, 0);  // goInside jest rowny 0. Nie wchodzimy do srodka. Pozostajemy Tam gdzie stalismy.
+            AddRoom(LEFT);
+            AddRoom(LEFT);
+            AddRoom(UP);
+            break;
+
+        case 8:     /// [zaulek w lewo x2]  dwa razy w prawo + up
+            // Ten przypadek jest nieco tricky. Bo aby dodac drugi zaulek trzeba wejsc do pierwszego zaulka.
+
+            room* tmpRoom = lastRoom;   // tmpRoom bedzie trzymal pozycje miejsca w ktorym stoimy na poczatku case'a.
+            AddRoom(LEFT);          // tworzymy dwa zaulki w lewo. Do pierwszego musimy wejsc aby nastepnie zrobic drugi.
+            AddRoom(LEFT);          // Do drugiego dowolnie. Mozemy wejsc, nie musimy. BO:
+            lastRoom = tmpRoom;     // Przenosimy sie, wracamy do pokoju z ktorego zaczelismy, aby teraz moc isc w [dwa razy w prawo + up]
+
+            AddRoom(RIGHT);
+            AddRoom(RIGHT);
+            AddRoom(UP);
+            break;
+
+    Ten sam sposob pozwoli nam dodac i 3 i 4 zaulki w lewo i w prawo i wgl.
+    5min na zrobienie 26 scenariuszy. Labirynt o 5 poziomach to 26^5 losowych rozgrywek.[ 26^5 = 11 881 376 ]
+    Nie wiem jaki wyjdzie nam poziom trudnosci. Celuje aby srednia rozgrywka trwala miedzy 20 a 50 poziomow.
+    Tak sie robi mapy do gier!!!   xD, jaram sie.
+    Dodatkowo kazdy pokoj bedzie mial inne wyposazenie/przeciwnikow/rzeczy w srodku. (dzialka mikolaja)
+    GOTOWE - hehe  :D
+*/
+
+
+
+
+
+
+
+
+
+void hotel::Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wlasciwa siezke labiryntu, (bez slepyhc uliczek)
 
 /// pierwszy argument odpowiada za to ile pokoi w bok idzie, chyba ze RoL jest 0 bo wtedy to nie ma znaczenia
 /// czyli np.: jak ile = 3 to wiemy ze ostatni pokoj bd na wid = 3 lub -3
@@ -98,9 +199,6 @@ void hotel :: Ok_Path(int ile,int RoL){ ///[Grzybo]----- Metoda ktora tworzy wla
 }
 
 ///EGZEKUCJA GRYFICY GNILDY [KONIEC]
-
-
-
 
 
 
@@ -434,7 +532,7 @@ void hotel :: AddFloor (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i 
             Ok_Path(2,-1);
             break;
 
-///na razie napisa�em tyle ale moge jeszce duuuuuuuzo wiecej dodac dla urozmaicenia :]
+///na razie napisałem tyle ale moge jeszce duuuuuuuzo wiecej dodac dla urozmaicenia :]
 
 
 

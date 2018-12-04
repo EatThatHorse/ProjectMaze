@@ -5,23 +5,23 @@
 	"c_room"
 	<iostream>
 
-1542526949 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
+1543919222 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
 	<iostream>
 	"c_hotel"
 	"c_room"
 	<iostream>
 
-1542522934 source:c:\users\ptysiek\desktop\projectmaze\c_hotel.cpp
+1543928690 source:c:\users\ptysiek\desktop\projectmaze\c_hotel.cpp
 	"c_hotel"
 
-1542522934 source:c:\users\ptysiek\desktop\projectmaze\c_room.cpp
+1543919222 source:c:\users\ptysiek\desktop\projectmaze\c_room.cpp
 	"c_room"
 
-1542522929 c:\users\ptysiek\desktop\projectmaze\c_room
+1543919222 c:\users\ptysiek\desktop\projectmaze\c_room
 	<time.h>
 	<iostream>
 
-1542522934 c:\users\ptysiek\desktop\projectmaze\c_hotel
+1543925665 c:\users\ptysiek\desktop\projectmaze\c_hotel
 	"c_room"
 	<cstdlib>
 	<iostream>
