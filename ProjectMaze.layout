@@ -2,9 +2,26 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="c_hotel" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2016" topLine="33" />
+		</Cursor>
+		<Folding>
+			<Collapse line="55" />
+		</Folding>
+	</File>
+	<File name="c_room.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8369" topLine="5" />
+		</Cursor>
+		<Folding>
+			<Collapse line="2" />
+			<Collapse line="42" />
+		</Folding>
+	</File>
 	<File name="c_hotel.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="23039" topLine="796" />
+			<Cursor1 position="23039" topLine="737" />
 		</Cursor>
 		<Folding>
 			<Collapse line="10" />
@@ -29,23 +46,6 @@
 			<Collapse line="5" />
 			<Collapse line="15" />
 			<Collapse line="30" />
-		</Folding>
-	</File>
-	<File name="c_hotel" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2016" topLine="33" />
-		</Cursor>
-		<Folding>
-			<Collapse line="55" />
-		</Folding>
-	</File>
-	<File name="c_room.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8369" topLine="5" />
-		</Cursor>
-		<Folding>
-			<Collapse line="2" />
-			<Collapse line="42" />
 		</Folding>
 	</File>
 	<Target name="Debug" top="c_hotel.cpp">
