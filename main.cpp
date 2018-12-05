@@ -48,7 +48,187 @@ Wymiary okien:
                                     ■
                                     ▄*/
 
-int tab[30][66];
+char tab[34][70]; //pierwszy nawias to wiersze, drugi to kolumny
+
+char ppo = 196;     //ppo  - pojedynzca pozioma
+char ppi = 179;     //ppi - pojedyncza pionowa
+char lgr = 218;     //lgr - lewy górny róg
+char pgr = 191;     //pgr - prawy górny róg
+char ldr = 192;     //ldr - lewy dolny róg
+char pdr = 217;     //pdr - prawy dolny róg
+
+string margin29 = "                             ";
+
+
+
+
+void TabLine(int wierszyk){
+///każda linijka sciany----------------------------------------------
+
+
+	tab [wierszyk][0] = ' ';
+	tab [wierszyk][1] = ppi;
+
+	for (int x=2; x<=67; ++x)
+		tab [wierszyk][x] = ' ';
+
+	tab [wierszyk][68] = ppi;
+	tab [wierszyk][69] = ' ';
+
+	cout << "\n";
+}
+
+void RenderRoom (){
+
+
+	// Zaczynamy funkcję, odpalamy fora:
+
+	bool north = true;
+
+/*	 for (int wiersz=0; wiersz<70; ++wiersz){
+		tab [0][wiersz] = wiersz;
+		cout << tab[0][wiersz];
+	}*/
+
+	// nadanie wartości elementom w tablicy kurwa!!!! CHAR
+	for (int wiersz=0; wiersz<35; ++wiersz){
+		for (int kolumny=0; kolumny<70; ++kolumny){
+			tab [wiersz][kolumny] = ' '; ///jedna ciapka( ' ) to char, dwuciapek( " ) to string (const char*)
+		}
+	}
+
+//	tab [2][2] = 218;
+
+	if (north){
+///linijka pierwsza----------------------------------------------
+   // cout << margin29;
+
+    for (int x=0; x<=31; ++x)		//cout << " ";
+		tab [0][x] = ' ';
+
+	tab [0][32] = ppi;    			// cout << ppi;
+
+	for (int x=33; x<=35; ++x)
+		tab [0][x] = ' ';
+
+	tab [0][36] = ppi;
+
+
+
+///druga linijka----------------------------------------------
+
+	tab [1][0] = ' ';
+
+	tab [1][1] = lgr;
+	for (int x=2; x<=31; ++x)
+        tab [1][x] = ppo;
+
+	tab [1][32] = pdr;
+    for (int x=33; x<=35; ++x)
+        tab [1][x] = ' ';
+
+	tab [1][36] = ldr;
+
+    for (int x=37; x<=67; ++x)
+        tab [1][x] = ppo;
+
+
+    tab [1][68] = pgr;
+    tab [1][69] = ' ';
+
+
+	///trzecia linijka----------------------------------------------
+	TabLine(2);
+	///czwarta linijka----------------------------------------------
+	TabLine(3);
+	///piata linijka----------------------------------------------
+	TabLine(4);
+
+
+    }
+
+
+
+
+
+
+
+/*
+    for (int x=0; x<2; ++x)
+        cout << " ";
+    cout << ppi;
+
+    for (int x=0; x<32; ++x)
+        cout << " ";
+    cout << margin29;
+
+    cout << "\n";
+///krawedz gorna + drzwi----------------------------------------------
+    cout << margin29
+         << lgr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+    cout << pdr;
+
+    for (int x=0; x<2; ++x)
+        cout << " ";
+    cout << ldr;
+
+    for (int x=0; x<31; ++x)
+        cout << ppo;
+    cout << pgr
+         << margin29;
+
+    cout << "\n";
+    }
+
+*/
+
+
+	// wyswietla 34 wiersze o 70 kolumnach (ktore nie sa w kolejnch wierszach klonami)
+	// wyswietla wszystkie elementy tablicy 34x70
+	for (int wiersz=0; wiersz<35; ++wiersz){
+		for (int kolumny=0; kolumny<70; ++kolumny){
+			cout << tab[wiersz][kolumny];
+		}
+		cout << "\n";
+	}
+
+	// ...
+
+
+
+		/*
+			int wiersz = 0;
+
+			(wiersz<35) <=> (0<35) TAK
+				zobacz tablice tab, otwórz szuflade o numerze [0][wiersz] <=> [0][0]
+				i wbij do środka wartość 0.
+				Wyświetl to co wpisałeś wyżej.
+
+				<koniec tablicy>
+				++wiersz <=> zwiększenie zmiennej wiersz o jeden
+				wiersz jest teraz równy 1.
+
+			(wiersz<35) <=> (1<35) TAK
+				zobacz tablice tab, otwórz szuflade o numerze [0][wiersz] <=> [0][1]
+				i wbij do środka wartość 0.
+				Wyświetl to co wpisałeś wyżej.
+
+				<koniec tablicy>
+				++wiersz <=> zwiększenie zmiennej wiersz o jeden
+				wiersz jest teraz równy 2.
+
+			...
+
+				wiersz jest teraz równy 35.
+			(wiersz<35) <=> (35<35) NIE
+
+
+		*/
+}
+
 
 void AsciiBox (int width, int height, string odstep){
 
@@ -503,7 +683,9 @@ int main (){
 
 //   AsciiBox(70,8, margin29);
 //    AsciiBox(70,30, margin29);
-    AsciiRoom(true, false, true, false);
+//    AsciiRoom(true, false, true, false);
+
+RenderRoom();
 
 /*
 /// górna kreska górnej ramki ------------------------------------
