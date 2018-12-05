@@ -667,7 +667,7 @@ void hotel :: AddFloor2 (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i
 
     switch (x) {
 
-        /// jeszce raz: pierwszy arg - ile w bok, drugi - na ktora strone idzie, lewo lub prawo
+
 
         case 0:
             AddRoom(UP); /// jeden w gore

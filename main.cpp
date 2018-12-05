@@ -214,25 +214,42 @@ int main (){
         HeadHotel.nr = 1;
 
         HeadHotel.lastRoom = &zero_Room;
+        CurrentRoom = &zero_Room;
 /*
         HeadHotel.Blind_Path(3,1);
        cout<<"***\n";
         HeadHotel.Ok_Path(0,0);
 
+     int x;
+        cin>>x;
+
+
+        for(int i = 0;i<x;++i ){    ///testowanko
+
+         HeadHotel.AddFloor2();
+         HeadHotel.ShowHotel(CurrentRoom);
+         CurrentRoom = HeadHotel.lastRoom;
+         getchar();
+        }
+
 */
-        HeadHotel.AddFloor2();
 
+/*
 
+    for(;;){
+        cout<<"ZAEBISCIE";
+    }
 
+*/
 
 
 
 
 
       //  HeadHotel.AddFloor();
-        cout<<"\n\n\n\n\n";
+       // cout<<"\n\n\n\n\n";
 
-       HeadHotel.ShowHotel(&zero_Room);
+      // HeadHotel.ShowHotel(&zero_Room);
 
     //    cout<<"lastRoom : ";
       //  HeadHotel.lastRoom->ShowALL();

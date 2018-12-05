@@ -195,16 +195,16 @@ void Show(){
     }
 */
 void room ::ShowALL(){
-        cout << "  "                     << (char)254
+        cout    << ""               << (char)254
             << " lvl: "            << this->lvl
-             << " wid: "            << this->wid
+            << " wid: "            << this->wid
              << " nr: "            << this->nr
              << "        "
-             << "  adresRoomu: ["   << this
+             << "this: ["   << this
              << "] North: ["        << this->north
              << "] South: ["        << this->south
              << "] East:  ["        << this->east
              << "] West:  ["        << this->west
-             << "]\n ";
+             << "]\n";
     }
 
