@@ -47,15 +47,34 @@
             this->wid = t_wid;
             this->nr = t_nr;
 
-
-
             if (t_south != NULL)
                 t_south->north = this;
         }
 
+        // [kacu] Wersja konstruktora z automatycznym wstawianiem nr pokoju.
+        room (room* t_south,room* t_east,room* t_west ,int t_lvl,int t_wid){
+            ++iloscPokoi;
+
+            this->south = t_south;
+            this->north = NULL;
+            this->east = t_east;
+            this->west = t_west;
+            this->lvl = t_lvl;
+            this->wid = t_wid;
+            this->nr = iloscPokoi;
+
+            if (t_south != NULL)
+                t_south->north = this;
+        }
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         ///     DEKONSTRUKTORY
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        ~room (){
+            --iloscPokoi;
+        }
+
+
 
 
         /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -65,6 +84,9 @@
         int lvl; ///poziom w pionie
         int wid; ///szerokosc
         int nr; ///nrumer pokoju (room 0,0 - nr 1)
+
+        static int iloscPokoi;
+
 
         room* north;
         room* east;

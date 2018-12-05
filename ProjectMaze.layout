@@ -3,6 +3,7 @@
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
 	<File name="c_hotel" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+<<<<<<< HEAD
 		<Cursor>
 			<Cursor1 position="2016" topLine="33" />
 		</Cursor>
@@ -22,14 +23,27 @@
 	<File name="c_hotel.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="23039" topLine="737" />
+=======
+		<Cursor>
+			<Cursor1 position="1335" topLine="18" />
+>>>>>>> 5a3d68c383c2304540afb5e6b4d734f7a6b07aae
 		</Cursor>
 		<Folding>
-			<Collapse line="10" />
+			<Collapse line="56" />
+		</Folding>
+	</File>
+	<File name="c_room.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3666" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="2" />
+			<Collapse line="48" />
 		</Folding>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="9568" topLine="139" />
+			<Cursor1 position="9355" topLine="127" />
 		</Cursor>
 		<Folding>
 			<Collapse line="17" />
@@ -38,16 +52,7 @@
 			<Collapse line="63" />
 		</Folding>
 	</File>
-	<File name="c_room" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1698" topLine="34" />
-		</Cursor>
-		<Folding>
-			<Collapse line="5" />
-			<Collapse line="15" />
-			<Collapse line="30" />
-		</Folding>
-	</File>
+<<<<<<< HEAD
 	<Target name="Debug" top="c_hotel.cpp">
 		<File name="main.cpp" />
 		<File name="c_room" />
@@ -55,4 +60,30 @@
 		<File name="c_hotel" />
 		<File name="c_hotel.cpp" />
 	</Target>
+=======
+	<File name="c_hotel.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5151" topLine="9" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="25" />
+			<Collapse line="142" />
+			<Collapse line="231" />
+			<Collapse line="326" />
+			<Collapse line="354" />
+			<Collapse line="490" />
+		</Folding>
+	</File>
+	<File name="c_room" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2374" topLine="32" />
+		</Cursor>
+		<Folding>
+			<Collapse line="5" />
+			<Collapse line="15" />
+			<Collapse line="30" />
+		</Folding>
+	</File>
+>>>>>>> 5a3d68c383c2304540afb5e6b4d734f7a6b07aae
 </CodeBlocks_layout_file>

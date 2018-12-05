@@ -39,6 +39,12 @@
 */
 
 
+
+
+int room::iloscPokoi = 0;
+
+
+
 //room::room MakeRoom(int lvl,int wid ,room* n,room* e,room* s,room* w )
 /* [Kacu]
     Wszystko w c++ posiada swoja fizyczna komorke pamieci.
