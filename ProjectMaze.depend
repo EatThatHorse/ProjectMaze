@@ -47,44 +47,48 @@
 1543618342 c:\users\ptysiek\desktop\projectmaze\c_update
 	"c_Render"
 
-1543613431 c:\users\ptysiek\desktop\projectmaze\c_bot
+1544185483 c:\users\ptysiek\desktop\projectmaze\c_bot
 
 1543616644 source:c:\users\ptysiek\desktop\projectmaze\greatloop.cpp
 	"c_GreatLoop"
 
-1543613431 c:\users\ptysiek\desktop\projectmaze\c_player
+1544187012 c:\users\ptysiek\desktop\projectmaze\c_player
 	"c_Bot"
 
-1543621557 source:c:\users\ptysiek\desktop\projectmaze\prm_core\greatloop.cpp
+1544190844 source:c:\users\ptysiek\desktop\projectmaze\prm_core\greatloop.cpp
 	"c_GreatLoop"
 
-1543618831 c:\users\ptysiek\desktop\projectmaze\prm_core\c_greatloop
+1544187979 c:\users\ptysiek\desktop\projectmaze\prm_core\c_greatloop
 	"c_Input"
 	"c_Update"
 	"c_Render"
 	<windows.h>
 	<iostream>
 
-1543621593 c:\users\ptysiek\desktop\projectmaze\prm_core\c_input
+1544185483 c:\users\ptysiek\desktop\projectmaze\prm_core\c_input
 	<conio.h>
 	"../c_Player"
 
-1543619718 c:\users\ptysiek\desktop\projectmaze\prm_core\c_update
+1544185483 c:\users\ptysiek\desktop\projectmaze\prm_core\c_update
 	"c_Render"
 
-1543621119 c:\users\ptysiek\desktop\projectmaze\prm_core\c_render
+1544185483 c:\users\ptysiek\desktop\projectmaze\prm_core\c_render
 	"../c_Player"
 	<iostream>
 
-1543621582 source:c:\users\ptysiek\desktop\projectmaze\prm_core\input.cpp
+1544185483 source:c:\users\ptysiek\desktop\projectmaze\prm_core\input.cpp
 	"c_Input"
 
-1543616891 source:c:\users\ptysiek\desktop\projectmaze\prm_core\main.cpp
+1544185483 source:c:\users\ptysiek\desktop\projectmaze\prm_core\main.cpp
 	"c_GreatLoop"
 
-1543622568 source:c:\users\ptysiek\desktop\projectmaze\prm_core\render.cpp
+1544185483 source:c:\users\ptysiek\desktop\projectmaze\prm_core\render.cpp
 	"c_Render"
 
-1543619710 source:c:\users\ptysiek\desktop\projectmaze\prm_core\update.cpp
+1544185483 source:c:\users\ptysiek\desktop\projectmaze\prm_core\update.cpp
 	"c_Update"
+
+1544190766 source:c:\users\ptysiek\desktop\projectmaze\player.cpp
+	"c_Player"
+	<iostream>
 

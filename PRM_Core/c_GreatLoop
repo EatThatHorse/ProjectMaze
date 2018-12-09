@@ -23,6 +23,7 @@
     private:
         // EVERY GAME VERSION:
         void GameVer01();
+        void GameVer02();
 
         // EVERY MENU VERSION:
         void MenuVer01();

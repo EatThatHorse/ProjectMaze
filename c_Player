@@ -2,63 +2,41 @@
 #ifndef PLAYER__PRMAZE
 #define PLAYER__PRMAZE
 
+//    #include "c_roomDes"
     #include "c_Bot"
 
     enum direction { UP, DOWN, LEFT, RIGHT };
 
     class player : public bot {
-    public:
+    public: /// KONSTRUKTOR
         player (){
             this->xpos = 45;
             this->ypos = 10;
             this->speed = 2;
         }
 
-    public:
-        Move(direction current){
-        /** Metoda odpowiedzialna za przemieszczanie sie gracza.
-            Modyfikuje odziedziczone po klasie [bot] zmienne polozenia.
-            Wywolywana jest dla obiektu HERO w klsie Update.            */
-
-            if (current == UP) {
-                this->ypos = (this->ypos - (this->speed/2));
-                this->a_image = ((char)24);    // [↑]
-                return current;
-            }
-            if (current == DOWN) {
-                this->ypos = (this->ypos + (this->speed/2));
-                this->a_image = ((char)25);    // [↓]
-                return current;
-            }
-            if (current == LEFT) {
-                this->xpos = (this->xpos - this->speed);
-                this->a_image = ((char)27);    // [←]
-                return current;
-            }
-            if (current == RIGHT) {
-                this->xpos = (this->xpos + this->speed);
-                this->a_image = ((char)26);    // [→]
-                return current;
-            }
-        }
-
     private: /// ZMIENNE
+        // Piloting
+        /*  Odkomentowac gdy bedzie gotowy Droom.
+        Droom* roomPosition;
+        */
+
         // Ranked / Status
         int score;              // def.[0]
         int hp;                 // Need to test for Optimalization.
 
         // Animation Char's:
-        char a_up = 24;         // [↑]
-        char a_down = 25;       // [↓]
-        char a_left = 27;       // [←]
-        char a_right = 26;      // [→]
-        char a_image;         // Used for Player Render
+        #define A_UP 24         // [↑]
+        #define A_DOWN 25       // [↓]
+        #define A_LEFT 27       // [←]
+        #define A_RIGHT 26      // [→]
+        char a_image;           // Used for Player Render
 
     public: /// METODY
-        // PUBLICZNE, CZYLI TYLKO DO ODCZYTU:
-        char IMAGE () {return a_image;}
+        int Move (direction);
 
-
+        // PUBLICZNE, TYLKO DO ODCZYTU:
+        //char IMAGE() {return a_image;}
     };
 
 #endif // PLAYER__PRMAZE

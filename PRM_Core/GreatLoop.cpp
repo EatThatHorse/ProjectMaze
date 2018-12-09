@@ -19,8 +19,9 @@ void GreatLoop::Execute(){
     // _________________
     /// STARTING POINT:
 
-    //GameVer01();
-    MenuVer01();
+    GameVer01();
+    //GameVer02();
+    //MenuVer01();
 
     #endif
     return;
@@ -28,6 +29,31 @@ void GreatLoop::Execute(){
 
 
 void GreatLoop::GameVer01() {
+    /** Pierwsza wersja Funkcji Sterującej Rozgrywką. */
+
+    player HERO;
+
+    GLOOP = true;           // GREAT LOOP - Wykonywana tak długo jak działa program.
+    while (GLOOP) {
+        //   Jedno Wykonanie Petli = Jeden Input, Jeden Klawisz = Jedna Klatka, Jeden Frame.
+
+        int InputEvent = this->Input::Run01G(HERO);
+
+        int x = 4;
+
+        if (InputEvent != 224) {    // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
+            system("cls");                  // Czyszczenie, Zerowanie Konsoli.
+
+            x = (x < 2)? 2 : x;
+
+            cout << x/2;
+
+        }
+    }
+    return;
+}
+
+void GreatLoop::GameVer02() {
     /** Pierwsza wersja Funkcji Sterującej Rozgrywką. */
 
     player HERO;
@@ -53,11 +79,11 @@ void GreatLoop::MenuVer01() {
 
     int currentChoose = 0;
 
-    this->Render::Run01M(currentChoose); // PreRender, Rysowanie Pierwszej Klatki.
+    this->Render::Run01M(currentChoose);    // PreRender, Rysowanie Pierwszej Klatki.
 
-    GLOOP = true;           // GREAT LOOP - Wykonywana tak długo jak działa program.
+    GLOOP = true;   // GREAT LOOP - Wykonywana tak długo jak działa program.
     while (GLOOP) {
-        //   Jedno Wykonanie Petli = Jeden Input, Jeden Klawisz = Jedna Klatka, Jeden Frame.
+        //  Jedno Wykonanie Petli = Jeden Input, Jeden Klawisz = Jedna Klatka, Jeden Frame.
 
         int InputEvent = this->Input::Run01M(GLOOP, currentChoose);
 

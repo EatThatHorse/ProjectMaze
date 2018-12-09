@@ -17,7 +17,8 @@
     protected:
         int xpos;
         int ypos;
-        int speed;              // X steps/jumps per turn.
+        int speedVY;              // X steps/jumps per turn.
+        int speedHX;              // X steps/jumps per turn.
     };
 
 #endif // BOT__PRMAZE
