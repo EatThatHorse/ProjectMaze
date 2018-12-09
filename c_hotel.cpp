@@ -758,7 +758,7 @@ void hotel :: AddFloor2 (){///[GRZYBO] nowy pokoj, super metoda,uzywa i okPath i
 
             AddRoom(RIGHT);
             AddRoom(RIGHT);
-            AddRoom(UP);     /// zaulek w lewo 2x + prawo 2x + up
+            AddRoom(UP);                /// zaulek w lewo 2x + prawo 2x + up
             break;
         case -8:
             tmpRoom = lastRoom;
