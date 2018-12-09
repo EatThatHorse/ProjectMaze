@@ -31,8 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="c_hotel" />
-		<Unit filename="c_hotel.cpp" />
+		<Unit filename="DT/c_maze__dt.cpp" />
+		<Unit filename="DT/c_room__dt.cpp" />
+		<Unit filename="DT/dzialanieProgramu__dt.cpp" />
+		<Unit filename="c_maze" />
+		<Unit filename="c_maze.cpp" />
 		<Unit filename="c_room" />
 		<Unit filename="c_room.cpp" />
 		<Unit filename="main.cpp" />

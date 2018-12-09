@@ -2,36 +2,36 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="c_room.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="10302" topLine="201" />
+			<Cursor1 position="3" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="c_hotel.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="21772" topLine="696" />
+			<Cursor1 position="162" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="c_hotel" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+	<File name="c_room" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="64" />
+			<Cursor1 position="662" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="c_room" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="c_maze" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="56" />
+			<Cursor1 position="1112" topLine="12" />
 		</Cursor>
 	</File>
-	<File name="c_room.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="c_maze.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="11879" topLine="43" />
+			<Cursor1 position="1407" topLine="0" />
 		</Cursor>
 	</File>
-	<Target name="Debug" top="c_hotel.cpp">
+	<Target name="Debug" top="c_maze">
+		<File name="main.cpp" />
 		<File name="c_room" />
 		<File name="c_room.cpp" />
-		<File name="c_hotel" />
-		<File name="c_hotel.cpp" />
-		<File name="main.cpp" />
+		<File name="c_maze.cpp" />
+		<File name="c_maze" />
 	</Target>
 </CodeBlocks_layout_file>

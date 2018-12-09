@@ -1,0 +1,48 @@
+#ifndef c_maze
+#define c_maze
+
+#include "c_room"
+
+#include <cstdlib>      // [srand] (do RandomSet)
+#include <ctime>
+#include <iostream>
+
+using std::cout;
+
+enum roomDirection { UP, LEFT, RIGHT };
+
+class maze {
+/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+///     KONSTRUKTORY
+/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+public:
+    maze(room*);
+/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+///     METODY - PUBLICZNE
+/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+public:
+
+    void SET_CURR(room*);
+    room* LASTROOM();
+
+    void ShowMaze();
+    void AddFloor();
+/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+///    ZMIENNE
+/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+private:
+
+    room* lastRoom;          // Umozliwi dodawanie pokoi.
+    room* currentRoom;       // Na starcie wskazuje na zeroRoom. Umozliwi poruszanie sie gracza miedzy pokojami.
+    room* zeroRoom;          // Na starcie wskazuje na zeroRoom. Umozliwi poruszanie sie gracza miedzy pokojami.
+/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+///     METODY - PRYWATNE
+/// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+private:
+
+    int RandomSet(int,int);
+    void AddRoom(roomDirection,bool);
+};
+
+#endif // c_maze
+

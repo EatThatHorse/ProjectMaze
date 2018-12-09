@@ -1,7 +1,6 @@
 # depslib dependency file v1.0
-1544036797 source:c:\users\dell\desktop\maze\projectmaze\main.cpp
-	<iostream>
-	"c_hotel"
+1544387384 source:c:\users\dell\desktop\maze\projectmaze\main.cpp
+	"c_maze"
 	"c_room"
 	<iostream>
 
@@ -31,13 +30,33 @@
 	<cstdlib>
 	<iostream>
 
-1544034373 c:\users\dell\desktop\maze\projectmaze\c_room
-	<time.h>
+1544385456 c:\users\dell\desktop\maze\projectmaze\c_room
 	<iostream>
 
-1544036301 source:c:\users\dell\desktop\maze\projectmaze\c_room.cpp
+1544385436 source:c:\users\dell\desktop\maze\projectmaze\c_room.cpp
 	"c_room"
 
-1544036150 source:c:\users\dell\desktop\maze\projectmaze\c_hotel.cpp
+1544365281 source:c:\users\dell\desktop\maze\projectmaze\c_hotel.cpp
 	"c_hotel"
+
+1544367325 source:c:\users\dell\desktop\maze\projectmaze\c_room__dt.cpp
+
+1544367324 source:c:\users\dell\desktop\maze\projectmaze\dzialanieprogramu__dt.cpp
+
+1544379731 source:c:\users\dell\desktop\maze\projectmaze\c_maze__dt.cpp
+
+1544387753 source:c:\users\dell\desktop\maze\projectmaze\c_maze.cpp
+	"c_maze"
+
+1544387899 c:\users\dell\desktop\maze\projectmaze\c_maze
+	"c_room"
+	<cstdlib>
+	<ctime>
+	<iostream>
+
+1544379731 source:c:\users\dell\desktop\maze\projectmaze\dt\c_maze__dt.cpp
+
+1544367325 source:c:\users\dell\desktop\maze\projectmaze\dt\c_room__dt.cpp
+
+1544367324 source:c:\users\dell\desktop\maze\projectmaze\dt\dzialanieprogramu__dt.cpp
 
