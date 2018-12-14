@@ -5,6 +5,7 @@
     #include "c_Input"
     #include "c_Update"
     #include "c_Render"
+    #include "../c_menu"
 
     #include <windows.h>    // system("");
     #include <iostream>     // Includowane tylko dla DEBUG_INPUT();
@@ -12,7 +13,7 @@
 
 
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
-    class GreatLoop : public Input, public Update, public Render {   // Zastosowanie dziedziczenia wielobazowego.
+    class GreatLoop : public Input, public Update, public Render  {   // Zastosowanie dziedziczenia wielobazowego.
     public:
         // PUBLICZNE METODY
         void Execute();
@@ -21,12 +22,14 @@
         bool GLOOP;  // GreatLoop flag.
 
     private:
+        void MAIN_TEST_DEBUG();
         // EVERY GAME VERSION:
         void GameVer01();
         void GameVer02();
 
         // EVERY MENU VERSION:
         void MenuVer01();
+        void GrzyboVer01();
     };
 
 

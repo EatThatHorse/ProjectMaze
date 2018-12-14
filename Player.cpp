@@ -81,23 +81,24 @@
                 }
                 */
 
-                this->ypos = (this->ypos - (this->speed/2));    // [Y-1]
+                this->ypos = (this->ypos -1);    // [Y-1]
                 this->a_image = ((char)A_UP);    // [↑]
                 return current;
             }
             if (current == DOWN) {
-                this->ypos = (this->ypos + (this->speed/2));    // [Y+1]
+                this->ypos = (this->ypos +1);    // [Y+1]
                 this->a_image = ((char)A_DOWN);    // [↓]
                 return current;
             }
             if (current == LEFT) {
-                this->xpos = (this->xpos - this->speed);        // [X-1]
+                this->xpos = (this->xpos - 1);        // [X-1]
                 this->a_image = ((char)A_LEFT);    // [←]
                 return current;
             }
             if (current == RIGHT) {
-                this->xpos = (this->xpos + this->speed);        // [X+1]
+                this->xpos = (this->xpos + 1);        // [X+1]
                 this->a_image = ((char)A_RIGHT);    // [→]
                 return current;
             }
         }
+

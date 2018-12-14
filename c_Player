@@ -12,7 +12,8 @@
         player (){
             this->xpos = 45;
             this->ypos = 10;
-            this->speed = 2;
+            this->speedVY = 2;
+            this->speedHX = 1;
         }
 
     private: /// ZMIENNE

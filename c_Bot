@@ -12,7 +12,7 @@
     public: // PUBLICZNE, CZYLI TYLKO DO ODCZYTU:
         int XPOS () {return this->xpos;}
         int YPOS () {return this->ypos;}
-        int SPEED () {return this->speed;}
+        //int SPEED () {return this->speed;}
 
     protected:
         int xpos;

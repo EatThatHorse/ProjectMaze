@@ -92,3 +92,54 @@
 	"c_Player"
 	<iostream>
 
+1544802013 source:c:\users\dell\desktop\maze\projectmaze\player.cpp
+	"c_Player"
+	<iostream>
+
+1544801979 c:\users\dell\desktop\maze\projectmaze\c_player
+	"c_Bot"
+
+1544801748 c:\users\dell\desktop\maze\projectmaze\c_bot
+
+1544816791 source:c:\users\dell\desktop\maze\projectmaze\prm_core\greatloop.cpp
+	"c_GreatLoop"
+	<iostream>
+
+1544816751 c:\users\dell\desktop\maze\projectmaze\prm_core\c_greatloop
+	"c_Input"
+	"c_Update"
+	"c_Render"
+	"../c_menu"
+	<windows.h>
+	<iostream>
+
+1544801228 c:\users\dell\desktop\maze\projectmaze\prm_core\c_input
+	<conio.h>
+	"../c_Player"
+
+1544801228 c:\users\dell\desktop\maze\projectmaze\prm_core\c_update
+	"c_Render"
+
+1544801228 c:\users\dell\desktop\maze\projectmaze\prm_core\c_render
+	"../c_Player"
+	<iostream>
+
+1544811842 source:c:\users\dell\desktop\maze\projectmaze\prm_core\input.cpp
+	"c_Input"
+
+1544802026 source:c:\users\dell\desktop\maze\projectmaze\prm_core\main.cpp
+	"c_GreatLoop"
+
+1544805149 source:c:\users\dell\desktop\maze\projectmaze\prm_core\render.cpp
+	"c_Render"
+
+1544801228 source:c:\users\dell\desktop\maze\projectmaze\prm_core\update.cpp
+	"c_Update"
+
+1544816930 source:c:\users\dell\desktop\maze\projectmaze\c_menu.cpp
+	"C_MENU"
+
+1544814749 c:\users\dell\desktop\maze\projectmaze\c_menu
+	<iostream>
+	<conio.h>
+

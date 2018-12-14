@@ -1,0 +1,23 @@
+#ifndef C_MENU
+#define C_MENU
+
+
+    #include <iostream>
+    #include <conio.h>
+    using std::cout;
+    using std::string;
+
+
+class menu{
+///##################################################################################
+public:
+    void ShowMENU(int&);
+    void AsciiButton (int, string, string, int);
+    void Write(bool&,int&);
+    int Input(bool&,int&);
+
+
+
+
+};
+#endif // C_MENU

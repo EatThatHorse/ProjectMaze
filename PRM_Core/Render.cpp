@@ -1,10 +1,10 @@
 
 #include "c_Render"
 
-void AsciiButton (int, string, string, int);
+//void AsciiButton (int, string, string, int);
 
 
-
+/*
 void Render::Run01G (player gammer){
 //        for (int col=0; col<30; ++col){
 //            cout << "\n\t" << (char)186;
@@ -41,7 +41,7 @@ void Render::Run01M (int option){
     cout << "\n\n";
 
 
-    int zazn = 2;
+    int zazn = 1;
     int odzn = 0;
 
 
@@ -126,3 +126,4 @@ void AsciiButton (int width, string Text, string odstep, int font){
 
     return;
 }
+*/

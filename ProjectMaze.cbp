@@ -43,6 +43,8 @@
 		<Unit filename="Player.cpp" />
 		<Unit filename="c_Bot" />
 		<Unit filename="c_Player" />
+		<Unit filename="c_menu" />
+		<Unit filename="c_menu.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
