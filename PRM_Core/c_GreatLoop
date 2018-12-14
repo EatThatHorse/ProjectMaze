@@ -1,0 +1,38 @@
+
+#ifndef C_GREATLOOP
+#define C_GREATLOOP
+
+    #include "c_Input"
+    #include "c_Update"
+    #include "c_Render"
+
+    #include <windows.h>    // system("");
+    #include <iostream>     // Includowane tylko dla DEBUG_INPUT();
+    using std::cout;
+    using std::cin;         // for GrzyboTestRoom()
+
+
+    /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
+    class GreatLoop : public Input, public Update, public Render {   // Zastosowanie dziedziczenia wielobazowego.
+    public:
+        // PUBLICZNE METODY
+        void Execute();
+    private:
+        // ZMIENNE
+        bool GLOOP;  // GreatLoop flag.
+
+    private:
+        // EVERY TEST / TEMPORARY VERSION:
+        void TestRoom();
+
+        // EVERY GAME VERSION:
+        void GameVer01();
+        void GameVer02();
+
+        // EVERY MENU VERSION:
+        void MenuVer01();
+    };
+
+
+    /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
+#endif // C_GREATLOOP

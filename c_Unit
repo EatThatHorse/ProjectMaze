@@ -1,0 +1,35 @@
+
+#ifndef C_UNIT
+#define C_UNIT
+
+    #include "c_Obstacle"
+    #include "u_ProjectUtilities"
+
+    class Unit : public Obstacle {
+        /** Klasa Bazowa dla:
+                - class: player
+                - class: X moob X
+                - ...
+            Znajduja sie w niej informacje niezbedne dla
+            co swobodnie skacze po pokoju.
+        */
+    public: // PUBLICZNE, CZYLI TYLKO DO ODCZYTU:
+        int SPEED_VY () {return this->speedVY;}
+        int SPEED_HX () {return this->speedHX;}
+
+    public:
+        int speedVY;              // X steps/jumps per turn.
+        int speedHX;              // X steps/jumps per turn.
+
+
+        // Piloting
+        /*  Odkomentowac gdy bedzie gotowy Droom.
+        Droom* roomPosition;
+        */
+
+
+    public: /// METODY
+        int Move (Direction);
+    };
+
+#endif // C_OBSTACLE

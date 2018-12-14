@@ -1,0 +1,19 @@
+
+#ifndef INPUT__PRMAZE
+#define INPUT__PRMAZE
+
+    #include <conio.h>      // getch / kbhit
+    #include "../c_Player"
+
+    class Input {
+    public:
+        /** Zakaz Uzywania w Metodach Cout, Nie zadziala.
+            Wynika to z sposobu dzialania getch() i system("cls")   */
+
+        int Run01G(player&);
+        int Run01M(bool&, int&);
+
+    };
+
+#endif // INPUT__PRMAZE
+

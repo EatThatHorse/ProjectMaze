@@ -31,14 +31,28 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="DT/c_maze__dt.cpp" />
-		<Unit filename="DT/c_room__dt.cpp" />
-		<Unit filename="DT/dzialanieProgramu__dt.cpp" />
+		<Unit filename="PRM_Core/GreatLoop.cpp" />
+		<Unit filename="PRM_Core/Input.cpp" />
+		<Unit filename="PRM_Core/Render.cpp" />
+		<Unit filename="PRM_Core/Update.cpp" />
+		<Unit filename="PRM_Core/c_GreatLoop" />
+		<Unit filename="PRM_Core/c_Input" />
+		<Unit filename="PRM_Core/c_Render" />
+		<Unit filename="PRM_Core/c_Update" />
+		<Unit filename="PRM_Core/main.cpp" />
+		<Unit filename="PRM_DT/c_maze__dt.cpp" />
+		<Unit filename="PRM_DT/c_room__dt.cpp" />
+		<Unit filename="PRM_DT/dzialanieProgramu__dt.cpp" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="c_Obstacle" />
+		<Unit filename="c_Player" />
+		<Unit filename="c_Unit" />
+		<Unit filename="c_Unit.cpp" />
 		<Unit filename="c_maze" />
 		<Unit filename="c_maze.cpp" />
 		<Unit filename="c_room" />
 		<Unit filename="c_room.cpp" />
-		<Unit filename="main.cpp" />
+		<Unit filename="u_ProjectUtilities" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -17,7 +17,7 @@ room* maze::LASTROOM(){
 }
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-void maze::AddRoom (roomDirection option, bool goInside=1){
+void maze::AddRoom (Direction option, bool goInside=1){
     room* tmp;
 
     switch (option){

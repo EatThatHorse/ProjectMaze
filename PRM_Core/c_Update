@@ -1,0 +1,24 @@
+
+
+#ifndef UPDATE__PRMAZE
+#define UPDATE__PRMAZE
+
+    #include "c_Render"
+
+
+    class Update {
+        /** - Przelicza zmiany w grze:
+               - status gracza i przeciwnikow
+               - pozycja gracza i przeciwnikow
+               - wyglad pokoju
+            - Modyfikuje Renderowana Tablice.
+            - Odpalane (tylko!) po nastapieniu zmiany w rozgrywce
+              = wcisnieciu (odpowiedniego!) Inputu.
+        */
+    public:
+        void Run01G (player );
+
+    };
+
+#endif // UPDATE__PRMAZE
+

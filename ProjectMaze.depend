@@ -1,62 +1,81 @@
 # depslib dependency file v1.0
-1544387384 source:c:\users\dell\desktop\maze\projectmaze\main.cpp
-	"c_maze"
-	"c_room"
-	<iostream>
+35717524 Î¬À@»!Ì}fC∑HıÜ"F9‘^áW,m˚>˝Ñ˘"±ô'êJ!SÌ¶÷bU”)D™˘ÙayΩ	îñIÚ#∆3—“∏0DUáÆ÷ß!ÑãH√…k!‹–˘|Ó»É@zk›©f°ê«ø¯Ïßˇ>≤L#q∏n¡——m€Rñ%õõõL&™™¬Ë´MpÅÆÎhZ
 
-1543964889 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
-	<iostream>
-	"c_hotel"
-	"c_room"
-	<iostream>
-
-1543965038 source:c:\users\ptysiek\desktop\projectmaze\c_hotel.cpp
-	"c_hotel"
-
-1543964560 source:c:\users\ptysiek\desktop\projectmaze\c_room.cpp
-	"c_room"
-
-1543966275 c:\users\ptysiek\desktop\projectmaze\c_room
-	<time.h>
-	<iostream>
-
-1543964517 c:\users\ptysiek\desktop\projectmaze\c_hotel
-	"c_room"
-	<cstdlib>
-	<iostream>
-
-1544034373 c:\users\dell\desktop\maze\projectmaze\c_hotel
-	"c_room"
-	<cstdlib>
-	<iostream>
-
-1544385456 c:\users\dell\desktop\maze\projectmaze\c_room
-	<iostream>
-
-1544385436 source:c:\users\dell\desktop\maze\projectmaze\c_room.cpp
-	"c_room"
-
-1544365281 source:c:\users\dell\desktop\maze\projectmaze\c_hotel.cpp
-	"c_hotel"
-
-1544367325 source:c:\users\dell\desktop\maze\projectmaze\c_room__dt.cpp
-
-1544367324 source:c:\users\dell\desktop\maze\projectmaze\dzialanieprogramu__dt.cpp
-
-1544379731 source:c:\users\dell\desktop\maze\projectmaze\c_maze__dt.cpp
-
-1544387753 source:c:\users\dell\desktop\maze\projectmaze\c_maze.cpp
+1544806759 source:c:\users\ptysiek\desktop\projectmaze\c_maze.cpp
 	"c_maze"
 
-1544387899 c:\users\dell\desktop\maze\projectmaze\c_maze
+1544807851 c:\users\ptysiek\desktop\projectmaze\c_maze
+	"u_ProjectUtilities"
 	"c_room"
 	<cstdlib>
 	<ctime>
 	<iostream>
 
-1544379731 source:c:\users\dell\desktop\maze\projectmaze\dt\c_maze__dt.cpp
+1544804247 c:\users\ptysiek\desktop\projectmaze\c_room
+	<iostream>
 
-1544367325 source:c:\users\dell\desktop\maze\projectmaze\dt\c_room__dt.cpp
+1544804354 source:c:\users\ptysiek\desktop\projectmaze\c_room.cpp
+	"c_room"
 
-1544367324 source:c:\users\dell\desktop\maze\projectmaze\dt\dzialanieprogramu__dt.cpp
+1544814196 source:c:\users\ptysiek\desktop\projectmaze\player.cpp
+	"c_Player"
+
+1544814296 c:\users\ptysiek\desktop\projectmaze\c_player
+	"c_Unit"
+	"u_ProjectUtilities"
+
+1544808973 c:\users\ptysiek\desktop\projectmaze\c_bot
+
+1544805004 source:c:\users\ptysiek\desktop\projectmaze\prm_core\input.cpp
+	"c_Input"
+
+1544805004 c:\users\ptysiek\desktop\projectmaze\prm_core\c_input
+	<conio.h>
+	"../c_Player"
+
+1544805004 source:c:\users\ptysiek\desktop\projectmaze\prm_core\main.cpp
+	"c_GreatLoop"
+
+1544817235 c:\users\ptysiek\desktop\projectmaze\prm_core\c_greatloop
+	"c_Input"
+	"c_Update"
+	"c_Render"
+	<windows.h>
+	<iostream>
+
+1544805004 c:\users\ptysiek\desktop\projectmaze\prm_core\c_update
+	"c_Render"
+
+1544805004 c:\users\ptysiek\desktop\projectmaze\prm_core\c_render
+	"../c_Player"
+	<iostream>
+
+1544805004 source:c:\users\ptysiek\desktop\projectmaze\prm_core\render.cpp
+	"c_Render"
+
+1544805004 source:c:\users\ptysiek\desktop\projectmaze\prm_core\update.cpp
+	"c_Update"
+
+1544808530 c:\users\ptysiek\desktop\projectmaze\u_projectutilities
+
+1544817218 source:c:\users\ptysiek\desktop\projectmaze\prm_core\greatloop.cpp
+	"c_GreatLoop"
+	"../c_maze"
+	"../c_room"
+	<stdio.h>
+
+1544813999 c:\users\ptysiek\desktop\projectmaze\c_unit
+	"c_Obstacle"
+	"u_ProjectUtilities"
+
+1544809005 c:\users\ptysiek\desktop\projectmaze\c_obstacle
+
+1544814034 source:c:\users\ptysiek\desktop\projectmaze\c_unit.cpp
+	"c_Unit"
+
+1544804247 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\c_maze__dt.cpp
+
+1544804247 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\c_room__dt.cpp
+
+1544804247 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\dzialanieprogramu__dt.cpp
 

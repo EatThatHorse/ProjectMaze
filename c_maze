@@ -1,6 +1,7 @@
 #ifndef c_maze
 #define c_maze
 
+#include "u_ProjectUtilities"
 #include "c_room"
 
 #include <cstdlib>      // [srand] (do RandomSet)
@@ -9,7 +10,6 @@
 
 using std::cout;
 
-enum roomDirection { UP, LEFT, RIGHT };
 
 class maze {
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -41,7 +41,7 @@ private:
 private:
 
     int RandomSet(int,int);
-    void AddRoom(roomDirection,bool);
+    void AddRoom(Direction,bool);
 };
 
 #endif // c_maze
