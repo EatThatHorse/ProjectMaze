@@ -40,10 +40,12 @@ int Input::Run01G(player& HERO){
 
 //_________________________________________________________________________________________________________________
 //───────────────────────────────────────────────────────────────────────────────────────────────────────────────── M-01
+
+/*
 int Input::Run01M(bool& gloop, int& option){
     /** Zakaz Uzywania Cout, Nie zadziala
         Wynika to z sposobu dzialania getch() i system("cls")   */
-
+/*
     unsigned char znak;
     znak = getch();   // Oczekiwanie na Input.
     if (znak == 224) return 224;    // PUNKT KONTROLNY - Wynika z dzialania getch().
@@ -56,7 +58,10 @@ int Input::Run01M(bool& gloop, int& option){
             option = 2;
         return znak;
     }
-    if (znak == 13) { return znak; }      // ENTER
+    if (znak == 13) {
+
+        return znak;
+    }      // ENTER
 
     if (znak == 72) {       // ↑ (up)
         --option;
@@ -70,4 +75,4 @@ int Input::Run01M(bool& gloop, int& option){
 
 
     return 224;     // 224 - z decyzji [Kacu]: kod bledu nakazujacy robic nic.
-}
+}*/

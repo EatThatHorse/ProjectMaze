@@ -46,6 +46,7 @@
 		<Unit filename="Player.cpp" />
 		<Unit filename="c_Obstacle" />
 		<Unit filename="c_Player" />
+<<<<<<< HEAD
 		<Unit filename="c_Unit" />
 		<Unit filename="c_Unit.cpp" />
 		<Unit filename="c_maze" />
@@ -53,6 +54,10 @@
 		<Unit filename="c_room" />
 		<Unit filename="c_room.cpp" />
 		<Unit filename="u_ProjectUtilities" />
+=======
+		<Unit filename="c_menu" />
+		<Unit filename="c_menu.cpp" />
+>>>>>>> origin/menu
 		<Extensions>
 			<code_completion />
 			<envvars />

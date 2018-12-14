@@ -24,15 +24,27 @@ void GreatLoop::Execute(){
     // _________________
     /// STARTING POINT:
 
+
     //GameVer01();
     //GameVer02();
     //MenuVer01();
     //TestRoom();   // Old Grzybo main.
 
+    MAIN_TEST_DEBUG();
+
+    //GameVer01();
+    //GameVer02();
+    GrzyboVer01();
+
+
+
     #endif
     return;
 }
 
+void GreatLoop::MAIN_TEST_DEBUG() {
+
+}
 
 void GreatLoop::TestRoom() {
 
@@ -94,29 +106,35 @@ void GreatLoop::GameVer02() {
         if (InputEvent != 224) {    // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
             system("cls");                  // Czyszczenie, Zerowanie Konsoli.
             this->Update::Run01G(HERO);      // Zmiany logiczne na planszy.
-            this->Render::Run01G(HERO);      // Render. Aktywowany Tyle razy ile cokolwiek się zmieni na ekranie.
+    //        this->Render::Run01G(HERO);      // Render. Aktywowany Tyle razy ile cokolwiek się zmieni na ekranie.
         }
     }
     return;
 }
 
 
-void GreatLoop::MenuVer01() {
+void GreatLoop::GrzyboVer01() {
+
     /** Pierwsza wersja Funkcji Sterującej Rozgrywką. */
+
+    menu EXEC;
 
     int currentChoose = 0;
 
-    this->Render::Run01M(currentChoose);    // PreRender, Rysowanie Pierwszej Klatki.
 
+    //this->Render::Run01M(currentChoose);    // PreRender, Rysowanie Pierwszej Klatki.
+    EXEC.ShowMENU(currentChoose);
     GLOOP = true;   // GREAT LOOP - Wykonywana tak długo jak działa program.
     while (GLOOP) {
         //  Jedno Wykonanie Petli = Jeden Input, Jeden Klawisz = Jedna Klatka, Jeden Frame.
 
-        int InputEvent = this->Input::Run01M(GLOOP, currentChoose);
+        //int InputEvent = this->menu::Input(GLOOP, currentChoose);
+        int InputEvent = EXEC.Input(GLOOP, currentChoose);
 
         if (InputEvent != 224) {    // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
-            system("cls");                          // Czyszczenie, Zerowanie Konsoli.
-            this->Render::Run01M(currentChoose);    // Render. Aktywowany Tyle razy ile cokolwiek się zmieni na ekranie.
+            system("cls");         // Czyszczenie, Zerowanie Konsoli.
+            EXEC.ShowMENU(currentChoose);
+            //this->ShowMENU(currentChoose);    // Render. Aktywowany Tyle razy ile cokolwiek się zmieni na ekranie.
         }
     }
     return;

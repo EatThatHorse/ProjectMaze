@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # depslib dependency file v1.0
 35717524 Î¬À@»!Ì}fC∑HıÜ"F9‘^áW,m˚>˝Ñ˘"±ô'êJ!SÌ¶÷bU”)D™˘ÙayΩ	îñIÚ#∆3—“∏0DUáÆ÷ß!ÑãH√…k!‹–˘|Ó»É@zk›©f°ê«ø¯Ïßˇ>≤L#q∏n¡——m€Rñ%õõõL&™™¬Ë´MpÅÆÎhZ
 
@@ -79,3 +80,150 @@
 
 1544804247 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\dzialanieprogramu__dt.cpp
 
+=======
+# depslib dependency file v1.0
+1543616891 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
+	"c_GreatLoop"
+
+1542383621 source:c:\users\ptysiek\desktop\projectmaze\tmp_botstuff.cpp
+
+1543616066 c:\users\ptysiek\desktop\projectmaze\c_greatloop
+	"c_Input"
+	"c_Update"
+	"c_Render"
+	"c_Bot"
+	<conio.h>
+	<windows.h>
+	<iostream>
+
+1541788212 c:\users\ptysiek\desktop\projectmaze\c_programsettings
+
+1541789486 c:\users\ptysiek\desktop\projectmaze\programcoresystems.cpp
+	<conio.h>
+
+1541789058 c:\users\ptysiek\desktop\projectmaze\programcoresystems
+	<conio.h>
+
+1541795434 source:c:\users\ptysiek\desktop\projectmaze\programcoresystems.cpp
+
+1542401288 c:\users\ptysiek\desktop\projectmaze\prmaze
+
+1541796702 c:\users\ptysiek\desktop\projectmaze\render.cpp
+
+1543618243 source:c:\users\ptysiek\desktop\projectmaze\render.cpp
+	"c_Render"
+
+1543617206 source:c:\users\ptysiek\desktop\projectmaze\input.cpp
+	"c_Input"
+
+1542385753 source:c:\users\ptysiek\desktop\projectmaze\update.cpp
+	"PrMaze"
+
+1543618286 c:\users\ptysiek\desktop\projectmaze\c_render
+	"c_Player"
+	<iostream>
+
+1543617031 c:\users\ptysiek\desktop\projectmaze\c_input
+	<conio.h>
+	"c_Player"
+
+1543618342 c:\users\ptysiek\desktop\projectmaze\c_update
+	"c_Render"
+
+1544185483 c:\users\ptysiek\desktop\projectmaze\c_bot
+
+1543616644 source:c:\users\ptysiek\desktop\projectmaze\greatloop.cpp
+	"c_GreatLoop"
+
+1544187012 c:\users\ptysiek\desktop\projectmaze\c_player
+	"c_Bot"
+
+1544190844 source:c:\users\ptysiek\desktop\projectmaze\prm_core\greatloop.cpp
+	"c_GreatLoop"
+
+1544187979 c:\users\ptysiek\desktop\projectmaze\prm_core\c_greatloop
+	"c_Input"
+	"c_Update"
+	"c_Render"
+	<windows.h>
+	<iostream>
+
+1544185483 c:\users\ptysiek\desktop\projectmaze\prm_core\c_input
+	<conio.h>
+	"../c_Player"
+
+1544185483 c:\users\ptysiek\desktop\projectmaze\prm_core\c_update
+	"c_Render"
+
+1544185483 c:\users\ptysiek\desktop\projectmaze\prm_core\c_render
+	"../c_Player"
+	<iostream>
+
+1544185483 source:c:\users\ptysiek\desktop\projectmaze\prm_core\input.cpp
+	"c_Input"
+
+1544185483 source:c:\users\ptysiek\desktop\projectmaze\prm_core\main.cpp
+	"c_GreatLoop"
+
+1544185483 source:c:\users\ptysiek\desktop\projectmaze\prm_core\render.cpp
+	"c_Render"
+
+1544185483 source:c:\users\ptysiek\desktop\projectmaze\prm_core\update.cpp
+	"c_Update"
+
+1544190766 source:c:\users\ptysiek\desktop\projectmaze\player.cpp
+	"c_Player"
+	<iostream>
+
+1544802013 source:c:\users\dell\desktop\maze\projectmaze\player.cpp
+	"c_Player"
+	<iostream>
+
+1544801979 c:\users\dell\desktop\maze\projectmaze\c_player
+	"c_Bot"
+
+1544801748 c:\users\dell\desktop\maze\projectmaze\c_bot
+
+1544816791 source:c:\users\dell\desktop\maze\projectmaze\prm_core\greatloop.cpp
+	"c_GreatLoop"
+	<iostream>
+
+1544816751 c:\users\dell\desktop\maze\projectmaze\prm_core\c_greatloop
+	"c_Input"
+	"c_Update"
+	"c_Render"
+	"../c_menu"
+	<windows.h>
+	<iostream>
+
+1544801228 c:\users\dell\desktop\maze\projectmaze\prm_core\c_input
+	<conio.h>
+	"../c_Player"
+
+1544801228 c:\users\dell\desktop\maze\projectmaze\prm_core\c_update
+	"c_Render"
+
+1544801228 c:\users\dell\desktop\maze\projectmaze\prm_core\c_render
+	"../c_Player"
+	<iostream>
+
+1544811842 source:c:\users\dell\desktop\maze\projectmaze\prm_core\input.cpp
+	"c_Input"
+
+1544802026 source:c:\users\dell\desktop\maze\projectmaze\prm_core\main.cpp
+	"c_GreatLoop"
+
+1544805149 source:c:\users\dell\desktop\maze\projectmaze\prm_core\render.cpp
+	"c_Render"
+
+1544801228 source:c:\users\dell\desktop\maze\projectmaze\prm_core\update.cpp
+	"c_Update"
+
+1544816930 source:c:\users\dell\desktop\maze\projectmaze\c_menu.cpp
+	"C_MENU"
+
+1544814749 c:\users\dell\desktop\maze\projectmaze\c_menu
+	<iostream>
+	<conio.h>
+
+>>>>>>> origin/menu
