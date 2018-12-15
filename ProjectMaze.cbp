@@ -31,7 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="PRM_DT/c_droom_TODO__dt.cpp" />
+		<Unit filename="PRM_DT/c_droom__dt.cpp" />
+		<Unit filename="PRM_DT/koziol_notatki_droom__dt.cpp" />
+		<Unit filename="c_roomDes" />
 		<Unit filename="main.cpp" />
+		<Unit filename="roomDes.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
