@@ -2,6 +2,9 @@
 #define C_ROOM_DESCRIPTION
 
 #include <iostream>
+#include <ctime>
+#include <windows.h>
+
 using std::cout;
 using std::string;
 
@@ -34,6 +37,8 @@ public: ///METODY
     void RenderRoom();
 
     void ClearRoom ();
+
+    void Danger(int,int,int,int,int);
 
 
 

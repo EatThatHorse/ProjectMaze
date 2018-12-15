@@ -3,7 +3,7 @@
 
 Droom::Droom(){  /// KONTSTRUKTOR
     this->tab = new char*[ROWS];
-    for(int row=0; row<ROWS; ++row)  // PÍtla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
+    for(int row=0; row<ROWS; ++row)  // P√™tla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
         this->tab[row] = new char[COLUMNS];
 }
 void Droom::RenderRoom(){
@@ -23,7 +23,7 @@ void Droom::RenderRoom(){
 
 void Droom::ClearRoom (){
 
-	// nadanie wartoúci elementom w tablicy CHAR
+	// nadanie warto≈ìci elementom w tablicy CHAR
 	for (int wiersz=0; wiersz<35; ++wiersz){
 		for (int kolumny=0; kolumny<70; ++kolumny){
 			tab [wiersz][kolumny] = ' '; ///jedna ciapka( ' ) to char, dwuciapek( " ) to string (const char*)
@@ -147,7 +147,7 @@ void Droom::ClearRoom (){
 }
 
 void Droom::ClearLine(int wierszyk){
-///kaøda linijka sciany----------------------------------------------
+///ka¬øda linijka sciany----------------------------------------------
 	tab [wierszyk][0] = ' ';
 	tab [wierszyk][1] = ppi;
 
@@ -157,3 +157,91 @@ void Droom::ClearLine(int wierszyk){
 	tab [wierszyk][68] = ppi;
 	tab [wierszyk][69] = ' ';
 }
+
+
+
+
+
+void Droom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
+
+    if (posX1 <= 1){              // warunki aby anchory nie wysz≈Çy poza rysunek
+        posX1 = 2;
+    }
+    if (posY1 <= 1){
+        posY1 = 2;
+    }
+
+    if (posX2 <= 1){
+        posX2 = 2;
+    }
+    if (posY2 <= 1){
+        posY2 = 2;
+    }
+
+    if (posX1 > 67){
+        posX1 = 67;
+    }
+    if (posY1 > 33){
+        posY1 = 33;
+    }
+
+    if (posX2 > 67){
+        posX2 = 67;
+    }
+    if (posY2 > 33){
+        posY2 = 33;
+    }
+
+
+    int tmp;
+    int testSUM_X = posX2 - posX1; // Dodatnie -> anchor2 jest po prawej od anchor1
+    int testSUM_Y = posY2 - posY1; // Dodatnie -> anchor2 jest pod anchor1
+
+
+    if(testSUM_X < 0 && testSUM_Y < 0){  // 0 0
+        tmp = posX1;
+        posX1 = posX2;
+        posX2 = tmp;
+
+        tmp = posY1;
+        posY1 = posY2;
+        posY2 = tmp;
+    }
+     if(testSUM_X >= 0 && testSUM_Y < 0){ // 1 0
+        tmp = posY1;
+        posY1 = posY2;
+        posY2 = tmp;
+
+     }
+     if(testSUM_X < 0 && testSUM_Y >= 0){ // 0 1
+        tmp = posX1;
+        posX1 = posX2;
+        posX2 = tmp;
+
+     }
+
+
+    int los;
+    srand(time(NULL));
+
+
+
+
+     for (int i=posY1; i<=posY2; ++i){
+            for (int j=posX1; j<=posX2; ++j){
+
+                los = (std::rand() % 100) + 0;
+                if (los  < chan ){
+                    tab[i][j]='#';
+                }
+            }
+
+     }
+/*    for (int wiersz=posX1; wiersz<=posX2; ++wiersz){
+        for (int kol=posY1; kol<=posY2; ++kol){
+        tab[i][j]=j+46;
+        }
+
+    }*/
+}
+

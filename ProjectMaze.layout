@@ -2,24 +2,30 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="c_roomDes" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="119" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="roomDes.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="PRM_DT\koziol_notatki_droom__dt.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3465" topLine="24" />
+			<Cursor1 position="6753" topLine="86" />
 		</Cursor>
 	</File>
-	<File name="PRM_DT\koziol_notatki_droom__dt.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="12" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6753" topLine="89" />
+			<Cursor1 position="97" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="c_roomDes" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="roomDes.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="353" topLine="12" />
+			<Cursor1 position="5354" topLine="215" />
 		</Cursor>
 	</File>
+	<Target name="Debug" top="main.cpp">
+		<File name="main.cpp" />
+		<File name="c_roomDes" />
+		<File name="roomDes.cpp" />
+		<File name="PRM_DT\koziol_notatki_droom__dt.cpp" />
+	</Target>
 </CodeBlocks_layout_file>
