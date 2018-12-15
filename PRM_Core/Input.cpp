@@ -41,8 +41,8 @@ int Input::Run01G(player& HERO){
 //_________________________________________________________________________________________________________________
 //───────────────────────────────────────────────────────────────────────────────────────────────────────────────── M-01
 
-/*
-int Input::Run01M(bool& gloop, int& option){
+
+//int Input::Run01M(bool& gloop, int& option){
     /** Zakaz Uzywania Cout, Nie zadziala
         Wynika to z sposobu dzialania getch() i system("cls")   */
 /*

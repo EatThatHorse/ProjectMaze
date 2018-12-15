@@ -1,9 +1,9 @@
 
-#ifndef PLAYER__PRMAZE
-#define PLAYER__PRMAZE
+#ifndef C_PLAYER__PRMAZE
+#define C_PLAYER__PRMAZE
 
     #include "c_Unit"               // Plik z [KLASA BAZOWA]
-    #include "u_ProjectUtilities"   // [enum Directory]
+    #include "../u_ProjectUtilities"   // [enum Directory]
 
     /// INIT SYMBOLS CONSTANS
     // Animation Symbols / Char's:
@@ -36,7 +36,7 @@
         int Move (Direction);
     };
 
-#endif // PLAYER__PRMAZE
+#endif // C_PLAYER__PRMAZE
 
 
 

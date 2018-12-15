@@ -3,7 +3,7 @@
 #define INPUT__PRMAZE
 
     #include <conio.h>      // getch / kbhit
-    #include "../c_Player"
+    #include "../PRM_Objects/c_Player"
 
     class Input {
     public:

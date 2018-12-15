@@ -35,6 +35,10 @@ void maze::AddRoom (Direction option, bool goInside=1){
         tmp = (new room(NULL,NULL,lastRoom,lastRoom->LVL(),lastRoom->WID()+1));
         lastRoom->SET_EAST(tmp);
         break;
+
+    case DOWN:
+        // Need To Define Every Option
+        break;
     }
 
     /// PART 2

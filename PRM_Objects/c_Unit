@@ -3,7 +3,7 @@
 #define C_UNIT
 
     #include "c_Obstacle"
-    #include "u_ProjectUtilities"
+    #include "../u_ProjectUtilities"
 
     class Unit : public Obstacle {
         /** Klasa Bazowa dla:

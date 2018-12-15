@@ -2,95 +2,31 @@
 #ifndef C_CONTAINER
 #define C_CONTAINER
 
-#include "c_Obstacle"
-#include "c_ContainerRecord"
+    #include "PRM_Objects/c_Obstacle"
+    #include "c_ContainerRecord"
 
-#include <iostream>
-using namespace std;
+    #include <iostream>
+    using namespace std;
 
-class Container {
-public:
-    Container(){
-        this->konSIZE = 0;
-        this->kontener = 0;
-        this->lastRecord = 0;
-    }
-    ~Container(){
-        DeleteKontener();
-    }
+    class Container {
+    public: /// KONSTRUKTORY / DESTRUKTORY
+        Container();
+        ~Container();
 
+    private: /// ZMIENNE
+        int konSIZE;
+        ConRecord* kontener;    // Adres pierwszego elementu kontenera. => Adres Listy
+        ConRecord* lastRecord;  // Adres ostatniego elementu kontenera. => Dodawanie nowych Recordow.
 
-public:
-    int konSIZE;
-    ConRecord* kontener;    // Adres pierwszego elementu kontenera. => Adres Listy
-    ConRecord* lastRecord;  // Adres ostatniego elementu kontenera. => Dodawanie nowych Recordow.
+    public: /// METODY
+        void ShowKontener ();
 
+        void AddRecord (int=0, int=0, char='K');
 
+        void DeleteLastRecord ();
 
-
-public:
-    void ShowKontener (){
-        ConRecord* tmpWalker = kontener;
-
-        cout << " Kontener:   firstR: ("<< kontener << ")  lastR: (" << lastRecord << ")  iloscR: [" << konSIZE << "]\n\n";
-        if (tmpWalker == 0) {
-            cout << "  [Brak Elementow] \n";
-            return;
-        }
-
-        // Else:
-        do {
-            tmpWalker->ShowRecord();
-            cout << "\n";
-            tmpWalker = tmpWalker->nextRecord;
-        } while (tmpWalker != 0);
-    }
-
-    void AddRecord (int xpos=0, int ypos=0, char symbol='K'){
-        ++konSIZE;
-
-        if (kontener == 0){
-            kontener = new ConRecord(0, 0, xpos, ypos, symbol);
-            lastRecord = kontener;
-        }else{
-            lastRecord->nextRecord = new ConRecord (konSIZE-1, lastRecord, xpos, ypos, symbol);
-            lastRecord = lastRecord->nextRecord;
-        }
-    }
-
-
-    void DeleteLastRecord (){
-        if (kontener==0){
-            return;
-        }
-
-        --konSIZE;
-
-        if (kontener == lastRecord){
-            delete lastRecord;
-            kontener = lastRecord = 0;
-            return;
-        }
-
-        ConRecord* hangman = lastRecord;
-
-        lastRecord = lastRecord->previousRecord;
-        lastRecord->nextRecord = 0;
-
-        delete hangman;
-    }
-
-    void DeleteKontener (){
-
-        while (lastRecord->previousRecord != 0) {
-            DeleteLastRecord();
-        }
-        DeleteLastRecord();
-    }
-
-};
-
-
+        void DeleteKontener ();
+    };
 
 #endif // C_CONTAINER
 

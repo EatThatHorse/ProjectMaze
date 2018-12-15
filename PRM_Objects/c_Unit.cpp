@@ -92,4 +92,6 @@ int Unit::Move (Direction current){
         this->xpos = (this->xpos + speedHX);        // [X+1]
         return current;
     }
+
+    return 0;
 }

@@ -2,7 +2,7 @@
 #ifndef RENDER__PRMAZE
 #define RENDER__PRMAZE
 
-    #include "../c_Player"
+    #include "../PRM_Objects/c_Player"
 
     #include <iostream>
     using std::cout;

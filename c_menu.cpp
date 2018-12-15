@@ -39,7 +39,7 @@ void menu::AsciiButton (int width, string Text, string odstep, int font){
     cout << pgr << "\n";    //prawy górny róg
 
     cout << odstep << ppi << " " << Text;        //pojedyncza pionowa
-    for (int x=0; x<(width-3-Text.length()) ;x++)
+    for (unsigned int x=0; x<(width-3-Text.length()) ;x++)
         cout << " ";
     cout << ppi << "\n";        //pojedyncza pionowa
 
