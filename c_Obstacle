@@ -8,6 +8,20 @@
             Znajduja sie w niej informacje niezbedne dla
             wszystkiego co znajduje się w pokoju.
         */
+    public:
+        Obstacle(int X, int Y, char S){
+            this->xpos = X;
+            this->ypos = Y;
+            this->symbol = S;
+        }
+
+        ~Obstacle() {
+            this->xpos = -1;
+            this->ypos = -1;
+            this->symbol = 'x';
+        }
+
+
     public: // PUBLICZNE, CZYLI TYLKO DO ODCZYTU:
         int XPOS () {return this->xpos;}
         int YPOS () {return this->ypos;}
@@ -17,6 +31,15 @@
         int xpos;
         int ypos;
         char symbol;    // Reprezentacja wizualna w Render Tablicy.
+
+    public:
+        UpdatePosition(int x, int y){
+            this->xpos = x;
+            this->ypos = y;
+        }
+        UpdateSymbol(char s='K'){
+            this->symbol = s;
+        }
 };
 
 #endif // C_OBSTACLE

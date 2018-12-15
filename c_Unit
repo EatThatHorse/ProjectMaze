@@ -13,6 +13,14 @@
             Znajduja sie w niej informacje niezbedne dla
             co swobodnie skacze po pokoju.
         */
+    public:
+    Unit (int O_xpos, int O_ypos, char O_symbol, int speedVY, int speedHX)
+          : Obstacle(O_xpos, O_ypos, O_symbol) {
+
+        this->speedVY = speedVY;
+        this->speedHX = speedHX;
+    }
+
     public: // PUBLICZNE, CZYLI TYLKO DO ODCZYTU:
         int SPEED_VY () {return this->speedVY;}
         int SPEED_HX () {return this->speedHX;}

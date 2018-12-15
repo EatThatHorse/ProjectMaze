@@ -1,0 +1,54 @@
+
+
+#ifndef C_CONTAINER_RECORD
+#define C_CONTAINER_RECORD
+
+#include <iostream>
+using std::cout;
+
+class ConRecord {
+public:
+    ConRecord(int Tindex, ConRecord* prev, int xpos, int ypos, char symbol)
+              : keptValue(xpos, ypos, symbol) {
+
+        this->previousRecord = prev;
+        this->nextRecord = 0;
+        this->index = Tindex;
+    }
+    ~ConRecord() {
+        this->previousRecord = 0;
+        this->nextRecord = 0;
+        this->index = -1;
+
+    }
+
+
+
+    Obstacle keptValue;
+
+    int index;
+    ConRecord* previousRecord;
+    ConRecord* nextRecord;
+
+public:
+    void ShowRecord (){
+        cout << " prev: (" << previousRecord;
+
+        if (previousRecord == 0)    cout << ")\t ";
+        else                        cout << ")";
+
+        cout << " self: (" << this << ")"
+             << " next: (" << nextRecord;
+
+        if (nextRecord == 0) cout << ")\t\t";
+        else                 cout << ")\t";
+
+        cout << " id: [" << index << "]"
+             << " X,Y: [" << keptValue.xpos << "," << keptValue.ypos << "]"
+             << " char: ['" << keptValue.symbol << "']";
+    }
+
+};
+
+#endif // C_CONTAINER_RECORD
+

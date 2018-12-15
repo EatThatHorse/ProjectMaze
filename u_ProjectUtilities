@@ -3,7 +3,9 @@
 
 
 
-enum Direction { UP=0, DOWN=2, LEFT=1, RIGHT=2 };
+enum Direction { UP=0, DOWN=1, LEFT=2, RIGHT=3 };
+
+enum PRM_Object { WALL=0, CWALL=1, CHEST=2, TRAP=3 };
 
 
 
