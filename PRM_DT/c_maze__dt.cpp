@@ -1,5 +1,37 @@
 #ifdef C_MAZE__DT
 
+
+
+// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+#include "../c_maze"
+#include "../c_room"
+
+void TestRoom() {      // Old Grzybo main, to test maze and room klass.
+
+    room zeroRoom(NULL,NULL,NULL,0,0);
+    maze Head(&zeroRoom);
+
+///testowanko
+
+    int x;
+    cin>>x;
+
+    for(int i = 0;i<x;++i ){
+
+        getchar();
+        Head.AddFloor();
+        Head.ShowMaze();
+        Head.SET_CURR(Head.LASTROOM());
+
+    }
+
+}
+// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+
+
+
+
+
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 /*
 - Mamy juz jeden obiekt typu hotel. Powstal on w mainie().

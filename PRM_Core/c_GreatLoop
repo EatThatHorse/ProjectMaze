@@ -7,18 +7,14 @@
     #include "c_Render"
     #include "../c_menu"
 
-
     #include <windows.h>    // system("");
-    #include <iostream>     // Includowane tylko dla DEBUG_INPUT();
-    using std::cout;
-    using std::cin;         // for GrzyboTestRoom()
-
 
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
     class GreatLoop : public Input, public Update, public Render  {   // Zastosowanie dziedziczenia wielobazowego.
     public:
         // PUBLICZNE METODY
         void Execute();
+
     private:
         // ZMIENNE
         bool GLOOP;  // GreatLoop flag.
@@ -26,17 +22,11 @@
     private:
         // EVERY TEST / TEMPORARY VERSION:
         void MAIN_TEST_DEBUG();
-        void TestRoom();
 
         // EVERY GAME VERSION:
-        void GameVer01();
-        void GameVer02();
 
         // EVERY MENU VERSION:
         void MenuVer01();
-        void GrzyboVer01();
     };
-
-
     /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
 #endif // C_GREATLOOP

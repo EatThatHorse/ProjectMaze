@@ -2,10 +2,18 @@
 #define u_PROJ_UTILITIES
 
 
+#include <windows.h>    // system("");
+#include <conio.h>    // system("");
+
+#include <iostream>
+using std::cout;
 
 enum Direction { UP=0, DOWN=1, LEFT=2, RIGHT=3 };
 
 enum PRM_Object { WALL=0, CWALL=1, CHEST=2, TRAP=3 };
+
+
+void DEBUG_KEYBOARD ();
 
 
 
