@@ -2,10 +2,8 @@
 #ifndef C_CONTAINER
 #define C_CONTAINER
 
-
 #include "c_Obstacle"
 #include "c_ContainerRecord"
-
 
 #include <iostream>
 using namespace std;
@@ -18,7 +16,7 @@ public:
         this->lastRecord = 0;
     }
     ~Container(){
-
+        DeleteKontener();
     }
 
 

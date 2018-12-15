@@ -2,34 +2,35 @@
 #ifndef PLAYER__PRMAZE
 #define PLAYER__PRMAZE
 
-    #include "c_Unit"   // Plik z [KLASA BAZOWA]
+    #include "c_Unit"               // Plik z [KLASA BAZOWA]
     #include "u_ProjectUtilities"   // [enum Directory]
+
+    /// INIT SYMBOLS CONSTANS
+    // Animation Symbols / Char's:
+    #define S_UP    24      // Symbol [↑]
+    #define S_DOWN  25      // Symbol [↓]
+    #define S_LEFT  27      // Symbol [←]
+    #define S_RIGHT 26      // Symbol [→]
+
+    /// INIT MOVEMENT CONSTANS
+    // Zmienne z klasy bazowej posredniej [Obstacle] [O_]
+    #define O_xpos      34          // X pozycja gracza w Kolumnach Render Tabeli.
+    #define O_ypos      17          // Y pozycja gracza w Wierszach Render Tabeli.
+    #define O_symbol    (char)S_UP  // Symbol Startowy.
+
+    // Zmienne z klasy bazowej bezposredniej [Unit] [U_]
+    #define U_speedVY   1           // Predkosc przemieszczania sie gracza po wierszach Y.
+    #define U_speedHX   1           // Predkosc przemieszczania sie gracza po kolumnach X.
+
 
     class player : public Unit {
     public: /// KONSTRUKTOR
-
-        #define O_xpos      34
-        #define O_ypos      17
-        #define U_speedVY   1
-        #define U_speedHX   1
-        #define O_symbol    (char)24
-
-        player () : Unit(O_xpos, O_ypos, O_symbol, U_speedVY, U_speedHX) {
-
-
-        }
+        player () : Unit(O_xpos, O_ypos, O_symbol, U_speedVY, U_speedHX) { }
 
     private: /// ZMIENNE
         // Ranked / Status
         int score;              // def.[0]
         int hp;                 // Need to test for Optimalization.
-
-        // Animation Symbols / Char's:
-        #define S_UP    24      // Symbol [↑]
-        #define S_DOWN  25      // Symbol [↓]
-        #define S_LEFT  27      // Symbol [←]
-        #define S_RIGHT 26      // Symbol [→]
-
 
     public: /// METODY
         int Move (Direction);

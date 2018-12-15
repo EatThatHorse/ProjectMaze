@@ -2,25 +2,24 @@
 #include "c_GreatLoop"
 
 
+//_________________________________
 void GreatLoop::Execute(){
     /** Czynnosci wykonywane przez Program.
         Obsluga wiekszosci bledow.
         Metoda wywolywana w MAIN().
     */
 
+    // MAIN PRZYSTOSOWANY DO PRACY Z KODEM.    CLEAN IT AFTER. LEAVE IT ENABLED.
     MAIN_TEST_DEBUG();
 
-    MenuVer01();
+    // METODY WYWOLANIA PROGRAMU, MENU LUB GRY.
+    //MenuVer01();
 
     return;
 }
 
 
-#include "../c_Container"
-#include <iostream>
-using namespace std;
-
-
+//_________________________________
 void GreatLoop::MAIN_TEST_DEBUG() {
     /** WorkSpace Przygotowany Specjalnie do TWOICH Testow.
         Traktuj go jak zwyklego MAIN'A.
@@ -34,6 +33,7 @@ void GreatLoop::MAIN_TEST_DEBUG() {
 }
 
 
+//_________________________________
 void GreatLoop::MenuVer01() {
     /** Pierwsza wersja Funkcji Sterującej Rozgrywką. */
 
