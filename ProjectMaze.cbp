@@ -47,6 +47,12 @@
 		<Unit filename="PRM_DT/c_GreatLoop___dt.cpp">
 			<Option virtualFolder="PRM_DT/" />
 		</Unit>
+		<Unit filename="PRM_DT/c_droom_TODO__dt.cpp">
+			<Option virtualFolder="PRM_DT/" />
+		</Unit>
+		<Unit filename="PRM_DT/c_droom__dt.cpp">
+			<Option virtualFolder="PRM_DT/" />
+		</Unit>
 		<Unit filename="PRM_DT/c_maze__dt.cpp">
 			<Option virtualFolder="PRM_DT/" />
 		</Unit>
@@ -56,22 +62,27 @@
 		<Unit filename="PRM_DT/dzialanieProgramu__dt.cpp">
 			<Option virtualFolder="PRM_DT/" />
 		</Unit>
+		<Unit filename="PRM_DT/koziol_notatki_droom__dt.cpp">
+			<Option virtualFolder="PRM_DT/" />
+		</Unit>
+		<Unit filename="PRM_MazeGen/c_Container" />
+		<Unit filename="PRM_MazeGen/c_Container.cpp" />
+		<Unit filename="PRM_MazeGen/c_ContainerRecord" />
+		<Unit filename="PRM_MazeGen/c_ContainerRecord.cpp" />
+		<Unit filename="PRM_MazeGen/c_maze" />
+		<Unit filename="PRM_MazeGen/c_maze.cpp" />
+		<Unit filename="PRM_MazeGen/c_room" />
+		<Unit filename="PRM_MazeGen/c_room.cpp" />
+		<Unit filename="PRM_MazeGen/c_roomDes" />
+		<Unit filename="PRM_MazeGen/c_roomDes.cpp" />
 		<Unit filename="PRM_Objects/c_Obstacle" />
 		<Unit filename="PRM_Objects/c_Obstacle.cpp" />
 		<Unit filename="PRM_Objects/c_Player" />
 		<Unit filename="PRM_Objects/c_Player.cpp" />
 		<Unit filename="PRM_Objects/c_Unit" />
 		<Unit filename="PRM_Objects/c_Unit.cpp" />
-		<Unit filename="c_Container" />
-		<Unit filename="c_Container.cpp" />
-		<Unit filename="c_ContainerRecord" />
-		<Unit filename="c_ContainerRecord.cpp" />
-		<Unit filename="c_maze" />
-		<Unit filename="c_maze.cpp" />
 		<Unit filename="c_menu" />
 		<Unit filename="c_menu.cpp" />
-		<Unit filename="c_room" />
-		<Unit filename="c_room.cpp" />
 		<Unit filename="u_ProjectUtilities" />
 		<Unit filename="u_ProjectUtilities.cpp" />
 		<Extensions>

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # depslib dependency file v1.0
 35717524 Î¬À@»!Ì}fC∑HıÜ"F9‘^áW,m˚>˝Ñ˘"±ô'êJ!SÌ¶÷bU”)D™˘ÙayΩ	îñIÚ#∆3—“∏0DUáÆ÷ß!ÑãH√…k!‹–˘|Ó»É@zk›©f°ê«ø¯Ïßˇ>≤L#q∏n¡——m€Rñ%õõõL&™™¬Ë´MpÅÆÎhZ
 
@@ -227,3 +228,61 @@
 	<conio.h>
 
 >>>>>>> origin/menu
+=======
+# depslib dependency file v1.0
+1544924662 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
+	"c_roomDes"
+
+1544834689 source:c:\users\kozio≥\desktop\projectmaze\main.cpp
+	"c_roomDes"
+
+1544835610 source:c:\users\kozio≥\desktop\projectmaze\roomdes.cpp
+	"c_roomDes"
+
+1544839403 c:\users\kozio≥\desktop\projectmaze\c_roomdes
+	<iostream>
+
+1544834214 source:c:\users\kozio≥\desktop\projectmaze\c_droom_todo__dt.cpp
+
+1544834214 source:c:\users\kozio≥\desktop\projectmaze\koziol_notatki_droom__dt.cpp
+
+1544834279 source:c:\users\kozio≥\desktop\projectmaze\c_droom__dt.cpp
+
+1544834279 source:c:\users\kozio≥\desktop\projectmaze\prm_dt\c_droom__dt.cpp
+
+1544834690 source:c:\users\kozio≥\desktop\projectmaze\prm_dt\c_droom_todo__dt.cpp
+
+1544834551 source:c:\users\kozio≥\desktop\projectmaze\prm_dt\koziol_notatki_droom__dt.cpp
+
+1544883868 source:c:\users\dell\desktop\maze\projectmaze\main.cpp
+	"c_roomDes"
+
+1544883540 c:\users\dell\desktop\maze\projectmaze\c_roomdes
+	<iostream>
+	<ctime>
+	<windows.h>
+
+1544841505 source:c:\users\dell\desktop\maze\projectmaze\prm_dt\c_droom__dt.cpp
+
+1544841505 source:c:\users\dell\desktop\maze\projectmaze\prm_dt\c_droom_todo__dt.cpp
+
+1544841505 source:c:\users\dell\desktop\maze\projectmaze\prm_dt\koziol_notatki_droom__dt.cpp
+
+1544883868 source:c:\users\dell\desktop\maze\projectmaze\roomdes.cpp
+	"c_roomDes"
+
+1544924688 c:\users\ptysiek\desktop\projectmaze\c_roomdes
+	<ctime>
+	<windows.h>
+	<iostream>
+
+1544924271 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\c_droom__dt.cpp
+
+1544915052 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\c_droom_todo__dt.cpp
+
+1544915418 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\koziol_notatki_droom__dt.cpp
+
+1544924584 source:c:\users\ptysiek\desktop\projectmaze\roomdes.cpp
+	"c_roomDes"
+
+>>>>>>> ko_room_design

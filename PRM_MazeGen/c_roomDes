@@ -1,0 +1,50 @@
+#ifndef C_ROOM_DESCRIPTION
+#define C_ROOM_DESCRIPTION
+
+#include <ctime>
+#include <windows.h>
+#include <iostream>
+using std::cout;
+using std::string;
+
+class Droom {
+public: ///KONSTRUKTOR
+    Droom();
+
+private: ///ZMIENNE
+    #define ROWS 36
+    #define COLUMNS 70
+    char** tab;
+
+    bool north = 1;
+    bool south = 1;
+    bool east = 1;
+    bool west = 1;
+
+    char ppo = 196;     //ppo  - pojedynzca pozioma
+    char ppi = 179;     //ppi - pojedyncza pionowa
+    char lgr = 218;     //lgr - lewy górny róg
+    char pgr = 191;     //pgr - prawy górny róg
+    char ldr = 192;     //ldr - lewy dolny róg
+    char pdr = 217;     //pdr - prawy dolny róg
+    string margin29 = "                             ";
+
+public: ///METODY
+    void RenderRoom();
+    void ClearRoom ();
+    void Danger(int,int,int,int,int);
+
+private: ///METODY PRYWATNE
+    void ClearLine (int);
+    void Line (int, int, int, char);
+};
+
+#endif // C_ROOM_DESCRIPTION
+
+
+
+
+
+
+
+

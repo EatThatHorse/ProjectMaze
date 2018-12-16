@@ -2,7 +2,7 @@
 #ifndef C_CONTAINER
 #define C_CONTAINER
 
-    #include "PRM_Objects/c_Obstacle"
+    #include "../PRM_Objects/c_Obstacle"
     #include "c_ContainerRecord"
 
     #include <iostream>

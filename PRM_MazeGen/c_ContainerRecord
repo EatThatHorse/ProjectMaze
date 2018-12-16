@@ -2,7 +2,7 @@
 #ifndef C_CONTAINER_RECORD
 #define C_CONTAINER_RECORD
 
-    #include "PRM_Objects/c_Obstacle"
+    #include "../PRM_Objects/c_Obstacle"
 
     #include <iostream>
     using std::cout;

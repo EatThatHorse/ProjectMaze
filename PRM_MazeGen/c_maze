@@ -1,7 +1,7 @@
 #ifndef c_maze
 #define c_maze
 
-#include "u_ProjectUtilities"
+#include "../u_ProjectUtilities"
 #include "c_room"
 
 #include <cstdlib>      // [srand] (do RandomSet)
