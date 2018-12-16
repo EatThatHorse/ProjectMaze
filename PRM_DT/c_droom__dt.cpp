@@ -9,15 +9,15 @@ bool west = true;
 
 char ppo = 196;     //ppo  - pojedynzca pozioma
 char ppi = 179;     //ppi - pojedyncza pionowa
-char lgr = 218;     //lgr - lewy g髍ny r骻
-char pgr = 191;     //pgr - prawy g髍ny r骻
-char ldr = 192;     //ldr - lewy dolny r骻
-char pdr = 217;     //pdr - prawy dolny r骻
+char lgr = 218;     //lgr - lewy g贸rny r贸g
+char pgr = 191;     //pgr - prawy g贸rny r贸g
+char ldr = 192;     //ldr - lewy dolny r贸g
+char pdr = 217;     //pdr - prawy dolny r贸g
 
 string margin29 = "                             ";
 
 void ClearLine(char** tab, int wierszyk){
-///ka縟a linijka sciany----------------------------------------------
+///ka偶da linijka sciany----------------------------------------------
 	tab [wierszyk][0] = ' ';
 	tab [wierszyk][1] = ppi;
 
@@ -47,7 +47,7 @@ void RenderRoom(char** tab){
 
 void ClearRoom (char** tab){
 
-	// nadanie warto渃i elementom w tablicy kurwa!!!! CHAR
+	// nadanie warto艣ci elementom w tablicy kurwa!!!! CHAR
 	for (int wiersz=0; wiersz<35; ++wiersz){
 		for (int kolumny=0; kolumny<70; ++kolumny){
 			tab [wiersz][kolumny] = ' '; ///jedna ciapka( ' ) to char, dwuciapek( " ) to string (const char*)
@@ -175,19 +175,19 @@ void ClearRoom (char** tab){
 }
 
 void AsciiBox (int width, int height, string odstep){
-/// g髍na kreska------------------------------------
+/// g贸rna kreska------------------------------------
     cout << odstep
-         << lgr;            //lewy g髍ny r骻
+         << lgr;            //lewy g贸rny r贸g
 
     for (int x=0; x<(width - 2); ++x) {
         cout << ppo;        //pojedyncza pozioma
     }
-    cout << pgr             //prawy g髍ny r骻
+    cout << pgr             //prawy g贸rny r贸g
          << "\n";           //debug pierwszego wiersza bocznych kresek
 
 
 
-    for (int x=0 ;x<height ;++x) {       //boczne kreski g髍nej ramki
+    for (int x=0 ;x<height ;++x) {       //boczne kreski g贸rnej ramki
         cout << odstep
              << ppi;        //pojedyncza pionowa
         for (int x=0; x<(width -2) ;x++) {
@@ -199,12 +199,12 @@ void AsciiBox (int width, int height, string odstep){
 
 ///dolna kreska------------------------------------
     cout << odstep
-         << ldr;            //lewy g髍ndolny r骻
+         << ldr;            //lewy g贸rndolny r贸g
 
     for (int x=0; x<(width - 2); ++x) {
         cout << ppo;    //pojedyncza pozioma
     }
-    cout << pdr         //prawy dolny r骻
+    cout << pdr         //prawy dolny r贸g
          << "\n";       //debug pierwszego wiersza bocznych kresek
 
     return;
@@ -471,14 +471,15 @@ void AsciiRoom (bool north, bool south, bool east, bool west){
 
 
         /// Etap drugi:
-    for(int row=0; row<ROWS; ++row)  // P阾la przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
+    for(int row=0; row<ROWS; ++row)  // P臋tla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
         tab[row] = new char[COLUMNS];
 
 
     ClearRoom(tab);
     RenderRoom(tab);
 
-*/
+
+*/
 
 
 // string margin29 = "                             ";

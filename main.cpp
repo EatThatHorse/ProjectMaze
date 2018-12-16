@@ -3,7 +3,6 @@
 int main (){
 
     Droom testRoom;
-
     testRoom.ClearRoom();
 
     {
@@ -22,8 +21,6 @@ int main (){
 
     }
 
-
-
     ///srodek           25,13,43,22,tmpChan
     ///srodek 2x2:      34,17,35,18,100
     ///srodek 4x4:      32,16,36,19,100
@@ -36,8 +33,6 @@ int main (){
     ///lewo srodek :    8,15,20,20,tmpChan
     ///prawo srodek :   49,15,61,20,tmpChan
     ///dol srodek :     25,25,43,30,tmpChan
-
-
   /*
     2,2,20,10,tmpChan); //lewo gora rog
     25,13,43,22,tmpChan); //sr
@@ -49,10 +44,7 @@ int main (){
     49,13,63,22,tmpChan);// sr prawo
     25,25,43,31,tmpChan); // sr dol
 */
-
     testRoom.RenderRoom();
-
-
 
     return 0;
 }

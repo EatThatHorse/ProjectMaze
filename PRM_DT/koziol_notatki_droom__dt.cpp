@@ -119,6 +119,7 @@
 
 
 
-
+/**
     - pułapka ktora sprawia, ze gracz przestaje widziec mape
     - bomba, ktora niszczy sciany rowniez. Wybucha jak ktos (gracz/zombie) wdepnie
+*/

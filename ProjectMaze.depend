@@ -1,7 +1,6 @@
 # depslib dependency file v1.0
-1543943517 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
-	<windows.h>
-	<iostream>
+1544924662 source:c:\users\ptysiek\desktop\projectmaze\main.cpp
+	"c_roomDes"
 
 1544834689 source:c:\users\kozio³\desktop\projectmaze\main.cpp
 	"c_roomDes"
@@ -39,5 +38,19 @@
 1544841505 source:c:\users\dell\desktop\maze\projectmaze\prm_dt\koziol_notatki_droom__dt.cpp
 
 1544883868 source:c:\users\dell\desktop\maze\projectmaze\roomdes.cpp
+	"c_roomDes"
+
+1544924688 c:\users\ptysiek\desktop\projectmaze\c_roomdes
+	<ctime>
+	<windows.h>
+	<iostream>
+
+1544924271 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\c_droom__dt.cpp
+
+1544915052 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\c_droom_todo__dt.cpp
+
+1544915418 source:c:\users\ptysiek\desktop\projectmaze\prm_dt\koziol_notatki_droom__dt.cpp
+
+1544924584 source:c:\users\ptysiek\desktop\projectmaze\roomdes.cpp
 	"c_roomDes"
 
