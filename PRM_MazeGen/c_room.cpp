@@ -26,24 +26,13 @@ room::~room (){
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 
-int room::LVL(){
-    return this->lvl;
-}
+int room::LVL(){ return this->lvl; }
+int room::WID(){ return this->wid; }
 
-int room::WID(){
-    return this->wid;
-}
-
-room* room::NORTH(){
-    return this->north;
-}
-
-room* room::EAST(){
-    return this->east;
-}
-
-room* room::WEST(){
-    return this->west;
+room* room::NORTH(){ return this->north; }
+room* room::EAST(){ return this->east; }
+room* room::SOUTH(){ return this->south; }
+room* room::WEST(){ return this->west;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void room::SET_NORTH(room* roomX){
@@ -63,12 +52,11 @@ void room::DEBUG_SHOWVARS(){
          << " lvl: "            << this->lvl
          << " wid: "            << this->wid
          << " nr: "             << this->nr
-         << "        "
-         << "this: ["           << this
-         << "] North: ["        << this->north
-         << "] South: ["        << this->south
-         << "] East:  ["        << this->east
-         << "] West:  ["        << this->west
+         << "\t\tthis: ["       << this
+         << "] N: ["        << this->north
+         << "] S: ["        << this->south
+         << "] E:  ["        << this->east
+         << "] W:  ["        << this->west
          << "]\n";
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■

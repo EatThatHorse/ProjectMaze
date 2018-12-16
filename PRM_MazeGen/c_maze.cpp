@@ -1,38 +1,41 @@
 #include "c_maze"
-// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-maze::maze(room* roomX){
 
-    this->lastRoom = roomX;
-    this->currentRoom = roomX;
-    this->zeroRoom = roomX;
+
+
+// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+maze::maze(){
+    this->zeroRoom = new Droom (NULL,NULL,NULL,0,0);
+
+    this->lastRoom = zeroRoom;
+    this->currentRoom = zeroRoom;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-void maze::SET_CURR(room* newAdres){
+void maze::SET_CURR(Droom* newAdres){
 
     this->currentRoom = newAdres;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-room* maze::LASTROOM(){
+Droom* maze::LASTROOM(){
     return this->lastRoom;
 }
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void maze::AddRoom (Direction option, bool goInside=1){
-    room* tmp;
+    Droom* tmp;
 
     switch (option){
     case UP:
-        tmp = (new room(lastRoom,NULL,NULL,lastRoom->LVL()+1,lastRoom->WID()));        // 1) Dodaj pokoj do gory od lastRoom.
+        tmp = (new Droom(lastRoom,NULL,NULL,lastRoom->LVL()+1,lastRoom->WID()));       // 1) Dodaj pokoj do gory od lastRoom.
         lastRoom->SET_NORTH(tmp);                                                     // 2) Ustaw wszystkie wskazniki i inne wartosci nowego pokoju, oraz lastRoom.
         break;
 
     case LEFT:
-        tmp = (new room(NULL,lastRoom,NULL,lastRoom->LVL(),lastRoom->WID()-1));
+        tmp = (new Droom(NULL,lastRoom,NULL,lastRoom->LVL(),lastRoom->WID()-1));
         lastRoom->SET_WEST(tmp);
         break;
 
     case RIGHT:
-        tmp = (new room(NULL,NULL,lastRoom,lastRoom->LVL(),lastRoom->WID()+1));
+        tmp = (new Droom(NULL,NULL,lastRoom,lastRoom->LVL(),lastRoom->WID()+1));
         lastRoom->SET_EAST(tmp);
         break;
 
@@ -132,7 +135,7 @@ void maze::ShowMaze (){
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void maze::AddFloor(){
 
-    room* tmpRoom;
+    Droom* tmpRoom;
 
     int x;
 

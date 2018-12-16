@@ -12,6 +12,7 @@
 void ko_room_design_EXEC (){
     /** Stary Main w ktorym testowano dzialanie metody Droom::Danger */
 
+/*
     Droom testRoom;
     testRoom.ClearRoom();
     {
@@ -28,6 +29,8 @@ void ko_room_design_EXEC (){
         testRoom.Danger(49,13,63,22,tmpChan2);  // sr prawo
         testRoom.Danger(25,25,43,31,tmpChan2);  // sr dol
     }
+
+    testRoom.RenderRoom();*/
 
     ///srodek           25,13,43,22,tmpChan
     ///srodek 2x2:      34,17,35,18,100
@@ -52,7 +55,6 @@ void ko_room_design_EXEC (){
     49,13,63,22,tmpChan);// sr prawo
     25,25,43,31,tmpChan); // sr dol
 */
-    testRoom.RenderRoom();
 }
 
 
@@ -66,7 +68,9 @@ void ko_room_design_EXEC (){
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
 /// KONTSTRUKTOR
-Droom::Droom(){
+Droom::Droom(room* t_south, room* t_east, room* t_west, int t_lvl, int t_wid)
+      : room(t_south, t_east, t_west, t_lvl, t_wid) {
+
     this->tab = new char*[ROWS];
     for(int row=0; row<ROWS; ++row)  // Pêtla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
         this->tab[row] = new char[COLUMNS];
@@ -106,7 +110,7 @@ void Droom::ClearRoom (){
 	}
 
 	/// ETAP 2
-	if (north){
+	if (NORTH() != 0){
         /// drzwi NORTH otwarte ------------------------------------------------
         // linijka pierwsza -------------------------------------------
         tab [0][33] = ppi;          //  │
@@ -137,7 +141,7 @@ void Droom::ClearRoom (){
     for (int x=2; x<=15; ++x) { ClearLine(x); }         //  │ newLine │ [x14]
 
     /// Drzwi WEST ---------------------------------------------------------
-    if (west){
+    if (WEST() != 0){
         // otwarte ----------------------------------------------------
         tab [16][0] = ppo;      tab [16][1] = pdr;      //  ─ ┘
         tab [19][0] = ppo;      tab [19][1] = pgr;      //  ─ ┐
@@ -152,7 +156,7 @@ void Droom::ClearRoom (){
     }
 
     /// Drzwi EAST ---------------------------------------------------------
-    if (east){
+    if (EAST() != 0){
         // otwarte ----------------------------------------------------
         tab [16][68] = ldr;     tab [16][69] = ppo;     //  └ ─
         tab [19][68] = lgr;     tab [19][69] = ppo;     //  ┌ ─
@@ -169,7 +173,7 @@ void Droom::ClearRoom (){
     /// sciany druga para --------------------------------------------------
     for (int x=20; x<=33; ++x) { ClearLine(x); }        // │ newLine │ [x14]
 
-    if (south){
+    if (SOUTH() != 0){
         /// drzwi SOUTH otwarte ------------------------------------------------
         // linijka przedostatnia --------------------------------------
         tab [34][1] = ldr;          //  └

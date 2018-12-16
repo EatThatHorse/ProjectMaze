@@ -18,6 +18,9 @@ void GreatLoop::Execute(){
     return;
 }
 
+#include "../PRM_MazeGen/c_maze"
+//#include "../c_room"
+
 
 //_________________________________
 void GreatLoop::MAIN_TEST_DEBUG() {
@@ -28,6 +31,29 @@ void GreatLoop::MAIN_TEST_DEBUG() {
          - Nie Posiada Instrukcji
         Po zakonczeniu pracy pozostaw go w stanie w jakim go zastales.
     */
+
+    maze Head;
+
+    Head.AddFloor();
+
+    Head.currentRoom->ClearRoom();
+
+    int tmpChan = 15;
+    int tmpChan2 = 5;
+
+    Head.currentRoom->Danger(2,2,20,10,tmpChan);     //lg
+    Head.currentRoom->Danger(25,13,43,22,5);        //sr
+    Head.currentRoom->Danger(2,25,20,35,tmpChan);    // lewy dol rog
+    Head.currentRoom->Danger(48,2,69,10,tmpChan);    //prawy gor rog
+    Head.currentRoom->Danger(48,25,69,35,tmpChan);   // prawy dol rog
+    Head.currentRoom->Danger(25,4,43,10,tmpChan2);   // sr gora
+    Head.currentRoom->Danger(6,13,20,22,tmpChan2);   // sr lewo
+    Head.currentRoom->Danger(49,13,63,22,tmpChan2);  // sr prawo
+    Head.currentRoom->Danger(25,25,43,31,tmpChan2);  // sr dol
+
+    Head.currentRoom->RenderRoom();
+
+    Head.SET_CURR(Head.LASTROOM());
 
 
 }

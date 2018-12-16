@@ -9,11 +9,13 @@ class room {
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 public:
     room(room*,room*,room*,int,int);
+
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     DEKONSTRUKTORY
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 public:
     ~room ();
+
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     METODY
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -22,6 +24,7 @@ public:
     int WID();
     room* NORTH();
     room* EAST();
+    room* SOUTH();
     room* WEST();
 
     void SET_NORTH(room*);
@@ -29,15 +32,15 @@ public:
     void SET_SOUTH(room*);
     void SET_WEST(room*);
 
-
     void DEBUG_SHOWVARS();
+
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///    ZMIENNE
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 private:
-    int lvl; ///poziom w pionie
-    int wid; ///szerokosc
-    int nr; ///nrumer pokoju (room 0,0 - nr 1)
+    int lvl; /// poziom w pionie
+    int wid; /// szerokosc
+    int nr;  /// nrumer pokoju (room 0,0 - nr 1)
 
     static int iloscPokoi;
 
@@ -45,8 +48,6 @@ private:
     room* east;     /// wskaznik dla pokoj na wschod od obecnego pokoju     ►
     room* south;    /// wskaznik dla pokoj na poludnie od obecnego pokoju   ▼
     room* west;     /// wskaznik dla pokoj na zachod od obecnego pokoju     ◄
-
-
 };
 
 #endif // C_ROOM
