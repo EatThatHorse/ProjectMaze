@@ -6,16 +6,14 @@
     #include "../u_ProjectUtilities"
 
     class Unit : public Obstacle {
-        /** Klasa Bazowa dla:
-                - class: player
-                - class: X moob X
-                - ...
-            Znajduja sie w niej informacje niezbedne dla
-            co swobodnie skacze po pokoju.
-        */
+    /** Klasa Bazowa dla:
+            - class: player
+        Znajduja sie w niej informacje
+        niezbedne do swobodnego skakania po pokoju.
+    */
     public:
-    Unit (int O_xpos, int O_ypos, char O_symbol, int speedVY, int speedHX)
-          : Obstacle(O_xpos, O_ypos, O_symbol) {
+    Unit (int O_xpos, int O_ypos, char O_symbol, int speedVY, int speedHX, Droom* roomPos)
+          : Obstacle(O_xpos, O_ypos, O_symbol, roomPos) {
 
         this->speedVY = speedVY;
         this->speedHX = speedHX;
@@ -28,13 +26,6 @@
     public:
         int speedVY;              // X steps/jumps per turn.
         int speedHX;              // X steps/jumps per turn.
-
-
-        // Piloting
-        /*  Odkomentowac gdy bedzie gotowy Droom.
-        Droom* roomPosition;
-        */
-
 
     public: /// METODY
         int Move (Direction);

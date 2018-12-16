@@ -3,11 +3,9 @@
 
 
 int Unit::Move (Direction current){
-/** Metoda odpowiedzialna za przemieszczanie sie gracza.
-    Modyfikuje odziedziczone po klasie [bot] zmienne polozenia.
-    Wywolywana jest dla obiektu HERO w klsie Update.            */
-
-    /*  ───────────────────────────────────────────────────────────────────────
+/** Metoda odpowiedzialna za przemieszczanie sie Obiektu [Unit].
+    Modyfikuje odziedziczone po klasie [Obstacle] zmienne polozenia.
+*/  /*  ───────────────────────────────────────────────────────────────────────
         POMOCNICZA ILUSTRACJA TABLICY:
         ...->tab[rowSize][colSize]
               └─ jest typu char**
@@ -23,75 +21,51 @@ int Unit::Move (Direction current){
         ───────────────────────────────────────────────────────────────────────
     */
 
-    /** TESTY - dzialajace, trzeba wprowadzic do [c_roomDes] [roomDes.cpp] klasy Droom.
-        SKASOWAĆ PO WPROWADZENIU!
-        char** tab;
-        int rows = 3;
-        int columns = 5;
+    // ---------------------------------------------------------------------------------------------
+    // Variables Choosen to Execute:
+    char** TAB_TMP;     // Only for Reading Purposes.
+    int X_DIFF;         // Difference between Object X Position
+    int Y_DIFF;         // Difference between Object Y Position
 
-        tab = new char*[rows];
-        for(int Trow=0; Trow<rows; ++Trow)
-            tab[Trow] = new char[columns];
-
-        for(int Trow=0; Trow<rows; ++Trow)
-            for(int Tcol=0; Tcol<columns; ++Tcol)
-                tab[Trow][Tcol] = 'o';
-
-        char** tabTMP = tab;
-
-        for(int Trow=0; Trow<rows; ++Trow){
-            for(int Tcol=0; Tcol<columns; ++Tcol){
-                std::cout << tabTMP[Trow][Tcol];
-            }
-            std::cout << "\n";
-        }
-        SKASOWAĆ PO WPROWADZENIU!    */
-
-
-    /*  Odkomentowac gdy bedzie gotowy Droom.
-    int tRowSize = this->roomPosition->rowSize;
-    int tColSize = this->roomPosition->colSize;
-
-    char** tabTMP;
-    tabTMP = this->roomPosition->tab;
-
-    */
-
-
+    int SPEED_TMP;
+    // ---------------------------------------------------------------------------------------------
+    TAB_TMP = this->roomPos->TAB();
 
     if (current == UP) {
-        /*  Odkomentowac gdy bedzie gotowy Droom.
-        this->a_image = ((char)A_UP);    // [↑] Zmiana wygladu gracza.
-
-        this->speed = ((this->speed) < 2) ?
-        for (int tmp=1; tmp<=(this->speed/2); ++tmp){  // Tyle ile (speed/2), tyle krokow zrobic.
-
-            if (tabTMP[(ypos-1)][xpos] == ' ') {  // Czy pole nad graczem jest puste?
-                /// TAK, moze zrobic krok.
-                this->ypos = (this->ypos - 1);    // [Y-1]
-
-            }else{
-                /// NIE, jest przeszkoda. Koniec ruchu.
-
-            }
-        }
-        */
-
-        this->ypos = (this->ypos - speedVY);    // [Y-1]
-        return current;
+        X_DIFF =  0;
+        Y_DIFF = -1;
+        SPEED_TMP = this->speedVY;
     }
     if (current == DOWN) {
-        this->ypos = (this->ypos + speedVY);    // [Y+1]
-        return current;
+        X_DIFF = 0;
+        Y_DIFF = 1;
+        SPEED_TMP = this->speedVY;
     }
     if (current == LEFT) {
-        this->xpos = (this->xpos - speedHX);        // [X-1]
-        return current;
+        X_DIFF = -1;
+        Y_DIFF =  0;
+        SPEED_TMP = this->speedHX;
     }
     if (current == RIGHT) {
-        this->xpos = (this->xpos + speedHX);        // [X+1]
-        return current;
+        X_DIFF = 1;
+        Y_DIFF = 0;
+        SPEED_TMP = this->speedHX;
     }
+    // ---------------------------------------------------------------------------------------------
 
+    for (int tmp=1; tmp<=SPEED_TMP; ++tmp){       // Tyle ile [SPEED_TMP], tyle krokow zrobic.
+        // ---------------------------------------------------------------------------------------------
+        if (TAB_TMP[(ypos + Y_DIFF)][xpos + X_DIFF] == ' ') {       // Czy pole nad graczem jest puste?
+            /** TAK, moze zrobic krok. **/
+            this->roomPos->EditPX (xpos, ypos, ' ');        // Tam gdzie stalismy zostaje puste pole.
+            this->ypos = (this->ypos + Y_DIFF);                  // Przemieszczamy sie: [Y-1]
+            this->xpos = (this->xpos + X_DIFF);                  // Przemieszczamy sie: [Y-1]
+            this->roomPos->EditPX (xpos, ypos, symbol);     // Tam gdzie idziemy pojawiamy sie my.
+        }else{
+            /** NIE, jest przeszkoda. Koniec ruchu. **/
+            return current;
+        }
+        // ---------------------------------------------------------------------------------------------
+    }
     return 0;
 }

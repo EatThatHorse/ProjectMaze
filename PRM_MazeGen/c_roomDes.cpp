@@ -227,7 +227,7 @@ void Droom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
         Oraz niezalezne X,Y Anchora1 i Anchora2,
 
         Anchor1 Nigdy nie jest POD lub z PRAWEJ Anchora2.
-        Anchor1 moze miec rowne wartosci co Anchora2.
+        Anchor1 moze miec rowne wartosci co Anchor2.
             An1(X,Y) ■────┐
                      │/ / │
                      │ / /│
@@ -235,6 +235,10 @@ void Droom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
     */
 
     /// Zapewnienie Warunkow. Etap 1
+
+    CheckEntry(&posX1, &posY1, &posX2, &posY2);
+
+#ifdef TEST_IN_ERROR_CASE
     // ------------------------------------------------------------
     //  An1  <==>  Anchor_1  <==>  ( posX1, posY1 )
     //  An2  <==>  Anchor_2  <==>  ( posX2, posY2 )
@@ -273,7 +277,6 @@ void Droom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
         posY2 = tmp;
     }
     // ------------------------------------------------------------
-
 /*  Nie musimy rozpatrywac konkretnie (0,0)
     if(testSUM_X < 0 && testSUM_Y < 0){     ///  0 0
         int tmp = posX1;
@@ -288,6 +291,7 @@ void Droom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
     if(testSUM_X >= 0 && testSUM_Y < 0){    ///  1 0
     if(testSUM_X < 0 && testSUM_Y >= 0){    ///  0 1
 */
+#endif // TEST_IN_ERROR_CASE
 
     /// Losowanie, Wypelnianie Znakami:
     // ------------------------------------------------------------
@@ -297,16 +301,99 @@ void Droom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
     for (int i=posY1; i<=posY2; ++i){
         for (int j=posX1; j<=posX2; ++j){
             los = (rand() % 100) + 0;
-            if (los  < chan ){
+            if (los < chan){
                 tab[i][j]='#';
             }
         }
     }
     // ------------------------------------------------------------
+
 /*
     for (int wiersz=posX1; wiersz<=posX2; ++wiersz)
         for (int kol=posY1; kol<=posY2; ++kol)
             tab[i][j]=j+46;*/
     // ------------------------------------------------------------
 }
+
+//  ____________________________________________________________________________________________________________
+//  ____________________________________________________________________________________________________________
+void Droom::CheckEntry(int* posX1,int* posY1,int* posX2,int* posY2){
+    /** Anchor1 Nigdy nie jest POD lub z PRAWEJ Anchora2.
+        Anchor1 moze miec rowne wartosci co Anchor2.
+            An1(X,Y) ■────┐
+                     │/ / │
+                     │ / /│
+                     └────■ (X,Y)An2
+
+        An1  <==>  Anchor_1  <==>  ( posX1, posY1 )
+        An2  <==>  Anchor_2  <==>  ( posX2, posY2 )
+    */
+
+    bool Xtmp, Ytmp;
+    Xtmp = Ytmp = true;
+
+    // ---------------------------------------------------------------------------------------------
+    // Warunki aby An1 nie wyszedł poza rysunek
+    if (posX1 != 0){
+        if (*posX1 <= 1){ *posX1 = 2;  }  // An1 over/behind LEFT wall
+        if (*posX1 > 67){ *posX1 = 67; }  // An1 over/behind RIGHT wall
+    }else{ Xtmp = false;}
+
+    if (posY1 != 0){
+        if (*posY1 <= 1){ *posY1 = 2;  }  // An1 over/behind UPPER wall
+        if (*posY1 > 33){ *posY1 = 33; }  // An1 over/behind BOTTOM wall
+    }else{ Ytmp = false;}
+    // ---------------------------------------------------------------------------------------------
+    // Warunki aby An2 nie wyszedł poza rysunek
+    if (posX2 != 0){
+        if (*posX2 <= 1){ *posX2 = 2;  }  // An2 over/behind LEFT wall
+        if (*posX2 > 67){ *posX2 = 67; }  // An2 over/behind RIGHT wall
+    }else{ Xtmp = false;}
+
+    if (posY2 != 0){
+        if (*posY2 <= 1){ *posY2 = 2;  }  // An2 over/behind UPPER wall
+        if (*posY2 > 33){ *posY2 = 33; }  // An2 over/behind BOTTOM wall
+    }else{ Ytmp = false;}
+    // ---------------------------------------------------------------------------------------------
+    if (Xtmp) {
+        // testSUM_X Dodatnie -> An2 jest po PRAWEJ od An1    [GOOD - 1]
+        // testSUM_X Ujemne   -> An2 jest po LEWEJ od An1     [BAD - 0]
+        int testSUM_X;
+        testSUM_X = *posX2 - *posX1;
+
+        if(testSUM_X < 0) {     /** 0 1 **/// An2 jest po LEWEJ od An1
+            int tmp = *posX1;
+            *posX1 = *posX2;
+            *posX2 = tmp;
+        }
+    }
+    // ---------------------------------------------------------------------------------------------
+    if (Ytmp) {
+        // testSUM_Y Dodatnie -> An2 jest POD An1     [GOOD - 1]
+        // testSUM_Y Ujemne   -> An2 jest NAD An1     [BAD - 0]
+        int testSUM_Y;
+        testSUM_Y = *posY2 - *posY1;
+
+        if(testSUM_Y < 0) {     /** 1 0 **/// An2 jest NAD An1
+            int tmp = *posY1;
+            *posY1 = *posY2;
+            *posY2 = tmp;
+        }
+    }
+    // ---------------------------------------------------------------------------------------------
+}
+
+
+//  ____________________________________________________________________________________________________________
+//  ____________________________________________________________________________________________________________
+void Droom::EditPX (int& posX, int& posY, char symbol){
+
+    CheckEntry (&posX, &posY);
+    this->tab[posY][posX] = symbol;
+}
+
+
+
+
+
 

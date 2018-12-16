@@ -24,6 +24,7 @@
         void MAIN_TEST_DEBUG();
 
         // EVERY GAME VERSION:
+        void GameVer01();
 
         // EVERY MENU VERSION:
         void MenuVer01();

@@ -18,11 +18,6 @@ private: ///ZMIENNE
     #define COLUMNS 70
     char** tab;
 
-//    bool north = 1;
-//    bool south = 1;
-//    bool east = 1;
-//    bool west = 1;
-
     char ppo = 196;     // ppo  - pojedynzca pozioma
     char ppi = 179;     // ppi - pojedyncza pionowa
     char lgr = 218;     // lgr - lewy górny róg
@@ -32,13 +27,19 @@ private: ///ZMIENNE
     string margin29 = "                             ";
 
 public: ///METODY
+    char** TAB() { return this->tab; };
+
     void RenderRoom();
     void ClearRoom ();
     void Danger(int,int,int,int,int);
 
+    void EditPX (int&,int&,char);
+
 private: ///METODY PRYWATNE
     void ClearLine (int);
     void Line (int, int, int, char);
+
+    void CheckEntry(int*,int*,int* =0,int* =0);
 };
 
 #endif // C_ROOM_DESCRIPTION

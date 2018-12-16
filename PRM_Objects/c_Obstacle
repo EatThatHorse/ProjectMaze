@@ -2,14 +2,14 @@
 #ifndef C_OBSTACLE
 #define C_OBSTACLE
 
+    #include "../PRM_MazeGen/c_roomDes"
+
     class Obstacle {
-        /** Klasa Bazowa dla:
-                - ...
-            Znajduja sie w niej informacje niezbedne dla
-            wszystkiego co znajduje się w pokoju.
-        */
+    /** Znajduja sie w niej informacje niezbedne dla
+        wszystkiego co znajduje się w pokoju.
+    */
     public:
-        Obstacle(int X, int Y, char S);
+        Obstacle(int, int, char, Droom* = 0);
         ~Obstacle();
 
     public: // PUBLICZNE, TYLKO DO ODCZYTU:
@@ -17,7 +17,8 @@
         int YPOS () {return this->ypos;}
         char SYMBOL () {return this->symbol;}
 
-    public:
+    public: /// ZMIENNE
+        Droom* roomPos;
         int xpos;
         int ypos;
         char symbol;    // Reprezentacja wizualna w Render Tablicy.
