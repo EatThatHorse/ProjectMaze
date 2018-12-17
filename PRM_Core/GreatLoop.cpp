@@ -10,7 +10,7 @@ void GreatLoop::Execute(){
     */
 
     // MAIN PRZYSTOSOWANY DO PRACY Z KODEM.    CLEAN IT AFTER. LEAVE IT ENABLED.
-    //MAIN_TEST_DEBUG();
+    MAIN_TEST_DEBUG();
 
     // METODY WYWOLANIA PROGRAMU, MENU LUB GRY.
     //MenuVer01();
@@ -29,6 +29,7 @@ void GreatLoop::MAIN_TEST_DEBUG() {
          - Nie Posiada Instrukcji
         Po zakonczeniu pracy pozostaw go w stanie w jakim go zastales.
     */
+    // DEBUG_KEYBOARD ();   // You Can Tast It. If You Want.
 
 
 }
@@ -77,14 +78,13 @@ void GreatLoop::GameVer01() {
     player HERO(HeadMaze.zeroRoom);
 
     HeadMaze.AddFloor();
-
+    HeadMaze.AddFloor();
     HeadMaze.currentRoom->ClearRoom();
+    HeadMaze.currentRoom->Danger(1,1,80,80,10);
 
 
     //HeadMaze.SET_CURR(HeadMaze.LASTROOM());
 
-
-//    this->Render::Run01M(currentChoose);    // PreRender, Rysowanie Pierwszej Klatki.,
 
     cout << "\n\n\n\n\n";
     HeadMaze.currentRoom->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
@@ -92,18 +92,18 @@ void GreatLoop::GameVer01() {
 
     GLOOP = true;   // GREAT LOOP - Wykonywana tak długo jak działa program.
     while (GLOOP) {
-        //  Jedno Wykonanie Petli = Jeden Input, Jeden Klawisz = Jedna Klatka, Jeden Frame.
-
+        //  Jedno Wykonanie Petli:
+        //   - Jeden Input, Jeden Klawisz
+        //   - Jedna Klatka, Jeden Frame
 
         int InputEvent;
-        InputEvent = Input::Run01G(HERO);
+        InputEvent = Input::Run01G(HERO,HeadMaze);
 
-        if (InputEvent != 224) {    // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
-            system("cls");         // Czyszczenie, Zerowanie Konsoli.
-//            this->ShowMENU(currentChoose);    // Render. Aktywowany Tyle razy ile cokolwiek się zmieni na ekranie.
-
+        if (InputEvent!=224) {      // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
+            system("cls");                          // Czyszczenie, Zerowanie Konsoli.
+            HERO.ShowGui();
             cout << "\n\n\n\n\n";
-            HeadMaze.currentRoom->RenderRoom();
+            HERO.roomPos->RenderRoom();
         }
     }
     return;

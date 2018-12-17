@@ -122,6 +122,8 @@ void Droom::ClearRoom (){
         Line(2,32,1,ppo);           //  ─ [x31]
 
         tab [1][33] = pdr;          //  ┘
+        tab [1][34] = '-';          //  -  <=> myslnik, nie [ppo]
+        tab [1][35] = '-';          //  -  <=> myslnik, nie [ppo]
         tab [1][36] = ldr;          //  └
 
         Line(37,67,1,ppo);          //  ─ [x31]
@@ -144,6 +146,8 @@ void Droom::ClearRoom (){
     if (WEST() != 0){
         // otwarte ----------------------------------------------------
         tab [16][0] = ppo;      tab [16][1] = pdr;      //  ─ ┘
+                                tab [17][1] = '|';      //    |
+                                tab [18][1] = '|';      //    |
         tab [19][0] = ppo;      tab [19][1] = pgr;      //  ─ ┐
         // ------------------------------------------------------------
     }else{
@@ -159,6 +163,8 @@ void Droom::ClearRoom (){
     if (EAST() != 0){
         // otwarte ----------------------------------------------------
         tab [16][68] = ldr;     tab [16][69] = ppo;     //  └ ─
+        tab [17][68] = '|';                             //  |       │<- NIE
+        tab [18][68] = '|';                             //  |       │
         tab [19][68] = lgr;     tab [19][69] = ppo;     //  ┌ ─
         // ------------------------------------------------------------
     }else{
@@ -180,6 +186,8 @@ void Droom::ClearRoom (){
         Line(2,32,34,ppo);          //  ─ [x31]
 
         tab [34][33] = pgr;         //  ┐
+        tab [34][34] = '-';         //  -
+        tab [34][35] = '-';         //  -
         tab [34][36] = lgr;         //  ┌
 
         Line(37,67,34,ppo);         //  ─ [x31]
@@ -391,6 +399,13 @@ void Droom::EditPX (int& posX, int& posY, char symbol){
     CheckEntry (&posX, &posY);
     this->tab[posY][posX] = symbol;
 }
+
+void Droom::EditPX_F (int& posX, int& posY, char symbol){
+
+    this->tab[posY][posX] = symbol;
+}
+
+
 
 
 

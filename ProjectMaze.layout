@@ -2,49 +2,43 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="PRM_MazeGen\c_maze" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+	<File name="PRM_MazeGen\c_room" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="733" topLine="11" />
+			<Cursor1 position="1012" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="PRM_MazeGen\c_maze.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+	<File name="PRM_MazeGen\c_roomDes.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="428" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PRM_MazeGen\c_room" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="931" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="PRM_MazeGen\c_room.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1640" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="PRM_MazeGen\c_roomDes" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="904" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="PRM_MazeGen\c_roomDes.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="15417" topLine="265" />
+			<Cursor1 position="2606" topLine="19" />
 		</Cursor>
 		<Folding>
-			<Collapse line="206" />
-			<Collapse line="219" />
-			<Collapse line="225" />
+			<Collapse line="11" />
+			<Collapse line="214" />
 		</Folding>
 	</File>
-	<File name="PRM_Objects\c_Obstacle" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+	<File name="PRM_Objects\c_Unit.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="40" topLine="0" />
+			<Cursor1 position="2404" topLine="19" />
 		</Cursor>
 	</File>
-	<File name="PRM_DT\c_maze__dt.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="PRM_Objects\c_Obstacle" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="141" topLine="0" />
+			<Cursor1 position="515" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="u_ProjectUtilities" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="287" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_MazeGen\c_ContainerRecord.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="306" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_Objects\c_Player" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="54" topLine="17" />
 		</Cursor>
 	</File>
 	<File name="PRM_Objects\c_Obstacle.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
@@ -52,57 +46,27 @@
 			<Cursor1 position="319" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="PRM_Objects\c_Player" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+	<File name="PRM_Objects\c_Player.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="830" topLine="3" />
+			<Cursor1 position="1537" topLine="17" />
 		</Cursor>
 	</File>
-	<File name="PRM_Objects\c_Player.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+	<File name="PRM_MazeGen\c_maze.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="416" topLine="0" />
+			<Cursor1 position="2097" topLine="21" />
 		</Cursor>
 	</File>
-	<File name="PRM_Core\c_GreatLoop" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="PRM_Core\GreatLoop.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="906" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PRM_Objects\c_Unit" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="825" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="PRM_Objects\c_Unit.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1785" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PRM_Core\c_Input" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="301" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PRM_Core\main.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="70" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PRM_MazeGen\c_Container" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="11" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="63" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PRM_Core\GreatLoop.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2503" topLine="53" />
+			<Cursor1 position="2797" topLine="68" />
 		</Cursor>
 		<Folding>
-			<Collapse line="37" />
+			<Collapse line="38" />
 		</Folding>
 	</File>
-	<File name="PRM_Core\Input.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="PRM_Core\Input.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="684" topLine="0" />
+			<Cursor1 position="532" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="PRM_MazeGen\c_ContainerRecord" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
@@ -110,9 +74,49 @@
 			<Cursor1 position="77" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="PRM_MazeGen\c_ContainerRecord.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+	<File name="PRM_MazeGen\c_maze" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="306" topLine="0" />
+			<Cursor1 position="337" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_Objects\c_Unit" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="850" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="PRM_DT\c_maze__dt.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="141" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_MazeGen\c_room.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1630" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_Core\c_GreatLoop" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="906" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_MazeGen\c_Container" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="11" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="63" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_Core\c_Input" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="171" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_Core\main.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="70" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PRM_MazeGen\c_roomDes" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="876" topLine="18" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

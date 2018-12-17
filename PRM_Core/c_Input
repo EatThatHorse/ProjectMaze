@@ -4,13 +4,14 @@
 
     #include <conio.h>      // getch / kbhit
     #include "../PRM_Objects/c_Player"
+    #include "../PRM_MazeGen/c_maze"
 
     class Input {
     public:
         /** Zakaz Uzywania w Metodach Cout, Nie zadziala.
             Wynika to z sposobu dzialania getch() i system("cls")   */
 
-        int Run01G(player&);
+        int Run01G(player&, maze);
         int Run01M(bool&, int&);
 
     };

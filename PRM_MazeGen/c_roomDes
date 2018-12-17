@@ -34,6 +34,7 @@ public: ///METODY
     void Danger(int,int,int,int,int);
 
     void EditPX (int&,int&,char);
+    void EditPX_F (int&,int&,char);
 
 private: ///METODY PRYWATNE
     void ClearLine (int);

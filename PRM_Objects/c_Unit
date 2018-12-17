@@ -24,11 +24,13 @@
         int SPEED_HX () {return this->speedHX;}
 
     public:
-        int speedVY;              // X steps/jumps per turn.
+        int speedVY;              // Y steps/jumps per turn.
         int speedHX;              // X steps/jumps per turn.
+        char frontThing;          // The Thing in front of the Unit.
 
     public: /// METODY
-        int Move (Direction);
+        virtual int Move (Direction);
+        virtual void Action ();
     };
 
 #endif // C_OBSTACLE

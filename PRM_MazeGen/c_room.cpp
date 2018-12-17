@@ -28,6 +28,7 @@ room::~room (){
 
 int room::LVL(){ return this->lvl; }
 int room::WID(){ return this->wid; }
+int room::NR(){ return this->nr; }
 
 room* room::NORTH(){ return this->north; }
 room* room::EAST(){ return this->east; }

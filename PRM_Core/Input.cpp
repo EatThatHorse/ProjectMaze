@@ -4,7 +4,11 @@
 
 //_________________________________________________________________________________________________________________
 //───────────────────────────────────────────────────────────────────────────────────────────────────────────────── G-01
-int Input::Run01G(player& HERO){
+int Input::Run01G(player& HERO, maze HEAD){
+    /** Zakaz Uzywania Cout, Nie zadziala
+        Wynika to z sposobu dzialania getch() i system("cls")
+    */
+
     unsigned char znak;
     znak = getch();   // Oczekiwanie na Input.
     if (znak == 224) return 224;    // PUNKT KONTROLNY - Wynika z dzialania getch().
@@ -16,22 +20,23 @@ int Input::Run01G(player& HERO){
     if (znak == 32) {       // SPACJA
         return znak;
     }
-    if (znak == 13) {       // ENTER
+    if (znak==13 || znak==101 || znak==69) {      // ( ENTER || e || E )
+        HERO.Action();
         return znak;
     }
-    if (znak == 75){        // ← (left)
+    if (znak==75 || znak==97 || znak==65){        // ( ← (left) || a || A )
         HERO.Move(LEFT);
         return znak;
     }
-    if (znak == 77){        // → (right)
+    if (znak==77 || znak==100 || znak==68){       // ( → (right) || d || D )
         HERO.Move(RIGHT);
         return znak;
     }
-    if (znak == 72){        // ↑ (up)
+    if (znak==72 || znak==119 || znak==65){       // ( ↑ (up) || w || W )
         HERO.Move(UP);
         return znak;
     }
-    if (znak == 80) {       // ↓ (down)
+    if (znak==80 || znak==115 || znak==83) {      // ( ↓ (down) || s || S )
         HERO.Move(DOWN);
         return znak;
     }
