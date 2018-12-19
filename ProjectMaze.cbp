@@ -32,12 +32,16 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="PRM_Core/Game.cpp" />
 		<Unit filename="PRM_Core/GreatLoop.cpp" />
 		<Unit filename="PRM_Core/Input.cpp" />
+		<Unit filename="PRM_Core/Menu.cpp" />
 		<Unit filename="PRM_Core/Render.cpp" />
 		<Unit filename="PRM_Core/Update.cpp" />
+		<Unit filename="PRM_Core/c_Game" />
 		<Unit filename="PRM_Core/c_GreatLoop" />
 		<Unit filename="PRM_Core/c_Input" />
+		<Unit filename="PRM_Core/c_Menu" />
 		<Unit filename="PRM_Core/c_Render" />
 		<Unit filename="PRM_Core/c_Update" />
 		<Unit filename="PRM_Core/main.cpp" />

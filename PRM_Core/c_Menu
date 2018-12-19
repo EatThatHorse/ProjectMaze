@@ -1,0 +1,29 @@
+
+#ifndef C_MENU__PRM
+#define C_MENU__PRM
+
+    #include "c_Input"
+    #include "c_Render"
+
+    #include <windows.h>    // system("");
+
+    /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
+    class Menu : public Input, public Render  {
+    public: // KONSTRUKTOR
+        Menu(bool* T_GLOOP){
+            this->GLOOP = T_GLOOP;
+        }
+
+    public: // PUBLICZNE METODY
+        void Execute();
+
+    private:
+        // ZMIENNE
+        bool* GLOOP;  // Pointer to GreatLoop flag.
+
+    private:
+        // EVERY MENU VERSION:
+        void MenuVer01();
+    };
+    /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
+#endif // C_MENU__PRM
