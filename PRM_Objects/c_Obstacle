@@ -2,7 +2,7 @@
 #ifndef C_OBSTACLE
 #define C_OBSTACLE
 
-    #include "../PRM_MazeGen/c_roomDes"
+    #include "../PRM_MazeGen/c_DesRoom"
 
     class Obstacle {
     /** Znajduja sie w niej informacje niezbedne dla

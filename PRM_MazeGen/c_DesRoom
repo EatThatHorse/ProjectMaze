@@ -1,15 +1,13 @@
 #ifndef C_ROOM_DESCRIPTION
 #define C_ROOM_DESCRIPTION
 
-#include "c_room"
-
 #include <ctime>
 #include <windows.h>
 #include <iostream>
 using std::cout;
 using std::string;
 
-class Droom : public room{
+class Droom{
 public: ///KONSTRUKTOR
     Droom(room*,room*,room*,int,int);
 
@@ -20,10 +18,10 @@ private: ///ZMIENNE
 
     char ppo = 196;     // ppo  - pojedynzca pozioma
     char ppi = 179;     // ppi - pojedyncza pionowa
-    char lgr = 218;     // lgr - lewy g贸rny r贸g
-    char pgr = 191;     // pgr - prawy g贸rny r贸g
-    char ldr = 192;     // ldr - lewy dolny r贸g
-    char pdr = 217;     // pdr - prawy dolny r贸g
+    char lgr = 218;     // lgr - lewy g髍ny r骻
+    char pgr = 191;     // pgr - prawy g髍ny r骻
+    char ldr = 192;     // ldr - lewy dolny r骻
+    char pdr = 217;     // pdr - prawy dolny r骻
     string margin29 = "                             ";
 
 public: ///METODY
