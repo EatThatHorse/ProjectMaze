@@ -12,7 +12,7 @@
         niezbedne do swobodnego skakania po pokoju.
     */
     public:
-    Unit (int O_xpos, int O_ypos, char O_symbol, int speedVY, int speedHX, Droom* roomPos)
+    Unit (int O_xpos, int O_ypos, char O_symbol, int speedVY, int speedHX, DesRoom* roomPos)
           : Obstacle(O_xpos, O_ypos, O_symbol, roomPos) {
 
         this->speedVY = speedVY;

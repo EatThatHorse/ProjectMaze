@@ -3,7 +3,7 @@
 
 
 /// KONSTRUKTORY / DESTRUKTORY
-Obstacle::Obstacle(int X, int Y, char S, Droom* roomPos){
+Obstacle::Obstacle(int X, int Y, char S, DesRoom* roomPos){
     this->roomPos = roomPos;
     this->xpos = X;
     this->ypos = Y;

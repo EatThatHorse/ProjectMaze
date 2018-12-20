@@ -3,15 +3,16 @@
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 
-int room::iloscPokoi = 0; //statyczna zmienna globalna
+int NavRoom::iloscPokoi = 0; //statyczna zmienna globalna
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-room::room(room* t_south,room* t_east,room* t_west ,int t_lvl,int t_wid){
+NavRoom::NavRoom(NavRoom* t_south, NavRoom* t_east, NavRoom* t_west, int t_lvl, int t_wid)
+        :DesRoom(t_south,t_east,t_west){
 
     ++iloscPokoi;
 
-    this->south = t_south;
     this->north = NULL;
+    this->south = t_south;
     this->east = t_east;
     this->west = t_west;
     this->lvl = t_lvl;
@@ -22,34 +23,34 @@ room::room(room* t_south,room* t_east,room* t_west ,int t_lvl,int t_wid){
         t_south->north = this;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-room::~room (){
+NavRoom::~NavRoom (){
     --iloscPokoi;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 
-int room::LVL(){ return this->lvl; }
-int room::WID(){ return this->wid; }
-int room::NR(){ return this->nr; }
+int NavRoom::LVL(){ return this->lvl; }
+int NavRoom::WID(){ return this->wid; }
+int NavRoom::NR(){ return this->nr; }
 
-room* room::NORTH(){ return this->north; }
-room* room::EAST(){ return this->east; }
-room* room::SOUTH(){ return this->south; }
-room* room::WEST(){ return this->west;
+NavRoom* NavRoom::NORTH(){ return this->north; }
+NavRoom* NavRoom::EAST(){ return this->east; }
+NavRoom* NavRoom::SOUTH(){ return this->south; }
+NavRoom* NavRoom::WEST(){ return this->west;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-void room::SET_NORTH(room* roomX){
+void NavRoom::SET_NORTH(NavRoom* roomX){
     this->north = roomX;
 }
 
-void room::SET_EAST(room* roomX){
+void NavRoom::SET_EAST(NavRoom* roomX){
     this->east = roomX;
 }
 
-void room::SET_WEST(room* roomX){
+void NavRoom::SET_WEST(NavRoom* roomX){
     this->west = roomX;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-void room::DEBUG_SHOWVARS(){
+void NavRoom::DEBUG_SHOWVARS(){
     cout <<(char)254
          << " lvl: "            << this->lvl
          << " wid: "            << this->wid

@@ -9,7 +9,7 @@
         wszystkiego co znajduje się w pokoju.
     */
     public:
-        Obstacle(int, int, char, Droom* = 0);
+        Obstacle(int, int, char, DesRoom* = 0);
         ~Obstacle();
 
     public: // PUBLICZNE, TYLKO DO ODCZYTU:
@@ -18,7 +18,7 @@
         char SYMBOL () {return this->symbol;}
 
     public: /// ZMIENNE
-        Droom* roomPos;
+        DesRoom* roomPos;
         int xpos;
         int ypos;
         char symbol;    // Reprezentacja wizualna w Render Tablicy.

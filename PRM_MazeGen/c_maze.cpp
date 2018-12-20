@@ -4,39 +4,39 @@
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 maze::maze(){
-    this->zeroRoom = new Droom (NULL,NULL,NULL,0,0);
+    this->zeroRoom = new NavRoom(NULL,NULL,NULL,0,0);
 
-    this->lastRoom = zeroRoom;
+    this->lastRoomAdded = zeroRoom;
     this->currentRoom = zeroRoom;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-void maze::SET_CURR(Droom* newAdres){
+void maze::SET_CURR(NavRoom* newAdres){
 
     this->currentRoom = newAdres;
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-Droom* maze::LASTROOM(){
-    return this->lastRoom;
+NavRoom* maze::LAST_ROOM_ADDED(){
+    return this->lastRoomAdded;
 }
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void maze::AddRoom (Direction option, bool goInside=1){
-    Droom* tmp;
+    NavRoom* tmp;
 
     switch (option){
-    case UP:
-        tmp = (new Droom(lastRoom,NULL,NULL,lastRoom->LVL()+1,lastRoom->WID()));       // 1) Dodaj pokoj do gory od lastRoom.
-        lastRoom->SET_NORTH(tmp);                                                     // 2) Ustaw wszystkie wskazniki i inne wartosci nowego pokoju, oraz lastRoom.
+    case UP:    // NavRoom( SOUTH  ,EAST,WEST,      lvl        ,      wid      )
+        tmp = (new NavRoom(lastRoomAdded,NULL,NULL,lastRoomAdded->LVL()+1,lastRoomAdded->WID()));       // 1) Dodaj pokoj do gory od lastRoom.
+        lastRoomAdded->SET_NORTH(tmp);                                                     // 2) Ustaw wszystkie wskazniki i inne wartosci nowego pokoju, oraz lastRoom.
         break;
 
-    case LEFT:
-        tmp = (new Droom(NULL,lastRoom,NULL,lastRoom->LVL(),lastRoom->WID()-1));
-        lastRoom->SET_WEST(tmp);
+    case LEFT:  // NavRoom(SOUTH,EAST   ,WEST,      lvl      ,      wid        )
+        tmp = (new NavRoom(NULL,lastRoomAdded,NULL,lastRoomAdded->LVL(),lastRoomAdded->WID()-1));
+        lastRoomAdded->SET_WEST(tmp);
         break;
 
-    case RIGHT:
-        tmp = (new Droom(NULL,NULL,lastRoom,lastRoom->LVL(),lastRoom->WID()+1));
-        lastRoom->SET_EAST(tmp);
+    case RIGHT: // NavRoom(SOUTH,EAST, WEST  ,      lvl      ,      wid        )
+        tmp = (new NavRoom(NULL,NULL,lastRoomAdded,lastRoomAdded->LVL(),lastRoomAdded->WID()+1));
+        lastRoomAdded->SET_EAST(tmp);
         break;
 
     case DOWN:
@@ -46,8 +46,7 @@ void maze::AddRoom (Direction option, bool goInside=1){
 
     /// PART 2
     if (goInside){
-        lastRoom = tmp;
-        // wejdz do pokoju = ustaw lastRoom na nowy pokoj.
+        lastRoomAdded = tmp; // wejdz do pokoju = ustaw lastRoomAdded na nowy pokoj.
     }
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
@@ -60,7 +59,7 @@ void maze::ShowMaze (){
 
     CurrentRoom = this->currentRoom;
 
-    while (CurrentRoom != lastRoom ) {
+    while (CurrentRoom != lastRoomAdded ) {
 //        cout<<"START\n ";
 //        cout<<"curr : ";
 //        CurrentRoom->DEBUG_SHOWVARS();
@@ -129,7 +128,7 @@ void maze::ShowMaze (){
 //        cout<<"KONIEC\n";
     }
 //    cout<<"**********";
-    lastRoom->DEBUG_SHOWVARS();
+    lastRoomAdded->DEBUG_SHOWVARS();
 }
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
@@ -225,20 +224,20 @@ void maze::AddFloor(){
             AddRoom(UP);                     /// zaulek w prawo+ lewo 3x + up
             break;
         case 8:
-            tmpRoom = lastRoom;
+            tmpRoom = lastRoomAdded;
             AddRoom(LEFT);
             AddRoom(LEFT);
-            lastRoom = tmpRoom;
+            lastRoomAdded = tmpRoom;
 
             AddRoom(RIGHT);
             AddRoom(RIGHT);
             AddRoom(UP);                /// zaulek w lewo 2x + prawo 2x + up
             break;
         case -8:
-            tmpRoom = lastRoom;
+            tmpRoom = lastRoomAdded;
             AddRoom(RIGHT);
             AddRoom(RIGHT);
-            lastRoom = tmpRoom;
+            lastRoomAdded = tmpRoom;
 
             AddRoom(LEFT);
             AddRoom(LEFT);

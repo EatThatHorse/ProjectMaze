@@ -1,20 +1,23 @@
-#ifndef C_ROOM
-#define C_ROOM
+#ifndef C_ROOM_NAVIGATION
+#define C_ROOM_NAVIGATION
+
+#include "c_DesRoom"
+
 #include <iostream>
 using std::cout;
 
-class room {
+class NavRoom : public DesRoom {
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     KONSTRUKTORY
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 public:
-    room(room*,room*,room*,int,int);
+    NavRoom(NavRoom*,NavRoom*,NavRoom*,int,int);
 
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     DEKONSTRUKTORY
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 public:
-    ~room ();
+    ~NavRoom ();
 
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     METODY
@@ -23,15 +26,15 @@ public:
     int LVL();
     int WID();
     int NR();
-    room* NORTH();
-    room* EAST();
-    room* SOUTH();
-    room* WEST();
+    NavRoom* NORTH();
+    NavRoom* EAST();
+    NavRoom* SOUTH();
+    NavRoom* WEST();
 
-    void SET_NORTH(room*);
-    void SET_EAST(room*);
-    void SET_SOUTH(room*);
-    void SET_WEST(room*);
+    void SET_NORTH(NavRoom*);
+    void SET_EAST(NavRoom*);
+    void SET_SOUTH(NavRoom*);
+    void SET_WEST(NavRoom*);
 
     void DEBUG_SHOWVARS();
 
@@ -45,13 +48,13 @@ private:
 
     static int iloscPokoi;
 
-    room* north;    /// wskaznik dla pokoj na polnoc od obecnego pokoju     ▲
-    room* east;     /// wskaznik dla pokoj na wschod od obecnego pokoju     ►
-    room* south;    /// wskaznik dla pokoj na poludnie od obecnego pokoju   ▼
-    room* west;     /// wskaznik dla pokoj na zachod od obecnego pokoju     ◄
+    NavRoom* north;    /// wskaznik dla pokoj na polnoc od obecnego pokoju     ▲
+    NavRoom* east;     /// wskaznik dla pokoj na wschod od obecnego pokoju     ►
+    NavRoom* south;    /// wskaznik dla pokoj na poludnie od obecnego pokoju   ▼
+    NavRoom* west;     /// wskaznik dla pokoj na zachod od obecnego pokoju     ◄
 };
 
-#endif // C_ROOM
+#endif // C_ROOM_NAVIGATION
 
 
 

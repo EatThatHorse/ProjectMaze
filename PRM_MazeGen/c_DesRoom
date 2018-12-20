@@ -7,9 +7,11 @@
 using std::cout;
 using std::string;
 
-class Droom{
+
+
+class DesRoom {
 public: ///KONSTRUKTOR
-    Droom(room*,room*,room*,int,int);
+    DesRoom(DesRoom* t_south, DesRoom* t_east, DesRoom* t_west);
 
 private: ///ZMIENNE
     #define ROWS 36
@@ -23,6 +25,12 @@ private: ///ZMIENNE
     char ldr = 192;     // ldr - lewy dolny róg
     char pdr = 217;     // pdr - prawy dolny róg
     string margin29 = "                             ";
+
+    bool NORTH;
+    bool SOUTH;
+    bool WEST;
+    bool EAST;
+
 
 public: ///METODY
     char** TAB() { return this->tab; };

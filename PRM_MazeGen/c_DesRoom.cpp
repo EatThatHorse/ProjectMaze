@@ -69,18 +69,26 @@ void ko_room_design_EXEC (){
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
 /// KONTSTRUKTOR
-Droom::Droom(room* t_south, room* t_east, room* t_west, int t_lvl, int t_wid)
-      : room(t_south, t_east, t_west, t_lvl, t_wid) {
+DesRoom::DesRoom(DesRoom* t_south, DesRoom* t_east, DesRoom* t_west) {
+
+
+    this->SOUTH = (t_south!=NULL)?  1 : 0;
+    this->WEST =  (t_east!=NULL)?   1 : 0;
+    this->EAST =  (t_west!=NULL)?   1 : 0;
+
+    this->NORTH = t_south;
+
+
 
     this->tab = new char*[ROWS];
-    for(int row=0; row<ROWS; ++row)  // Pêtla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
+    for(int row=0; row<ROWS; ++row)  // Petla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
         this->tab[row] = new char[COLUMNS];
 }
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
 /// METODY
-void Droom::RenderRoom(){
+void DesRoom::RenderRoom(){
 	/** Wyswietla 36 wiersze o 70 kolumnach (ktore nie sa w kolejnych wierszach klonami)
         wyswietla wszystkie elementy tablicy 36x70
 	*/
@@ -94,7 +102,7 @@ void Droom::RenderRoom(){
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
-void Droom::ClearRoom (){
+void DesRoom::ClearRoom (){
     /** ETAP 1
         Metoda Zeruje wszystkie elementy Tablicy,
         wstawiajac w nie ' ' [spacje].
@@ -111,7 +119,7 @@ void Droom::ClearRoom (){
 	}
 
 	/// ETAP 2
-	if (NORTH() != 0){
+	if (NORTH){
         /// drzwi NORTH otwarte ------------------------------------------------
         // linijka pierwsza -------------------------------------------
         tab [0][33] = ppi;          //  │
@@ -144,7 +152,7 @@ void Droom::ClearRoom (){
     for (int x=2; x<=15; ++x) { ClearLine(x); }         //  │ newLine │ [x14]
 
     /// Drzwi WEST ---------------------------------------------------------
-    if (WEST() != 0){
+    if (WEST){
         // otwarte ----------------------------------------------------
         tab [16][0] = ppo;      tab [16][1] = pdr;      //  ─ ┘
                                 tab [17][1] = '|';      //    |
@@ -161,7 +169,7 @@ void Droom::ClearRoom (){
     }
 
     /// Drzwi EAST ---------------------------------------------------------
-    if (EAST() != 0){
+    if (EAST){
         // otwarte ----------------------------------------------------
         tab [16][68] = ldr;     tab [16][69] = ppo;     //  └ ─
         tab [17][68] = '|';                             //  |       │<- NIE
@@ -211,7 +219,7 @@ void Droom::ClearRoom (){
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
-void Droom::ClearLine(int wierszyk){
+void DesRoom::ClearLine(int wierszyk){
     /// kazda linijka sciany----------------------------------------------
 	tab [wierszyk][0] = ' ';
 	tab [wierszyk][1] = ppi;
@@ -224,13 +232,13 @@ void Droom::ClearLine(int wierszyk){
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
-void Droom::Line (int X, int width, int Y, char value){
+void DesRoom::Line (int X, int width, int Y, char value){
 	for ( ; X<=width; ++X) tab [Y][X] = value;
 }
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
-void Droom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
+void DesRoom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
     /** Metoda wytycza obszar generowania losowych Obstacli.
         W argumentach Podajemy szanse na wylosowanie Obstacla [chan].
         Oraz niezalezne X,Y Anchora1 i Anchora2,
@@ -326,7 +334,7 @@ void Droom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
-void Droom::CheckEntry(int* posX1,int* posY1,int* posX2,int* posY2){
+void DesRoom::CheckEntry(int* posX1,int* posY1,int* posX2,int* posY2){
     /** Anchor1 Nigdy nie jest POD lub z PRAWEJ Anchora2.
         Anchor1 moze miec rowne wartosci co Anchor2.
             An1(X,Y) ■────┐
@@ -395,13 +403,13 @@ void Droom::CheckEntry(int* posX1,int* posY1,int* posX2,int* posY2){
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
-void Droom::EditPX (int& posX, int& posY, char symbol){
+void DesRoom::EditPX (int& posX, int& posY, char symbol){
 
     CheckEntry (&posX, &posY);
     this->tab[posY][posX] = symbol;
 }
 
-void Droom::EditPX_F (int& posX, int& posY, char symbol){
+void DesRoom::EditPX_F (int& posX, int& posY, char symbol){
 
     this->tab[posY][posX] = symbol;
 }

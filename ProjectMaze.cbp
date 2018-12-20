@@ -79,8 +79,6 @@
 		<Unit filename="PRM_MazeGen/c_NavRoom.cpp" />
 		<Unit filename="PRM_MazeGen/c_maze" />
 		<Unit filename="PRM_MazeGen/c_maze.cpp" />
-		<Unit filename="PRM_MazeGen/c_room.cpp" />
-		<Unit filename="PRM_MazeGen/c_roomDes.cpp" />
 		<Unit filename="PRM_Objects/c_Obstacle" />
 		<Unit filename="PRM_Objects/c_Obstacle.cpp" />
 		<Unit filename="PRM_Objects/c_Player" />
