@@ -6,8 +6,7 @@
 int NavRoom::iloscPokoi = 0; //statyczna zmienna globalna
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-NavRoom::NavRoom(NavRoom* t_south, NavRoom* t_east, NavRoom* t_west, int t_lvl, int t_wid)
-        :DesRoom(t_south,t_east,t_west){
+NavRoom::NavRoom(NavRoom* t_south, NavRoom* t_east, NavRoom* t_west, int t_lvl, int t_wid){
 
     ++iloscPokoi;
 
@@ -21,6 +20,7 @@ NavRoom::NavRoom(NavRoom* t_south, NavRoom* t_east, NavRoom* t_west, int t_lvl, 
 
     if (t_south != NULL)
         t_south->north = this;
+
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 NavRoom::~NavRoom (){
@@ -49,8 +49,16 @@ void NavRoom::SET_EAST(NavRoom* roomX){
 void NavRoom::SET_WEST(NavRoom* roomX){
     this->west = roomX;
 }
+
+void NavRoom::SET_DOORS(){
+    this->b_south = (this->south!=NULL)?  1 : 0;
+    this->b_west =  (this->east!=NULL)?   1 : 0;
+    this->b_east =  (this->west!=NULL)?   1 : 0;
+
+}
+
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-void NavRoom::DEBUG_SHOWVARS(){
+void NavRoom::DEBUG_ALLVARS(){
     cout <<(char)254
          << " lvl: "            << this->lvl
          << " wid: "            << this->wid
@@ -61,5 +69,9 @@ void NavRoom::DEBUG_SHOWVARS(){
          << "] E:  ["        << this->east
          << "] W:  ["        << this->west
          << "]\n";
+}
+void NavRoom::DEBUG_VARS(){
+    cout << " [nr:"        << this->lvl
+         << " pos:(" << this->lvl << "," << this->wid << ")]";
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■

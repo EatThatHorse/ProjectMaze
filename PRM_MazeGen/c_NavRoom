@@ -36,7 +36,10 @@ public:
     void SET_SOUTH(NavRoom*);
     void SET_WEST(NavRoom*);
 
-    void DEBUG_SHOWVARS();
+    void SET_DOORS();
+
+    void DEBUG_VARS();
+    void DEBUG_ALLVARS();
 
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///    ZMIENNE

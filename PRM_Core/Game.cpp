@@ -2,11 +2,11 @@
 #include "c_Game"
 
 
-/// [Kacu] åMIECIIIII -----------------------------
+/// [Kacu] ≈öMIECIIIII -----------------------------
 #include "../PRM_Objects/c_Player"
 #include "../PRM_MazeGen/c_maze"
 
-/// [Kacu] åMIECIIIII -----------------------------
+/// [Kacu] ≈öMIECIIIII -----------------------------
 
 
 
@@ -17,8 +17,7 @@ void Game::Execute(){
     */
 
 
-    // METODY WYWOLANIA PROGRAMU, MENU LUB GRY.
-    //MenuVer01();
+    // METODY WYWOLANIA GRY.
     GameVer01();
 
     return;
@@ -34,25 +33,24 @@ void Game::Execute(){
 
 //_________________________________
 void Game::GameVer01() {
-    /** Pierwsza wersja Funkcji Sterujπcej Rozgrywkπ. */
+    /** Pierwsza wersja Funkcji SterujƒÖcej RozgrywkƒÖ. */
 
     maze HeadMaze;
-    player HERO(HeadMaze.zeroRoom);
+    player HERO(HeadMaze.veryFirstRoom);
 
     HeadMaze.AddFloor();
     HeadMaze.AddFloor();
-    HeadMaze.currentRoom->ClearRoom();
-    HeadMaze.currentRoom->Danger(1,1,80,80,10);
+    HeadMaze.AddFloor();
 
-
-    //HeadMaze.SET_CURR(HeadMaze.LASTROOM());
-
+    HeadMaze.ShowMaze();
+//    HeadMaze.veryFirstRoom->ClearRoom();
+//    HeadMaze.veryFirstRoom->Danger(1,1,80,80,10);
 
     cout << "\n\n\n\n\n";
-    HeadMaze.currentRoom->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
+    HeadMaze.veryFirstRoom->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
 
 
-    *GLOOP = true;   // GREAT LOOP - Wykonywana tak d≥ugo jak dzia≥a program.
+    *GLOOP = true;   // GREAT LOOP - Wykonywana tak d≈Çugo jak dzia≈Ça program.
     while (GLOOP) {
         //  Jedno Wykonanie Petli:
         //   - Jeden Input, Jeden Klawisz

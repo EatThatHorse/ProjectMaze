@@ -2,10 +2,11 @@
 #define C_MENU
 
 
-    #include <iostream>
+
     #include <conio.h>      // getch
     #include <windows.h>    // TEMPORARY - system("");
     #include <stdio.h>      // getchar
+    #include <iostream>
     using std::cout;
     using std::string;
 

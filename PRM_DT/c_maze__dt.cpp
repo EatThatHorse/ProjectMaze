@@ -208,4 +208,87 @@ void TestRoom() {      // Old Grzybo main, to test maze and room klass.
     GOTOWE - hehe  :D
     */
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+
+
+// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+void maze::ShowMaze (){
+
+    NavRoom* CurrentRoom;
+    NavRoom* tmp;
+    int w = 0;
+    int e = 0;
+
+    CurrentRoom = this->currentRoom;
+
+    while (CurrentRoom != lastRoomAdded ) {
+//        cout<<"START\n ";
+//        cout<<"curr : ";
+//        CurrentRoom->DEBUG_SHOWVARS();
+        tmp = CurrentRoom;
+        if (CurrentRoom->NORTH() != NULL) {
+//            cout<<"1 :";
+            CurrentRoom->DEBUG_SHOWVARS();
+
+            while ( CurrentRoom->EAST() != NULL ) {
+                CurrentRoom = CurrentRoom->EAST();
+                CurrentRoom->DEBUG_SHOWVARS();
+//                cout<<"666";
+            }
+            CurrentRoom = tmp;
+
+            while ( CurrentRoom->WEST() != NULL ) {
+                CurrentRoom = CurrentRoom->WEST();
+                CurrentRoom->DEBUG_SHOWVARS();
+//                cout<<"555";
+            }
+
+            CurrentRoom = tmp;
+            CurrentRoom = CurrentRoom->NORTH();
+        } else {
+//            cout<<"2 \n";
+            tmp = CurrentRoom;
+            CurrentRoom->DEBUG_SHOWVARS();
+
+            while ( CurrentRoom->EAST() != NULL ) {
+//                cout<<"444";
+                CurrentRoom = CurrentRoom->EAST();
+                CurrentRoom->DEBUG_SHOWVARS();
+                if (CurrentRoom->NORTH() != NULL) {
+                    e = e+1;
+                }
+            }
+            CurrentRoom = tmp;
+
+
+            while ( CurrentRoom->WEST() != NULL ) {
+//                cout<<"333";
+                CurrentRoom = CurrentRoom->WEST();
+                CurrentRoom->DEBUG_SHOWVARS();
+                if (CurrentRoom->NORTH() != NULL) {
+                    w = w+1;
+                }
+            }
+            CurrentRoom = tmp;
+
+            if (e>w) {
+                while ( CurrentRoom->NORTH() == NULL ) {
+                    CurrentRoom = CurrentRoom->EAST();
+                }
+                CurrentRoom = CurrentRoom->NORTH();
+//                cout<<"222";
+            }
+
+            if (e<w){
+                while ( CurrentRoom->NORTH() == NULL ) {
+                    CurrentRoom = CurrentRoom->WEST();
+                }
+                CurrentRoom = CurrentRoom->NORTH();
+//                cout<<"111";
+            }
+        }
+//        cout<<"KONIEC\n";
+    }
+//    cout<<"**********";
+    lastRoomAdded->DEBUG_SHOWVARS();
+}
 #endif // C_MAZE__DT

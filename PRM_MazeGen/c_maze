@@ -3,7 +3,7 @@
 
 #include "../u_ProjectUtilities"
 
-#include "c_DesRoom"
+#include "c_NavRoom"
 
 #include <cstdlib>      // [srand] (do RandomSet)
 #include <ctime>
@@ -22,8 +22,8 @@ public:
 ///     METODY - PUBLICZNE
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 public:
-    void SET_CURR(DesRoom*);
-    DesRoom* LAST_ROOM_ADDED();
+    void SET_CURR(NavRoom*);
+    NavRoom* LAST_ROOM_ADDED();
 
     void ShowMaze();
     void AddFloor();
@@ -32,9 +32,8 @@ public:
 ///    ZMIENNE
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 public:
-    DesRoom* lastRoomAdded;     // Umozliwi dodawanie pokoi. It starts with: zeroRoom.
-    DesRoom* currentRoom;       // Na starcie wskazuje na zeroRoom.
-    DesRoom* zeroRoom;          // Na starcie wskazuje na zeroRoom. Umozliwi poruszanie sie gracza miedzy pokojami.
+    NavRoom* lastRoomAdded;     // Umozliwi dodawanie pokoi. It starts with: zeroRoom.
+    NavRoom* veryFirstRoom;     // Zawsze wskazuje na zeroRoom.
 
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     METODY - PRYWATNE

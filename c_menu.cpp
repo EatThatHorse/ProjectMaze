@@ -1,6 +1,6 @@
 #include "c_menu"
 
-using namespace std;
+
 
 void menu::AsciiButton (int width, string Text, string odstep, int font){
 

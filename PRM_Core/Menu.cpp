@@ -9,8 +9,7 @@ void Menu::Execute(){
         Obsluga wiekszosci bledow.
     */
 
-    // METODY WYWOLANIA PROGRAMU, MENU LUB GRY.
-    //MenuVer01();
+    // METODY WYWOLANIA MENU.
     MenuVer01();
 
     return;
@@ -20,14 +19,14 @@ void Menu::Execute(){
 
 //_________________________________
 void Menu::MenuVer01() {
-    /** Pierwsza wersja Funkcji Sterujπcej Rozgrywkπ. */
+    /** Pierwsza wersja Funkcji SterujƒÖcej RozgrywkƒÖ. */
 
     menu EXEC;
     int currentChoose = 0;
 
     //this->Render::Run01M(currentChoose);    // PreRender, Rysowanie Pierwszej Klatki.
     EXEC.ShowMENU(currentChoose);
-    *GLOOP = true;   // GREAT LOOP - Wykonywana tak d≥ugo jak dzia≥a program.
+    *GLOOP = true;   // GREAT LOOP - Wykonywana tak d≈Çugo jak dzia≈Ça program.
     while (GLOOP) {
         //  Jedno Wykonanie Petli = Jeden Input, Jeden Klawisz = Jedna Klatka, Jeden Frame.
 
@@ -37,7 +36,7 @@ void Menu::MenuVer01() {
         if (InputEvent != 224) {    // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
             system("cls");         // Czyszczenie, Zerowanie Konsoli.
             EXEC.ShowMENU(currentChoose);
-            //this->ShowMENU(currentChoose);    // Render. Aktywowany Tyle razy ile cokolwiek siÍ zmieni na ekranie.
+            //this->ShowMENU(currentChoose);    // Render. Aktywowany Tyle razy ile cokolwiek siƒô zmieni na ekranie.
         }
     }
     return;

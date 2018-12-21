@@ -69,20 +69,25 @@ void ko_room_design_EXEC (){
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
 /// KONTSTRUKTOR
-DesRoom::DesRoom(DesRoom* t_south, DesRoom* t_east, DesRoom* t_west) {
+DesRoom::DesRoom() {
 
-
+    this->b_north = 0;
+    this->b_south = 0;
+    this->b_west =  0;
+    this->b_east =  0;
+/*
     this->SOUTH = (t_south!=NULL)?  1 : 0;
     this->WEST =  (t_east!=NULL)?   1 : 0;
     this->EAST =  (t_west!=NULL)?   1 : 0;
 
-    this->NORTH = t_south;
+    cout << "\n    " << SOUTH << "\n";
 
-
+    this->NORTH = t_south;*/
 
     this->tab = new char*[ROWS];
     for(int row=0; row<ROWS; ++row)  // Petla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
         this->tab[row] = new char[COLUMNS];
+
 }
 
 //  ____________________________________________________________________________________________________________
@@ -119,7 +124,7 @@ void DesRoom::ClearRoom (){
 	}
 
 	/// ETAP 2
-	if (NORTH){
+	if (b_north){
         /// drzwi NORTH otwarte ------------------------------------------------
         // linijka pierwsza -------------------------------------------
         tab [0][33] = ppi;          //  │
@@ -152,7 +157,7 @@ void DesRoom::ClearRoom (){
     for (int x=2; x<=15; ++x) { ClearLine(x); }         //  │ newLine │ [x14]
 
     /// Drzwi WEST ---------------------------------------------------------
-    if (WEST){
+    if (b_west){
         // otwarte ----------------------------------------------------
         tab [16][0] = ppo;      tab [16][1] = pdr;      //  ─ ┘
                                 tab [17][1] = '|';      //    |
@@ -169,7 +174,7 @@ void DesRoom::ClearRoom (){
     }
 
     /// Drzwi EAST ---------------------------------------------------------
-    if (EAST){
+    if (b_east){
         // otwarte ----------------------------------------------------
         tab [16][68] = ldr;     tab [16][69] = ppo;     //  └ ─
         tab [17][68] = '|';                             //  |       │<- NIE
@@ -188,7 +193,7 @@ void DesRoom::ClearRoom (){
     /// sciany druga para --------------------------------------------------
     for (int x=20; x<=33; ++x) { ClearLine(x); }        // │ newLine │ [x14]
 
-    if (SOUTH() != 0){
+    if (b_south){
         /// drzwi SOUTH otwarte ------------------------------------------------
         // linijka przedostatnia --------------------------------------
         tab [34][1] = ldr;          //  └
@@ -399,7 +404,6 @@ void DesRoom::CheckEntry(int* posX1,int* posY1,int* posX2,int* posY2){
     }
     // ---------------------------------------------------------------------------------------------
 }
-
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
