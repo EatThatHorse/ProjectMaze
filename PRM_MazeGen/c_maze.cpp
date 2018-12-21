@@ -6,54 +6,34 @@
 maze::maze(){
     this->veryFirstRoom = new NavRoom(NULL,NULL,NULL,0,0);
 
-    veryFirstRoom->SET_DOORS();
-    veryFirstRoom->ClearRoom();
-    veryFirstRoom->Danger(1,1,80,80,10);
+//    veryFirstRoom->SET_DOORS();
+//    veryFirstRoom->ClearRoom();
+//    veryFirstRoom->Danger(1,1,80,80,10);
 
     this->lastRoomAdded = veryFirstRoom;
-//    this->currentRoom = veryFirstRoom;
 }
-// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-void maze::SET_CURR(NavRoom* newAdres){
-
-//    this->currentRoom = newAdres;
-}
-// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-NavRoom* maze::LAST_ROOM_ADDED(){
-    return this->lastRoomAdded;
-}
-
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void maze::AddRoom (Direction option, bool goInside=1){
     /** Dodaje nowe pokoje do [lastRoomAdded].
         Pokoje sa tworzone z pomoca tymczasowego wskaźnika.
+        Po zakonczonej pracy moze wejsc do utworzonego pokoju.
     */
-
 
     NavRoom* tmp;
 
     switch (option){
     case UP:    // NavRoom( SOUTH  ,EAST,WEST,      lvl        ,      wid      )
         tmp = (new NavRoom(lastRoomAdded,NULL,NULL,lastRoomAdded->LVL()+1,lastRoomAdded->WID()));       // 1) Dodaj pokoj do gory od lastRoom.
-        tmp->SET_DOORS();
-        tmp->ClearRoom();
-        tmp->Danger(1,1,80,80,10);
         lastRoomAdded->SET_NORTH(tmp);                                                     // 2) Ustaw wszystkie wskazniki i inne wartosci nowego pokoju, oraz lastRoom.
         break;
 
     case LEFT:  // NavRoom(SOUTH,EAST   ,WEST,      lvl      ,      wid        )
         tmp = (new NavRoom(NULL,lastRoomAdded,NULL,lastRoomAdded->LVL(),lastRoomAdded->WID()-1));
-        tmp->SET_DOORS();
-        tmp->ClearRoom();
-        tmp->Danger(1,1,80,80,10);
         lastRoomAdded->SET_WEST(tmp);
         break;
 
     case RIGHT: // NavRoom(SOUTH,EAST, WEST  ,      lvl      ,      wid        )
         tmp = (new NavRoom(NULL,NULL,lastRoomAdded,lastRoomAdded->LVL(),lastRoomAdded->WID()+1));
-        tmp->SET_DOORS();
-        tmp->ClearRoom();
-        tmp->Danger(1,1,80,80,10);
         lastRoomAdded->SET_EAST(tmp);
         break;
 
@@ -61,10 +41,6 @@ void maze::AddRoom (Direction option, bool goInside=1){
         // Need To Define Every Option
         break;
     }
-
-    lastRoomAdded->SET_DOORS();
-    lastRoomAdded->ClearRoom();
-    lastRoomAdded->Danger(1,1,80,80,10);
 
 
     /// PART 2
@@ -160,121 +136,196 @@ void maze::ShowMaze (){
     lastRoomAdded->DEBUG_ALLVARS();
 }
 
+
+
+void recur_UpdateFloor (Direction dir, NavRoom* tmproom){
+    /** Rekurencyjna SubFunkcja metody maze::UpdateLastFloor.
+        Pozawala na wedrowanie po pietrze z uwzglednieniem zaulkow.
+    */
+    // Pojawilismy sie w tym pokoju, posprzatajmy.
+    tmproom->SET_DOORS();
+    tmproom->ClearRoom();
+
+    if (dir == LEFT){ // Przybylismy z pokoju po PRAWEJ
+        if (tmproom->WEST() != NULL){ // Zobaczmy czy mozemy isc dalej w LEWO.
+            /** SKORO TAK, Idziemy dalej w LEWO **/
+            recur_UpdateFloor (LEFT, tmproom->WEST());
+        }
+    }
+    if (dir == RIGHT){ // Przybylismy z pokoju po LEWEJ
+        if (tmproom->EAST() != NULL){ // Zobaczmy czy mozemy isc dalej w PRAWO.
+            /** SKORO TAK, Idziemy dalej w PRAWO **/
+            recur_UpdateFloor (LEFT, tmproom->EAST());
+        }
+    }
+
+    // Sprawdzilismy juz wszystkie drogi w LEWO i wszystkie drogi w PRAWO.
+    // Zobaczmy czy teraz mozemy isc do dolu.
+
+    if (tmproom->SOUTH() != NULL){ // Zobaczmy czy mozemy isc do DOLU.
+        /** SKORO TAK, Idziemy **/
+        // Wykonujemy tutaj wszystko recznie, Poniewaz to ostatni pokoj jaki chcemy posprzatac.
+        tmproom = tmproom->SOUTH();
+        tmproom->SET_DOORS();
+        tmproom->ClearRoom();
+    }
+    // Dalej nie mozemy wedrowac, to koniec.
+}
+
+// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+void maze::UpdateLastFloor(){
+    /** Naprawia ostatnie, dodane pietro */
+
+    NavRoom* tmpRoom = this->lastRoomAdded;     // Zaczyna od lastRoomAdded. Wedruje przez cale pietro w dol.
+
+    // Czyszczenie last room:
+    tmpRoom->SET_DOORS();
+    tmpRoom->ClearRoom();
+
+    if (tmpRoom->SOUTH() != NULL){ // Ide poziom nizej, O ile moge.
+        tmpRoom = tmpRoom->SOUTH();
+        // Czyszczenie
+        tmpRoom->SET_DOORS();
+        tmpRoom->ClearRoom();
+    }else{ return; }
+
+    if (tmpRoom->WEST() != NULL){ // Zobaczmy czy mozemy isc w LEWO.
+        /** SKORO TAK, Idziemy w LEWO **/
+        recur_UpdateFloor (LEFT, tmpRoom->WEST());
+    }   // Cala Galaz po LEWEJ zalatwiona.
+
+    if (tmpRoom->EAST() != NULL){ // Zobaczmy czy mozemy isc dalej w PRAWO.
+        /** SKORO TAK, Idziemy w PRAWO **/
+        recur_UpdateFloor (LEFT, tmpRoom->EAST());
+    }   // Cala Galaz po PRAWEJ zalatwiona.
+
+    if (tmpRoom->SOUTH() != NULL){ // Zobaczmy czy mozemy isc do DOLU.
+        /** SKORO TAK, Idziemy **/
+        // Poniewaz to ostatni pokoj jaki chcemy posprzatac,
+        // Wykonujemy tutaj wszystko recznie.
+        // Nie chcemy dalej wedrowac.
+        tmpRoom = tmpRoom->SOUTH();
+        tmpRoom->SET_DOORS();
+        tmpRoom->ClearRoom();
+    }
+}
+
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void maze::AddFloor(){
-
-    NavRoom* tmpRoom;
-
-    int x;
-
-    x = RandomSet(-8,8);
+    /** Losuje Scenariusz,
+        generuje jedno cale pietro,
+        naprawia rozmieszczenie drzwi.
+    */
+    NavRoom* tmpRoom;           // potrzebny do dodawania zaulkow.
+    int x = RandomSet(-8,8);
 
     switch (x) {
+    case 0:
+        AddRoom(UP); /// jeden w gore
+        break;
+    case 1:
+        AddRoom(RIGHT); /// up + prawko
+        AddRoom(UP);
+       break;
+    case -1:
+        AddRoom(LEFT); /// up + lewo + up
+        AddRoom(UP);
+        break;
+    case 2:
+        AddRoom(RIGHT);
+        AddRoom(RIGHT); /// up + dwa razy w prawo
+        AddRoom(UP);
+        break;
+    case -2:
+        AddRoom(LEFT);
+        AddRoom(LEFT);  /// up + dwa razy w lewo
+        AddRoom(UP);
+        break;
+    case 3:
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(UP);  /// trzy razy prawo + up
+        break;
+    case -3:
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(UP);  ///trzy razy lewo + up
+        break;
+    case 4:
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(UP);///  cztery razy prawo + up
+        break;
+    case -4:
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(UP);            ///  cztery razy lewo  + up
+        break;
+    case 5:
+        AddRoom(RIGHT,0);
+        AddRoom(UP);              ///jeden w gore - zaulek w prawo z obecnego
+        break;
+    case -5:
+        AddRoom(LEFT,0);
+        AddRoom(UP);             ///jeden w gore - zaulek w lewo  z obecnego
+        break;
+    case 6:
+        AddRoom(LEFT,0);
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(UP);                     /// zaulek w lewo + prawo 2x + up
+        break;
+    case -6:
+        AddRoom(RIGHT,0);
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(UP);                     /// zaulek w prawo+ lewo 2x + up
+        break;
+     case 7:
+        AddRoom(LEFT,0);
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(UP);                     /// zaulek w lewo + prawo 3x + up
+        break;
+    case -7:
+        AddRoom(RIGHT,0);
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(UP);                     /// zaulek w prawo+ lewo 3x + up
+        break;
+    case 8:
+        tmpRoom = lastRoomAdded;
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        lastRoomAdded = tmpRoom;
 
-        case 0:
-            AddRoom(UP); /// jeden w gore
-            break;
-        case 1:
-            AddRoom(RIGHT); /// up + prawko
-            AddRoom(UP);
-           break;
-        case -1:
-            AddRoom(LEFT); /// up + lewo + up
-            AddRoom(UP);
-            break;
-        case 2:
-            AddRoom(RIGHT);
-            AddRoom(RIGHT); /// up + dwa razy w prawo
-            AddRoom(UP);
-            break;
-        case -2:
-            AddRoom(LEFT);
-            AddRoom(LEFT);  /// up + dwa razy w lewo
-            AddRoom(UP);
-            break;
-        case 3:
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(UP);  /// trzy razy prawo + up
-            break;
-        case -3:
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(UP);  ///trzy razy lewo + up
-            break;
-        case 4:
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(UP);///  cztery razy prawo + up
-            break;
-        case -4:
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(UP);            ///  cztery razy lewo  + up
-            break;
-        case 5:
-            AddRoom(RIGHT,0);
-            AddRoom(UP);              ///jeden w gore - zaulek w prawo z obecnego
-            break;
-        case -5:
-            AddRoom(LEFT,0);
-            AddRoom(UP);             ///jeden w gore - zaulek w lewo  z obecnego
-            break;
-        case 6:
-            AddRoom(LEFT,0);
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(UP);                     /// zaulek w lewo + prawo 2x + up
-            break;
-        case -6:
-            AddRoom(RIGHT,0);
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(UP);                     /// zaulek w prawo+ lewo 2x + up
-            break;
-         case 7:
-            AddRoom(LEFT,0);
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(UP);                     /// zaulek w lewo + prawo 3x + up
-            break;
-        case -7:
-            AddRoom(RIGHT,0);
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(UP);                     /// zaulek w prawo+ lewo 3x + up
-            break;
-        case 8:
-            tmpRoom = lastRoomAdded;
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            lastRoomAdded = tmpRoom;
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        AddRoom(UP);                /// zaulek w lewo 2x + prawo 2x + up
+        break;
+    case -8:
+        tmpRoom = lastRoomAdded;
+        AddRoom(RIGHT);
+        AddRoom(RIGHT);
+        lastRoomAdded = tmpRoom;
 
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            AddRoom(UP);                /// zaulek w lewo 2x + prawo 2x + up
-            break;
-        case -8:
-            tmpRoom = lastRoomAdded;
-            AddRoom(RIGHT);
-            AddRoom(RIGHT);
-            lastRoomAdded = tmpRoom;
-
-            AddRoom(LEFT);
-            AddRoom(LEFT);
-            AddRoom(UP);                /// zaulek w prawo 2x + lewo 2x + up
-            break;
-
-
+        AddRoom(LEFT);
+        AddRoom(LEFT);
+        AddRoom(UP);                /// zaulek w prawo 2x + lewo 2x + up
+        break;
     }
+
+    // Napraw nie ustawione drzwi.
+    UpdateLastFloor();
+
 }
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■

@@ -51,10 +51,10 @@ void NavRoom::SET_WEST(NavRoom* roomX){
 }
 
 void NavRoom::SET_DOORS(){
+    this->b_north = (this->north!=NULL)?  1 : 0;
     this->b_south = (this->south!=NULL)?  1 : 0;
-    this->b_west =  (this->east!=NULL)?   1 : 0;
-    this->b_east =  (this->west!=NULL)?   1 : 0;
-
+    this->b_west =  (this->west!=NULL)?   1 : 0;
+    this->b_east =  (this->east!=NULL)?   1 : 0;
 }
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■

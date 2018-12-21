@@ -22,11 +22,9 @@ public:
 ///     METODY - PUBLICZNE
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 public:
-    void SET_CURR(NavRoom*);
-    NavRoom* LAST_ROOM_ADDED();
-
     void ShowMaze();
     void AddFloor();
+    void UpdateLastFloor();
 
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///    ZMIENNE

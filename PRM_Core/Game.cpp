@@ -43,10 +43,8 @@ void Game::GameVer01() {
     HeadMaze.AddFloor();
 
     HeadMaze.ShowMaze();
-//    HeadMaze.veryFirstRoom->ClearRoom();
-//    HeadMaze.veryFirstRoom->Danger(1,1,80,80,10);
-
-    cout << "\n\n\n\n\n";
+    HERO.ShowGui();
+    cout << "\n\n\n";
     HeadMaze.veryFirstRoom->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
 
 
@@ -61,8 +59,10 @@ void Game::GameVer01() {
 
         if (InputEvent!=224) {      // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
             system("cls");                          // Czyszczenie, Zerowanie Konsoli.
+
+            HeadMaze.ShowMaze();
             HERO.ShowGui();
-            cout << "\n\n\n\n\n";
+            cout << "\n\n\n";
             HERO.roomPos->RenderRoom();
         }
     }
