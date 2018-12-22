@@ -19,8 +19,8 @@
     #define O_symbol    (char)S_UP  // Symbol Startowy.
 
     // Zmienne z klasy bazowej bezposredniej [Unit] [U_]
-    #define U_speedVY   1           // Predkosc przemieszczania sie gracza po wierszach Y.
-    #define U_speedHX   1           // Predkosc przemieszczania sie gracza po kolumnach X.
+    #define U_speedVY   2           // Predkosc przemieszczania sie gracza po wierszach Y.
+    #define U_speedHX   2           // Predkosc przemieszczania sie gracza po kolumnach X.
 
 
     class player : public Unit {

@@ -138,6 +138,7 @@ void maze::ShowMaze (){
 
 
 
+// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void recur_UpdateFloor (Direction dir, NavRoom* tmproom){
     /** Rekurencyjna SubFunkcja metody maze::UpdateLastFloor.
         Pozawala na wedrowanie po pietrze z uwzglednieniem zaulkow.
@@ -146,37 +147,22 @@ void recur_UpdateFloor (Direction dir, NavRoom* tmproom){
     tmproom->SET_DOORS();
     tmproom->ClearRoom();
 
-    if (dir == LEFT){ // Przybylismy z pokoju po PRAWEJ
-        if (tmproom->WEST() != NULL){ // Zobaczmy czy mozemy isc dalej w LEWO.
-            /** SKORO TAK, Idziemy dalej w LEWO **/
-            recur_UpdateFloor (LEFT, tmproom->WEST());
-        }
-    }
-    if (dir == RIGHT){ // Przybylismy z pokoju po LEWEJ
-        if (tmproom->EAST() != NULL){ // Zobaczmy czy mozemy isc dalej w PRAWO.
-            /** SKORO TAK, Idziemy dalej w PRAWO **/
-            recur_UpdateFloor (LEFT, tmproom->EAST());
-        }
-    }
+    if (dir == LEFT) // Przybylismy z pokoju po PRAWEJ
+        if (tmproom->WEST() != NULL) // Zobaczmy czy mozemy isc dalej w LEWO.
+            recur_UpdateFloor (LEFT, tmproom->WEST());  // SKORO TAK, Idziemy dalej w LEWO
 
-    // Sprawdzilismy juz wszystkie drogi w LEWO i wszystkie drogi w PRAWO.
-    // Zobaczmy czy teraz mozemy isc do dolu.
+    if (dir == RIGHT) // Przybylismy z pokoju po LEWEJ
+        if (tmproom->EAST() != NULL) // Zobaczmy czy mozemy isc dalej w PRAWO.
+            recur_UpdateFloor (RIGHT, tmproom->EAST()); // SKORO TAK, Idziemy dalej w PRAWO
 
-    if (tmproom->SOUTH() != NULL){ // Zobaczmy czy mozemy isc do DOLU.
-        /** SKORO TAK, Idziemy **/
-        // Wykonujemy tutaj wszystko recznie, Poniewaz to ostatni pokoj jaki chcemy posprzatac.
-        tmproom = tmproom->SOUTH();
-        tmproom->SET_DOORS();
-        tmproom->ClearRoom();
-    }
-    // Dalej nie mozemy wedrowac, to koniec.
-}
+}    // Dalej nie mozemy wedrowac, to koniec.
 
-// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void maze::UpdateLastFloor(){
     /** Naprawia ostatnie, dodane pietro */
 
-    NavRoom* tmpRoom = this->lastRoomAdded;     // Zaczyna od lastRoomAdded. Wedruje przez cale pietro w dol.
+    // Zaczyna od lastRoomAdded, czysci go.
+    // Wedruje przez cale pietro ponizej lastRoomAdded.
+    NavRoom* tmpRoom = this->lastRoomAdded;
 
     // Czyszczenie last room:
     tmpRoom->SET_DOORS();
@@ -196,20 +182,10 @@ void maze::UpdateLastFloor(){
 
     if (tmpRoom->EAST() != NULL){ // Zobaczmy czy mozemy isc dalej w PRAWO.
         /** SKORO TAK, Idziemy w PRAWO **/
-        recur_UpdateFloor (LEFT, tmpRoom->EAST());
+        recur_UpdateFloor (RIGHT, tmpRoom->EAST());
     }   // Cala Galaz po PRAWEJ zalatwiona.
-
-    if (tmpRoom->SOUTH() != NULL){ // Zobaczmy czy mozemy isc do DOLU.
-        /** SKORO TAK, Idziemy **/
-        // Poniewaz to ostatni pokoj jaki chcemy posprzatac,
-        // Wykonujemy tutaj wszystko recznie.
-        // Nie chcemy dalej wedrowac.
-        tmpRoom = tmpRoom->SOUTH();
-        tmpRoom->SET_DOORS();
-        tmpRoom->ClearRoom();
-    }
 }
-
+// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void maze::AddFloor(){
     /** Losuje Scenariusz,
