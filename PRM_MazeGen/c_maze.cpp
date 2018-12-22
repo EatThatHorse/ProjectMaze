@@ -3,14 +3,17 @@
 
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-maze::maze(){
+maze::maze() {
     this->veryFirstRoom = new NavRoom(NULL,NULL,NULL,0,0);
-
-//    veryFirstRoom->SET_DOORS();
-//    veryFirstRoom->ClearRoom();
-//    veryFirstRoom->Danger(1,1,80,80,10);
+        // Przygotowanie Nowo Powstalego Pokoju.
+        veryFirstRoom->SET_DOORS();
+        veryFirstRoom->ClearRoom();
+        veryFirstRoom->Danger(1,1,80,80,10);
 
     this->lastRoomAdded = veryFirstRoom;
+    this->HERO.roomPos = this->veryFirstRoom;
+
+    this->AddFloor();
 }
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 void maze::AddRoom (Direction option, bool goInside=1){

@@ -19,13 +19,13 @@
     #define O_symbol    (char)S_UP  // Symbol Startowy.
 
     // Zmienne z klasy bazowej bezposredniej [Unit] [U_]
-    #define U_speedVY   2           // Predkosc przemieszczania sie gracza po wierszach Y.
-    #define U_speedHX   2           // Predkosc przemieszczania sie gracza po kolumnach X.
+    #define U_speedVY   3           // Predkosc przemieszczania sie gracza po wierszach Y.
+    #define U_speedHX   3           // Predkosc przemieszczania sie gracza po kolumnach X.
 
 
     class player : public Unit {
     public: /// KONSTRUKTOR
-        player (NavRoom* roomPos) : Unit(O_xpos, O_ypos, O_symbol, U_speedVY, U_speedHX, roomPos) { }
+        player (NavRoom* roomPos=0) : Unit(O_xpos, O_ypos, O_symbol, U_speedVY, U_speedHX, roomPos) { }
 
     private: /// ZMIENNE
         // Ranked / Status
@@ -34,7 +34,7 @@
 
     public: /// METODY
         int Move (Direction);
-        void Action ();
+        int Action ();
         void ShowGui ();
     };
 

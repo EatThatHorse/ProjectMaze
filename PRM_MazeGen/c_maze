@@ -2,7 +2,7 @@
 #define c_maze
 
 #include "../u_ProjectUtilities"
-
+#include "../PRM_Objects/c_Player"
 #include "c_NavRoom"
 
 #include <cstdlib>      // [srand] (do RandomSet)
@@ -32,6 +32,8 @@ public:
 public:
     NavRoom* lastRoomAdded;     // Umozliwi dodawanie pokoi. It starts with: zeroRoom.
     NavRoom* veryFirstRoom;     // Zawsze wskazuje na zeroRoom.
+
+    player HERO;
 
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     METODY - PRYWATNE

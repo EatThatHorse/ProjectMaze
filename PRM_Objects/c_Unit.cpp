@@ -61,9 +61,9 @@ int Unit::Move (Direction current){
     return 0;
 }
 
-void Unit::Action (){
+int Unit::Action (){
 
-
+    return 0;
 }
 
 

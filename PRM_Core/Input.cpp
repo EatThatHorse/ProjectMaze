@@ -4,10 +4,11 @@
 
 //_________________________________________________________________________________________________________________
 //───────────────────────────────────────────────────────────────────────────────────────────────────────────────── G-01
-int Input::Run01G(player& HERO, maze HEAD){
+int Input::Run01G(maze& HEAD){
     /** Zakaz Uzywania Cout, Nie zadziala
         Wynika to z sposobu dzialania getch() i system("cls")
     */
+    player& HERO = HEAD.HERO;
 
     unsigned char znak;
     znak = getch();   // Oczekiwanie na Input.
@@ -21,7 +22,9 @@ int Input::Run01G(player& HERO, maze HEAD){
         return znak;
     }
     if (znak==13 || znak==101 || znak==69) {      // ( ENTER || e || E )
-        HERO.Action();
+        if (HERO.Action() == 1)
+            if (HEAD.HERO.roomPos == HEAD.lastRoomAdded)
+                HEAD.AddFloor();
         return znak;
     }
     if (znak==75 || znak==97 || znak==65){        // ( ← (left) || a || A )

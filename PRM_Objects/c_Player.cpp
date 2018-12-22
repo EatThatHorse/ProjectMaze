@@ -12,9 +12,6 @@ int player::Move (Direction current){
     /// Przemieszczenie Gracza
     this->Unit::Move(current);
 
-    std::cout << xpos << "      " << ypos << "      [" << this->frontThing << "]";
-
-
     // ------------------------------------------------------------
     /// Zmiana wygladu Gracza
     if (current == UP)      this->symbol = ((char)S_UP);        // [↑]
@@ -26,7 +23,7 @@ int player::Move (Direction current){
     return current;
 }
 
-void player::Action (){
+int player::Action (){
     /** Metoda wywolywana w Inpucie, dla klawisza [ENTER] [E] [e] */
 
     /// NATRAFILISMY NA DRZWI ───-───-───-───-───-───-───-───-───-───-───-───-───-───-───-───-───-───-───
@@ -35,12 +32,12 @@ void player::Action (){
         if (this->xpos == 2){       // [←] Drzwi z LEWEJ Strony
             this->roomPos = roomPos->WEST();    // Przemieszczenie sie do Pokoju.
             this->xpos = 67;                    // Odbicie gracza na druga strone pokoju.
-            return;
+            return 0;                           // Nothing to do, zero
         }
         if (this->xpos == 67){      // [→] Drzwi z PRAWEJ Strony
             roomPos = roomPos->EAST();  // Przemieszczenie sie do Pokoju.
             this->xpos = 2;             // Odbicie gracza na druga strone pokoju.
-            return;
+            return 0;                   // Nothing to do, zero
         }
         // ------------------------------------------------------------
     }
@@ -49,16 +46,17 @@ void player::Action (){
         if (this->ypos == 2){       // [↑] Drzwi u GORY Strony
             roomPos = roomPos->NORTH(); // Przemieszczenie sie do Pokoju.
             this->ypos = 33;            // Odbicie gracza na druga strone pokoju.
-            return;
+            return 1;                   // Dodaj Pietro
         }
         if (this->ypos == 33){      // [↓] Drzwi z DOLU Strony
             roomPos = roomPos->SOUTH(); // Przemieszczenie sie do Pokoju.
             this->ypos = 2;             // Odbicie gracza na druga strone pokoju.
-            return;
+            return 1;
         }
         // ------------------------------------------------------------
     }
     ///  ───-───-───-───-───--───-───-───-───-───-───-───-───-───-───-───-───-───-───-───-───-───-───-───
+    return 0;   // Nothing to do, zero
 }
 
 void player::ShowGui(){

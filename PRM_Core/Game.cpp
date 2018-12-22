@@ -36,16 +36,16 @@ void Game::GameVer01() {
     /** Pierwsza wersja Funkcji Sterującej Rozgrywką. */
 
     maze HeadMaze;
-    player HERO(HeadMaze.veryFirstRoom);
 
-    HeadMaze.AddFloor();
-    HeadMaze.AddFloor();
-    HeadMaze.AddFloor();
-
-    HeadMaze.ShowMaze();
-    HERO.ShowGui();
-    cout << "\n\n\n";
+    HeadMaze.HERO.ShowGui();
     HeadMaze.veryFirstRoom->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
+
+//    HeadMaze.ShowMaze();
+
+//    cout << "\n\n\n";
+//
+//
+
 
 
     *GLOOP = true;   // GREAT LOOP - Wykonywana tak długo jak działa program.
@@ -55,15 +55,15 @@ void Game::GameVer01() {
         //   - Jedna Klatka, Jeden Frame
 
         int InputEvent;
-        InputEvent = Input::Run01G(HERO,HeadMaze);
+        InputEvent = Input::Run01G(HeadMaze);
 
         if (InputEvent!=224) {      // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
             system("cls");                          // Czyszczenie, Zerowanie Konsoli.
 
-            HeadMaze.ShowMaze();
-            HERO.ShowGui();
+//            HeadMaze.ShowMaze();
+            HeadMaze.HERO.ShowGui();
             cout << "\n\n\n";
-            HERO.roomPos->RenderRoom();
+            HeadMaze.HERO.roomPos->RenderRoom();
         }
     }
     return;

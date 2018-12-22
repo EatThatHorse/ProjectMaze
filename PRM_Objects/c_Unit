@@ -30,7 +30,7 @@
 
     public: /// METODY
         virtual int Move (Direction);
-        virtual void Action ();
+        virtual int Action ();
     };
 
 #endif // C_OBSTACLE
