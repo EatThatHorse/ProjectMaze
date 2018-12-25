@@ -1,0 +1,53 @@
+
+Streszczenie:
+- co najmniej 3 klasy Pu³apek
+- Wyœwietlanie Obiektów w roomie
+
+-------------------------------------------------------------
+MUST!
+ Person 1:
+ - Wiêcej info i Schemat dziedziczenia w pliku ModelKlas
+ - Zaprojektowaæ Pu³apki
+   Jeden rodzaj = Jedna niezale¿na Klasa
+ - Napisaæ klase Trap
+   Wszystkie zaprojektowane pu³apki
+   dziedzicz¹ po nim.
+	 
+ Person 2:
+ - Wiêcej info i Schemat dziedziczenia w pliku ModelKlas
+ - Napisaæ Klasê RoomContainer
+   Trzyma ona kilka kontenerów (klasa Container)
+   Kontenery te trzymaj¹ informacje o 
+   obiektach znajduj¹cych siê w pomieszczeniu.
+   Na podstawie tych informacji bêdzie dzia³a³ Update i Render.
+ - Sprawdziæ dzia³ania klas Record i Container.
+
+-------------------------------------------------------------
+SHOULD...
+ - Dokoñczenie prac nad Menu, 
+   Du¿o sprz¹tania,
+   Obs³uga plików zewn.
+   Jest ju¿ wszystko aby Skoñczyæ nad nim prace.
+
+ - Klasy:
+      Wall
+      chest
+      Door 
+      Item 
+
+-------------------------------------------------------------
+WOULD... (ostatecznie)
+Tego co tu: 
+albo nie musimy robiæ, 
+albo nie op³aca nam siê 
+tego robiæ przed 
+ukoñczeniem MUST I SHOULD.
+
+ - poprawiæ dzia³anie gracza
+   jego input, struktura, kilka ma³ych b³êdów.
+
+
+-------------------------------------------------------------
+SKOÑCZYMY MUST i SHOULD
+I BIERZEMY SIÊ ZA OSTATECZNE TESTOWANIE
+PROJEKT GOTOWY.
