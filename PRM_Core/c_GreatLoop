@@ -5,16 +5,16 @@
     #include "c_Game"
     #include "c_Menu"
 
-    //#include <windows.h>    // system("");
-
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
-    class GreatLoop {   // Zastosowanie dziedziczenia wielobazowego.
+    class GreatLoop {
+    public: // KONSTRUKTOR
+        GreatLoop ();
+
     public: // PUBLICZNE METODY
         void Execute();
 
     private: // ZMIENNE
         bool GLOOP;  // GreatLoop flag.
-
 
     private: // EVERY TEST / TEMPORARY VERSION:
         void MAIN_TEST_DEBUG();

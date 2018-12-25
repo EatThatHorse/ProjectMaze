@@ -2,13 +2,17 @@
 #include "c_GreatLoop"
 
 
-//_________________________________
+GreatLoop::GreatLoop (){    // KONSTRUKTOR
+    this->GLOOP = true;
+    Execute();
+}
+
+
 void GreatLoop::Execute(){
     /** Czynnosci wykonywane przez Program.
         Obsluga wiekszosci bledow.
-        Metoda wywolywana w MAIN().
+        Metoda wywolywana w MAIN() przez konstruktor.
     */
-
     Game Main_GAME(&this->GLOOP); // Game Exec
     Menu Main_MENU(&this->GLOOP); // Menu Exec
 
@@ -23,7 +27,6 @@ void GreatLoop::Execute(){
 }
 
 
-//_________________________________
 void GreatLoop::MAIN_TEST_DEBUG() {
     /** WorkSpace Przygotowany Specjalnie do TWOICH Testow.
         Traktuj go jak zwyklego MAIN'A.
@@ -32,7 +35,7 @@ void GreatLoop::MAIN_TEST_DEBUG() {
          - Nie Posiada Instrukcji
         Po zakonczeniu pracy pozostaw go w stanie w jakim go zastales.
     */
-    // DEBUG_KEYBOARD ();   // You Can Tast It. If You Want.
+     //DEBUG_KEYBOARD ();   // You Can Tast It. If You Want.
 
 
 }

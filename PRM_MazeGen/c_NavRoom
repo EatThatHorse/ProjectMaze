@@ -23,6 +23,7 @@ public:
 ///     METODY
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 public:
+    // Getery. Zmienne Klasy Tylko do Odczytu.
     int LVL();
     int WID();
     int NR();
@@ -31,13 +32,15 @@ public:
     NavRoom* SOUTH();
     NavRoom* WEST();
 
+    // Ustawienie Wszystkich Wskaznikow z poziomu klasy Maze.
     void SET_NORTH(NavRoom*);
     void SET_EAST(NavRoom*);
     void SET_SOUTH(NavRoom*);
     void SET_WEST(NavRoom*);
 
-    void SET_DOORS();
+    void SET_DOORS();       // Ustawienie booli rysowania drzwi
 
+    // Testowania, Wyswietlane w konsoli.
     void DEBUG_VARS();
     void DEBUG_ALLVARS();
 
@@ -45,16 +48,17 @@ public:
 ///    ZMIENNE
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 private:
-    int lvl; /// poziom w pionie
-    int wid; /// szerokosc
-    int nr;  /// nrumer pokoju (room 0,0 - nr 1)
+    static int iloscPokoi;  /// ilosc wszystkich pokoi
 
-    static int iloscPokoi;
+    int lvl;    /// poziom w pionie
+    int wid;    /// szerokosc
+    int nr;     /// nrumer pokoju (room 0,0 - nr 1)
 
-    NavRoom* north;    /// wskaznik dla pokoj na polnoc od obecnego pokoju     ▲
-    NavRoom* east;     /// wskaznik dla pokoj na wschod od obecnego pokoju     ►
-    NavRoom* south;    /// wskaznik dla pokoj na poludnie od obecnego pokoju   ▼
-    NavRoom* west;     /// wskaznik dla pokoj na zachod od obecnego pokoju     ◄
+    // Wskazniki do sasiadujacych pokoi.
+    NavRoom* north;    /// na polnoc od obecnego pokoju     ▲
+    NavRoom* east;     /// na wschod od obecnego pokoju     ►
+    NavRoom* south;    /// na poludnie od obecnego pokoju   ▼
+    NavRoom* west;     /// na zachod od obecnego pokoju     ◄
 };
 
 #endif // C_ROOM_NAVIGATION

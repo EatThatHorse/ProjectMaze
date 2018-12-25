@@ -10,19 +10,15 @@
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
     class Menu : public Input, public Render  {
     public: // KONSTRUKTOR
-        Menu(bool* T_GLOOP){
-            this->GLOOP = T_GLOOP;
-        }
+        Menu(bool* T_GLOOP);
 
     public: // PUBLICZNE METODY
         void Execute();
 
-    private:
-        // ZMIENNE
+    private: // ZMIENNE
         bool* GLOOP;  // Pointer to GreatLoop flag.
 
-    private:
-        // EVERY MENU VERSION:
+    private: // EVERY MENU VERSION:
         void MenuVer01();
     };
     /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -

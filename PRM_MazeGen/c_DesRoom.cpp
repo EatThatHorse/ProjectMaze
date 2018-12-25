@@ -68,21 +68,13 @@ void ko_room_design_EXEC (){
 
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
-/// KONTSTRUKTOR
+/// KONSTRUKTOR
 DesRoom::DesRoom() {
 
     this->b_north = 0;
     this->b_south = 0;
     this->b_west =  0;
     this->b_east =  0;
-/*
-    this->SOUTH = (t_south!=NULL)?  1 : 0;
-    this->WEST =  (t_east!=NULL)?   1 : 0;
-    this->EAST =  (t_west!=NULL)?   1 : 0;
-
-    cout << "\n    " << SOUTH << "\n";
-
-    this->NORTH = t_south;*/
 
     this->tab = new char*[ROWS];
     for(int row=0; row<ROWS; ++row)  // Petla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
@@ -258,7 +250,11 @@ void DesRoom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
 
     /// Zapewnienie Warunkow. Etap 1
 
+    // Metoda Sprawdzajaca czy obiek znajduje sie w Przedziale
+    // W Przypadku gdyby nie Modyfikuje wprowadzone zmienne - za pomocą wskaznikow
+    // Nie testowana duzo. W przypadku bledow, sprawdzic w pierwszej kolejnosci.
     CheckEntry(&posX1, &posY1, &posX2, &posY2);
+
 
 #ifdef TEST_IN_ERROR_CASE
     // ------------------------------------------------------------
@@ -408,13 +404,24 @@ void DesRoom::CheckEntry(int* posX1,int* posY1,int* posX2,int* posY2){
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
 void DesRoom::EditPX (int& posX, int& posY, char symbol){
+    /** Pozwala na modyfikacje jednego symbolu w tablicy.
+        Wykorzystywana przez klase Unit do przemieszczania sie po tablicy.
 
+        Wersja Z Sprawdzeniem Wprowadzonych danych.
+        Za malo przetestowana, Moze generowac bledy.
+    **/
     CheckEntry (&posX, &posY);
     this->tab[posY][posX] = symbol;
 }
 
 void DesRoom::EditPX_F (int& posX, int& posY, char symbol){
+    /** Pozwala na modyfikacje jednego symbolu w tablicy.
+        Wykorzystywana przez klase Unit do przemieszczania sie po tablicy.
 
+        Wersja BEZ Sprawdzania Wprowadzonych danych.
+        Pozwala Uzytkownikowi na wprowadzenie bledow
+        = shutdown Programu z poziomu Windowsa.
+    **/
     this->tab[posY][posX] = symbol;
 }
 

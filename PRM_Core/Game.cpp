@@ -2,21 +2,15 @@
 #include "c_Game"
 
 
-/// [Kacu] ŚMIECIIIII -----------------------------
-#include "../PRM_Objects/c_Player"
-#include "../PRM_MazeGen/c_maze"
-
-/// [Kacu] ŚMIECIIIII -----------------------------
+Game::Game(bool* T_GLOOP){    // KONSTRUKTOR
+    this->GLOOP = T_GLOOP;
+}
 
 
-
-//_________________________________
 void Game::Execute(){
     /** Czynnosci wykonywane przez Program.
         Obsluga wiekszosci bledow.
     */
-
-
     // METODY WYWOLANIA GRY.
     GameVer01();
 
@@ -24,29 +18,15 @@ void Game::Execute(){
 }
 
 
-
-
-
-
-
-
-
-//_________________________________
 void Game::GameVer01() {
     /** Pierwsza wersja Funkcji Sterującej Rozgrywką. */
 
     maze HeadMaze;
 
-    HeadMaze.HERO.ShowGui();
-    HeadMaze.veryFirstRoom->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
-
 //    HeadMaze.ShowMaze();
-
-//    cout << "\n\n\n";
-//
-//
-
-
+    HeadMaze.HERO.ShowGui();
+    cout << "\n\n\n";
+    HeadMaze.veryFirstRoom->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
 
     *GLOOP = true;   // GREAT LOOP - Wykonywana tak długo jak działa program.
     while (GLOOP) {
@@ -63,7 +43,7 @@ void Game::GameVer01() {
 //            HeadMaze.ShowMaze();
             HeadMaze.HERO.ShowGui();
             cout << "\n\n\n";
-            HeadMaze.HERO.roomPos->RenderRoom();
+            HeadMaze.HERO.roomPos->RenderRoom();    // Main Render
         }
     }
     return;

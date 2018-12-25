@@ -2,9 +2,10 @@
 #ifndef INPUT__PRMAZE
 #define INPUT__PRMAZE
 
-    #include <conio.h>      // getch / kbhit
     #include "../PRM_Objects/c_Player"
     #include "../PRM_MazeGen/c_maze"
+
+    #include <conio.h>      // getch / kbhit
 
     class Input {
     public:
@@ -13,7 +14,6 @@
 
         int Run01G(maze&);
         int Run01M(bool&, int&);
-
     };
 
 #endif // INPUT__PRMAZE

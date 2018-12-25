@@ -45,7 +45,6 @@ void maze::AddRoom (Direction option, bool goInside=1){
         break;
     }
 
-
     /// PART 2
     if (goInside){
         lastRoomAdded = tmp; // wejdz do pokoju = ustaw lastRoomAdded na nowy pokoj.
@@ -200,85 +199,85 @@ void maze::AddFloor(){
 
     switch (x) {
     case 0:
-        AddRoom(UP); /// jeden w gore
+        AddRoom(UP);                /// jeden w gore
         break;
     case 1:
-        AddRoom(RIGHT); /// up + prawko
+        AddRoom(RIGHT);             /// up + prawko
         AddRoom(UP);
        break;
     case -1:
-        AddRoom(LEFT); /// up + lewo + up
+        AddRoom(LEFT);              /// up + lewo + up
         AddRoom(UP);
         break;
     case 2:
         AddRoom(RIGHT);
-        AddRoom(RIGHT); /// up + dwa razy w prawo
+        AddRoom(RIGHT);             /// up + dwa razy w prawo
         AddRoom(UP);
         break;
     case -2:
         AddRoom(LEFT);
-        AddRoom(LEFT);  /// up + dwa razy w lewo
+        AddRoom(LEFT);              /// up + dwa razy w lewo
         AddRoom(UP);
         break;
     case 3:
         AddRoom(RIGHT);
         AddRoom(RIGHT);
         AddRoom(RIGHT);
-        AddRoom(UP);  /// trzy razy prawo + up
+        AddRoom(UP);                /// trzy razy prawo + up
         break;
     case -3:
         AddRoom(LEFT);
         AddRoom(LEFT);
         AddRoom(LEFT);
-        AddRoom(UP);  ///trzy razy lewo + up
+        AddRoom(UP);                ///trzy razy lewo + up
         break;
     case 4:
         AddRoom(RIGHT);
         AddRoom(RIGHT);
         AddRoom(RIGHT);
         AddRoom(RIGHT);
-        AddRoom(UP);///  cztery razy prawo + up
+        AddRoom(UP);                ///  cztery razy prawo + up
         break;
     case -4:
         AddRoom(LEFT);
         AddRoom(LEFT);
         AddRoom(LEFT);
         AddRoom(LEFT);
-        AddRoom(UP);            ///  cztery razy lewo  + up
+        AddRoom(UP);                ///  cztery razy lewo  + up
         break;
     case 5:
         AddRoom(RIGHT,0);
-        AddRoom(UP);              ///jeden w gore - zaulek w prawo z obecnego
+        AddRoom(UP);                ///jeden w gore - zaulek w prawo z obecnego
         break;
     case -5:
         AddRoom(LEFT,0);
-        AddRoom(UP);             ///jeden w gore - zaulek w lewo  z obecnego
+        AddRoom(UP);                 ///jeden w gore - zaulek w lewo  z obecnego
         break;
     case 6:
         AddRoom(LEFT,0);
         AddRoom(RIGHT);
         AddRoom(RIGHT);
-        AddRoom(UP);                     /// zaulek w lewo + prawo 2x + up
+        AddRoom(UP);                /// zaulek w lewo + prawo 2x + up
         break;
     case -6:
         AddRoom(RIGHT,0);
         AddRoom(LEFT);
         AddRoom(LEFT);
-        AddRoom(UP);                     /// zaulek w prawo+ lewo 2x + up
+        AddRoom(UP);                /// zaulek w prawo+ lewo 2x + up
         break;
      case 7:
         AddRoom(LEFT,0);
         AddRoom(RIGHT);
         AddRoom(RIGHT);
         AddRoom(RIGHT);
-        AddRoom(UP);                     /// zaulek w lewo + prawo 3x + up
+        AddRoom(UP);                /// zaulek w lewo + prawo 3x + up
         break;
     case -7:
         AddRoom(RIGHT,0);
         AddRoom(LEFT);
         AddRoom(LEFT);
         AddRoom(LEFT);
-        AddRoom(UP);                     /// zaulek w prawo+ lewo 3x + up
+        AddRoom(UP);                /// zaulek w prawo+ lewo 3x + up
         break;
     case 8:
         tmpRoom = lastRoomAdded;
@@ -304,11 +303,11 @@ void maze::AddFloor(){
 
     // Napraw nie ustawione drzwi.
     UpdateLastFloor();
-
 }
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 int maze::RandomSet(int Rmin, int Rmax){
+    /** Losowanie scenariusza na dodawanie pokoju do pietra **/
 
     srand(time(NULL));
 

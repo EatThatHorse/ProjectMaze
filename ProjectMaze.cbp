@@ -38,13 +38,13 @@
 		<Unit filename="PRM_Core/Menu.cpp" />
 		<Unit filename="PRM_Core/Render.cpp" />
 		<Unit filename="PRM_Core/Update.cpp" />
+		<Unit filename="PRM_Core/_MAIN.cpp" />
 		<Unit filename="PRM_Core/c_Game" />
 		<Unit filename="PRM_Core/c_GreatLoop" />
 		<Unit filename="PRM_Core/c_Input" />
 		<Unit filename="PRM_Core/c_Menu" />
 		<Unit filename="PRM_Core/c_Render" />
 		<Unit filename="PRM_Core/c_Update" />
-		<Unit filename="PRM_Core/main.cpp" />
 		<Unit filename="PRM_DT/c_Container__dt.cpp">
 			<Option virtualFolder="PRM_DT/" />
 		</Unit>

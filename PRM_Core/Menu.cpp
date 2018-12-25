@@ -3,12 +3,17 @@
 #include "../c_menu"
 
 
-//_________________________________
+
+Menu::Menu(bool* T_GLOOP){
+    this->GLOOP = T_GLOOP;
+}
+
+
+
 void Menu::Execute(){
     /** Czynnosci wykonywane przez Program.
-        Obsluga wiekszosci bledow.
+        Obsluga wiekszosci bledow Tutaj.
     */
-
     // METODY WYWOLANIA MENU.
     MenuVer01();
 
@@ -17,9 +22,8 @@ void Menu::Execute(){
 
 
 
-//_________________________________
 void Menu::MenuVer01() {
-    /** Pierwsza wersja Funkcji Sterującej Rozgrywką. */
+    /** Pierwsza wersja Menu. */
 
     menu EXEC;
     int currentChoose = 0;

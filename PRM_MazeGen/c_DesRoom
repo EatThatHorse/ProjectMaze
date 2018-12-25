@@ -1,13 +1,11 @@
 #ifndef C_ROOM_DESCRIPTION
 #define C_ROOM_DESCRIPTION
 
-#include <ctime>
-#include <windows.h>
+#include <ctime>        // time(NULL)
+#include <windows.h>    // srand();
 #include <iostream>
 using std::cout;
 using std::string;
-
-
 
 class DesRoom {
 public: ///KONSTRUKTOR
@@ -24,14 +22,13 @@ private: ///ZMIENNE
     char pgr = 191;     // pgr - prawy górny róg
     char ldr = 192;     // ldr - lewy dolny róg
     char pdr = 217;     // pdr - prawy dolny róg
-    string margin29 = "                             ";
+    string margin29 = "                             ";      // Odstep 29 spacji
 
 public:
     bool b_north;
     bool b_south;
     bool b_west;
     bool b_east;
-
 
 public: ///METODY
     char** TAB() { return this->tab; };

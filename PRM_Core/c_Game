@@ -6,23 +6,22 @@
     #include "c_Update"
     #include "c_Render"
 
+    #include "../PRM_MazeGen/c_maze"
+
     #include <windows.h>    // system("");
 
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
     class Game : public Input, public Update, public Render  {   // Zastosowanie dziedziczenia wielobazowego.
     public: // KONSTRUKTOR
-        Game(bool* T_GLOOP){
-            this->GLOOP = T_GLOOP;
-        }
+        Game(bool* T_GLOOP);
+
     public: // PUBLICZNE METODY
         void Execute();
 
-    private:
-        // ZMIENNE
+    private: // ZMIENNE
         bool* GLOOP;  // Pointer to GreatLoop flag.
 
-    private:
-        // EVERY GAME VERSION:
+    private: // EVERY GAME VERSION:
         void GameVer01();
     };
     /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
