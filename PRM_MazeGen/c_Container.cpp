@@ -94,3 +94,4 @@ void Container::DeleteKontener (){
     }
     DeleteLastRecord(); // Skasowanie zerowego Rekordu - kontenera.
 }
+ConRecord* Container::KONTENER(){return this->kontener;}

@@ -19,7 +19,7 @@ int player::Move (Direction current){
     if (current == LEFT)    this->symbol = ((char)S_LEFT);      // [←]
     if (current == RIGHT)   this->symbol = ((char)S_RIGHT);     // [→]
 
-    this->roomPos->EditPX (xpos, ypos, symbol);     // Zmien wyglad Gracza.
+   // this->roomPos->EditPX (xpos, ypos, symbol);     // Zmien wyglad Gracza.
     return current;
 }
 
@@ -30,12 +30,12 @@ int player::Action (){
     if (this->frontThing=='|'){     // Drzwi z Lewej LUB Prawej Strony
         // ------------------------------------------------------------
         if (this->xpos == 2){       // [←] Drzwi z LEWEJ Strony
-            this->roomPos = roomPos->WEST();    // Przemieszczenie sie do Pokoju.
+         //   this->roomPos = roomPos->WEST();    // Przemieszczenie sie do Pokoju.
             this->xpos = 67;                    // Odbicie gracza na druga strone pokoju.
             return 0;                           // Nothing to do, zero
         }
         if (this->xpos == 67){      // [→] Drzwi z PRAWEJ Strony
-            roomPos = roomPos->EAST();  // Przemieszczenie sie do Pokoju.
+         //   roomPos = roomPos->EAST();  // Przemieszczenie sie do Pokoju.
             this->xpos = 2;             // Odbicie gracza na druga strone pokoju.
             return 0;                   // Nothing to do, zero
         }
@@ -44,12 +44,12 @@ int player::Action (){
     if (this->frontThing=='-'){     // Drzwi z Gory LUB Dolu
         // ------------------------------------------------------------
         if (this->ypos == 2){       // [↑] Drzwi u GORY Strony
-            roomPos = roomPos->NORTH(); // Przemieszczenie sie do Pokoju.
+//            roomPos = roomPos->NORTH(); // Przemieszczenie sie do Pokoju.
             this->ypos = 33;            // Odbicie gracza na druga strone pokoju.
             return 1;                   // Dodaj Pietro
         }
         if (this->ypos == 33){      // [↓] Drzwi z DOLU Strony
-            roomPos = roomPos->SOUTH(); // Przemieszczenie sie do Pokoju.
+//            roomPos = roomPos->SOUTH(); // Przemieszczenie sie do Pokoju.
             this->ypos = 2;             // Odbicie gracza na druga strone pokoju.
             return 1;
         }
@@ -64,13 +64,14 @@ void player::ShowGui(){
 
     */
 
-    cout << "\n  room nr: " << roomPos->NR()  << "    ("
-                            << roomPos->WID() << ","
-                            << roomPos->LVL() << ")\n  "
-                            << roomPos->b_north << "\n"
-                            << roomPos->b_west << "   "
-                            << roomPos->b_east << "\n  "
-                            << roomPos->b_south;
+//    cout << "\n  room nr: " << roomPos->NR()  << "    ("
+//                            << roomPos->WID() << ","
+//                            << roomPos->LVL() << ")\n  "
+//                            << roomPos->b_north << "\n"
+//                            << roomPos->b_west << "   "
+//                            << roomPos->b_east << "\n  "
+//                            << roomPos->b_south;
+//
 }
 
 

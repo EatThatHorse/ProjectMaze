@@ -69,7 +69,7 @@ void ko_room_design_EXEC (){
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
 /// KONSTRUKTOR
-DesRoom::DesRoom() {
+DesRoom::DesRoom():RoomContainer(tab) {
 
     this->b_north = 0;
     this->b_south = 0;
@@ -89,6 +89,8 @@ void DesRoom::RenderRoom(){
 	/** Wyswietla 36 wiersze o 70 kolumnach (ktore nie sa w kolejnych wierszach klonami)
         wyswietla wszystkie elementy tablicy 36x70
 	*/
+
+
 	for (int wiersz=0; wiersz<36; ++wiersz){
         cout << "\n" << margin29 ;
 		for (int kolumny=0; kolumny<70; ++kolumny){

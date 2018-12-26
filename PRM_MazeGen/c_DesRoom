@@ -1,13 +1,15 @@
 #ifndef C_ROOM_DESCRIPTION
 #define C_ROOM_DESCRIPTION
 
+#include "c_RoomContainer"
+
 #include <ctime>        // time(NULL)
 #include <windows.h>    // srand();
 #include <iostream>
 using std::cout;
 using std::string;
 
-class DesRoom {
+class DesRoom : public RoomContainer{
 public: ///KONSTRUKTOR
     DesRoom();
 

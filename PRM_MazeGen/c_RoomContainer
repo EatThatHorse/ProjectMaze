@@ -2,6 +2,7 @@
 #define C_ROOMCONTAINER
 
 #include <iostream>
+#include <ctime>
 #include "c_Container"
 #include "../u_ProjectUtilities"
 
@@ -9,6 +10,7 @@ using namespace std;
 
 class RoomContainer{
 public:
+    RoomContainer(char**);
 
     Container TrapContainer;
     Container WallContainer;
@@ -17,6 +19,8 @@ public:
     void ShowContainers();
 
     void RoomContainerDanger(int,int,int,int,int);
+    void TabMod(char**);
+
 
 };
 

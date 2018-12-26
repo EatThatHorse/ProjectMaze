@@ -11,7 +11,8 @@ maze::maze() {
         veryFirstRoom->Danger(1,1,80,80,10);
 
     this->lastRoomAdded = veryFirstRoom;
-    this->HERO.roomPos = this->veryFirstRoom;
+    this->walker = veryFirstRoom;
+   // this->HERO.roomPos = this->veryFirstRoom;
 
     this->AddFloor();
 }

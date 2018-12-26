@@ -14,7 +14,7 @@ int Unit::Move (Direction current){
 
     int SPEED_TMP;
     // ---------------------------------------------------------------------------------------------
-    TAB_TMP = this->roomPos->TAB();
+//    TAB_TMP = this->roomPos->TAB();
 
     if (current == UP) {
         X_DIFF =  0;
@@ -48,10 +48,10 @@ int Unit::Move (Direction current){
         // ---------------------------------------------------------------------------------------------
         if (frontThing == ' ') {                // Czy pole PRZED Obiektem jest puste?
             /** TAK, moze zrobic krok. **/
-            this->roomPos->EditPX (xpos, ypos, ' ');        // Tam gdzie stal zostaje puste pole.
+//            this->roomPos->EditPX (xpos, ypos, ' ');        // Tam gdzie stal zostaje puste pole.
             this->ypos = (this->ypos + Y_DIFF);             // Przemieszczamy sie: [Y-1]
             this->xpos = (this->xpos + X_DIFF);             // Przemieszczamy sie: [X-1]
-            this->roomPos->EditPX (xpos, ypos, symbol);     // Tam gdzie idzie pojawia sie obiekt.
+//            this->roomPos->EditPX (xpos, ypos, symbol);     // Tam gdzie idzie pojawia sie obiekt.
         }else{
             /** NIE, jest przeszkoda. Koniec ruchu. **/
             return current;

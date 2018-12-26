@@ -26,7 +26,7 @@ void Game::GameVer01() {
 //    HeadMaze.ShowMaze();
     HeadMaze.HERO.ShowGui();
     cout << "\n\n\n";
-    HeadMaze.veryFirstRoom->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
+    HeadMaze.walker->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
 
     *GLOOP = true;   // GREAT LOOP - Wykonywana tak długo jak działa program.
     while (GLOOP) {
@@ -43,7 +43,7 @@ void Game::GameVer01() {
 //            HeadMaze.ShowMaze();
             HeadMaze.HERO.ShowGui();
             cout << "\n\n\n";
-            HeadMaze.HERO.roomPos->RenderRoom();    // Main Render
+            HeadMaze.walker->RenderRoom();    // Main Render
         }
     }
     return;

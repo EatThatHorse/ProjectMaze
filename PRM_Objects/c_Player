@@ -25,7 +25,7 @@
 
     class player : public Unit {
     public: /// KONSTRUKTOR
-        player (NavRoom* roomPos=0) : Unit(O_xpos, O_ypos, O_symbol, U_speedVY, U_speedHX, roomPos) { }
+        player () : Unit(O_xpos, O_ypos, O_symbol, U_speedVY, U_speedHX) { }
 
     private: /// ZMIENNE
         // Ranked / Status

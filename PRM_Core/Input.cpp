@@ -23,8 +23,8 @@ int Input::Run01G(maze& HEAD){
     }
     if (znak==13 || znak==101 || znak==69) {      // ( ENTER || e || E )
         if (HERO.Action() == 1)
-            if (HEAD.HERO.roomPos == HEAD.lastRoomAdded)
-                HEAD.AddFloor();
+         /*   if (HEAD.HERO.roomPos == HEAD.lastRoomAdded)
+                HEAD.AddFloor();*/
         return znak;
     }
     if (znak==75 || znak==97 || znak==65){        // ( ← (left) || a || A )

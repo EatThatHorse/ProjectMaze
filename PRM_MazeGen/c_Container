@@ -26,6 +26,8 @@
         void DeleteLastRecord ();
 
         void DeleteKontener ();
+
+        ConRecord* KONTENER();
     };
 
 #endif // C_CONTAINER

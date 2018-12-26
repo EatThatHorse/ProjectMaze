@@ -1,8 +1,8 @@
 #include "c_RoomContainer"
-#include <iostream>
-using namespace std;
 
-
+RoomContainer::RoomContainer(char** tab){
+    TabMod(tab);
+}
 
 void RoomContainer::ShowContainers(){
     cout<<"Traps: \n";
@@ -20,7 +20,7 @@ void RoomContainer::RoomContainerDanger(int posX1,int posY1,int posX2,int posY2,
     /// Zapewnienie Warunkow.
 
     // Metoda Sprawdzajaca czy obiek znajduje sie w Przedziale
-    // W Przypadku gdyby nie Modyfikuje wprowadzone zmienne - za pomoc¹ wskaznikow
+    // W Przypadku gdyby nie Modyfikuje wprowadzone zmienne - za pomocÄ… wskaznikow
     // Nie testowana duzo. W przypadku bledow, sprawdzic w pierwszej kolejnosci.
     RepairArg(&posX1, &posY1, &posX2, &posY2);
 
@@ -43,4 +43,12 @@ void RoomContainer::RoomContainerDanger(int posX1,int posY1,int posX2,int posY2,
     // ------------------------------------------------------------
 
 
+}
+void RoomContainer::TabMod(char** tab){
+    ConRecord* tmp;
+    tmp = TrapContainer.KONTENER();
+
+    while(tmp->nextRecord != NULL ){
+        tab[tmp->keptValue->xpos][tmp->keptValue->ypos] = tmp->keptValue->symbol;
+    }
 }
