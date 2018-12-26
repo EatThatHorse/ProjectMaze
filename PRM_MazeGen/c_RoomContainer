@@ -1,0 +1,23 @@
+#ifndef C_ROOMCONTAINER
+#define C_ROOMCONTAINER
+
+#include <iostream>
+#include "c_Container"
+#include "../u_ProjectUtilities"
+
+using namespace std;
+
+class RoomContainer{
+public:
+
+    Container TrapContainer;
+    Container WallContainer;
+    Container ItemContainer;
+
+    void ShowContainers();
+
+    void RoomContainerDanger(int,int,int,int,int);
+
+};
+
+#endif // C_ROOMCONTAINER

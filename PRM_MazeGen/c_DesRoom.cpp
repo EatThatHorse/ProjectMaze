@@ -255,7 +255,7 @@ void DesRoom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
     // Nie testowana duzo. W przypadku bledow, sprawdzic w pierwszej kolejnosci.
     CheckEntry(&posX1, &posY1, &posX2, &posY2);
 
-
+//#define TEST_IN_ERROR_CASE
 #ifdef TEST_IN_ERROR_CASE
     // ------------------------------------------------------------
     //  An1  <==>  Anchor_1  <==>  ( posX1, posY1 )
