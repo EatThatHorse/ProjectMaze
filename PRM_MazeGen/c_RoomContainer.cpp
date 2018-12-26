@@ -1,7 +1,9 @@
 #include "c_RoomContainer"
 
-RoomContainer::RoomContainer(char** tab){
-    TabMod(tab);
+RoomContainer::RoomContainer(){
+
+    RoomContainerDanger(10,10,20,20,20);
+    TabMod(this->tab);
 }
 
 void RoomContainer::ShowContainers(){

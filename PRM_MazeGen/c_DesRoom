@@ -1,7 +1,6 @@
 #ifndef C_ROOM_DESCRIPTION
 #define C_ROOM_DESCRIPTION
 
-#include "c_RoomContainer"
 
 #include <ctime>        // time(NULL)
 #include <windows.h>    // srand();
@@ -9,11 +8,11 @@
 using std::cout;
 using std::string;
 
-class DesRoom : public RoomContainer{
+class DesRoom {
 public: ///KONSTRUKTOR
     DesRoom();
 
-private: ///ZMIENNE
+protected: ///ZMIENNE
     #define ROWS 36
     #define COLUMNS 70
     char** tab;

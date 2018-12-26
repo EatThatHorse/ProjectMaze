@@ -4,13 +4,14 @@
 #include <iostream>
 #include <ctime>
 #include "c_Container"
+#include "c_DesRoom"
 #include "../u_ProjectUtilities"
 
 using namespace std;
 
-class RoomContainer{
+class RoomContainer : public DesRoom {
 public:
-    RoomContainer(char**);
+    RoomContainer();
 
     Container TrapContainer;
     Container WallContainer;
