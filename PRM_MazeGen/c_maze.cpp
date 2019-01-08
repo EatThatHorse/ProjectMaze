@@ -12,7 +12,7 @@ maze::maze() {
 
     this->lastRoomAdded = veryFirstRoom;
     this->walker = veryFirstRoom;
-   // this->HERO.roomPos = this->veryFirstRoom;
+    this->HERO.roomPos = this->veryFirstRoom;
 
     this->AddFloor();
 }
