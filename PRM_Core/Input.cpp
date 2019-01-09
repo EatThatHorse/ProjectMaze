@@ -4,7 +4,7 @@
 
 //_________________________________________________________________________________________________________________
 //───────────────────────────────────────────────────────────────────────────────────────────────────────────────── G-01
-int Input::Run01G(maze& HEAD){
+int Input::Run01G(bool* gloop, maze& HEAD){
     /** Zakaz Uzywania Cout, Nie zadziala
         Wynika to z sposobu dzialania getch() i system("cls")
     */
@@ -17,6 +17,8 @@ int Input::Run01G(maze& HEAD){
 
     // Obsluga Input Eventow: -------------------------------------
     if (znak == 27) {       // ESCAPE
+        *gloop = false;
+
         return znak;
     }
     if (znak == 32) {       // SPACJA

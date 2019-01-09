@@ -37,13 +37,13 @@ void Game::GameVer01() {
 
 
     *GLOOP = true;   // GREAT LOOP - Wykonywana tak długo jak działa program.
-    while (GLOOP) {
+    while (*GLOOP) {
         //  Jedno Wykonanie Petli:
         //   - Jeden Input, Jeden Klawisz
         //   - Jedna Klatka, Jeden Frame
 
         int InputEvent;
-        InputEvent = Input::Run01G(HeadMaze);
+        InputEvent = Input::Run01G(GLOOP, HeadMaze);
 
         if (InputEvent!=224) {      // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
             system("cls");                          // Czyszczenie, Zerowanie Konsoli.
