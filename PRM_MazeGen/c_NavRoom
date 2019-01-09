@@ -1,12 +1,12 @@
 #ifndef C_ROOM_NAVIGATION
 #define C_ROOM_NAVIGATION
 
-#include "c_DesRoom"
+#include "c_RoomContainer"
 
 #include <iostream>
 using std::cout;
 
-class NavRoom : public DesRoom {
+class NavRoom : public RoomContainer {
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     KONSTRUKTORY
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

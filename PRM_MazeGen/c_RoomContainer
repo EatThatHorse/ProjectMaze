@@ -11,7 +11,7 @@ using namespace std;
 
 class RoomContainer : public DesRoom {
 public:
-    RoomContainer();
+    RoomContainer(int,int,int);
 
     Container TrapContainer;
     Container WallContainer;
@@ -22,6 +22,12 @@ public:
     void RoomContainerDanger(int,int,int,int,int);
     void TabMod(char**);
 
+    void AllocateContainers();
+
+private:
+    int lvl;    /// poziom w pionie
+    int wid;    /// szerokosc
+    int nr;     /// nrumer pokoju (room 0,0 - nr 1)
 
 };
 

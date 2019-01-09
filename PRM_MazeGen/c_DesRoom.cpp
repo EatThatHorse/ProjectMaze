@@ -70,7 +70,6 @@ void ko_room_design_EXEC (){
 //  ____________________________________________________________________________________________________________
 /// KONSTRUKTOR
 DesRoom::DesRoom(){
-
     this->b_north = 0;
     this->b_south = 0;
     this->b_west =  0;
@@ -416,7 +415,7 @@ void DesRoom::EditPX (int& posX, int& posY, char symbol){
     this->tab[posY][posX] = symbol;
 }
 
-void DesRoom::EditPX_F (int& posX, int& posY, char symbol){
+void DesRoom::EditPX_F (int posX, int posY, char symbol){
     /** Pozwala na modyfikacje jednego symbolu w tablicy.
         Wykorzystywana przez klase Unit do przemieszczania sie po tablicy.
 
