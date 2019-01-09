@@ -20,8 +20,10 @@ void GreatLoop::Execute(){
     MAIN_TEST_DEBUG();
 
     // METODY WYWOLANIA PROGRAMU, MENU LUB GRY.
-    Main_GAME.Execute();
     Main_MENU.Execute();
+    if (this->GLOOP)
+        Main_GAME.Execute();
+
 
     return;
 }

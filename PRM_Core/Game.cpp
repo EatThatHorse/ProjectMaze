@@ -28,6 +28,7 @@ void Game::GameVer01() {
         int y  = HeadMaze.HERO.ypos;
         char s = HeadMaze.HERO.symbol;
 
+        system("cls");
         cout << "\n\n\n";
         HeadMaze.HERO.ShowGui();
         HeadMaze.HERO.roomPos->EditPX (x,y,s);  // PreRender Gracza

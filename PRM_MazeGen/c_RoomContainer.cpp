@@ -13,7 +13,7 @@ RoomContainer::RoomContainer(int Tlvl, int Twid, int Tnr){
 //    this->RoomContainerDanger(53,19,67,33,10);
 
 
-    this->RoomContainerDanger(2,2,67,33,1);
+    this->RoomContainerDanger(2,2,67,33,3);
     this->AddWalls();
 }
 
@@ -122,6 +122,7 @@ void RoomContainer::RoomContainerDanger(int posX1,int posY1,int posX2,int posY2,
     // ------------------------------------------------------------
     int los;
     float variety = 3.14159265;
+    //float variety = 100;
     srand(time(NULL));
 
 
@@ -140,6 +141,8 @@ void RoomContainer::RoomContainerDanger(int posX1,int posY1,int posX2,int posY2,
     }
 
     chan = chan*variety*0.01;
+
+
 
     for (int i=posY1; i<=posY2; ++i){
         for (int j=posX1; j<=posX2; ++j){

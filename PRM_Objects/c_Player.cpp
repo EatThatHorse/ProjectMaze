@@ -117,14 +117,14 @@ void player::ShowGui(){
 
     */
 
-//    cout << "\n  room nr: " << roomPos->NR()  << "    ("
-//                            << roomPos->WID() << ","
-//                            << roomPos->LVL() << ")\n  "
-//                            << roomPos->b_north << "\n"
-//                            << roomPos->b_west << "   "
-//                            << roomPos->b_east << "\n  "
-//                            << roomPos->b_south;
-//
+    cout << "\n  room nr: " << roomPos->NR()  << "    ("
+                            << roomPos->WID() << ","
+                            << roomPos->LVL() << ")\n  "
+                            << roomPos->b_north << "\n"
+                            << roomPos->b_west << "   "
+                            << roomPos->b_east << "\n  "
+                            << roomPos->b_south;
+
 }
 
 
