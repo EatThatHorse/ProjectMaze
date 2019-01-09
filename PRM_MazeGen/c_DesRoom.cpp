@@ -75,9 +75,9 @@ DesRoom::DesRoom(){
     this->b_west =  0;
     this->b_east =  0;
 
-    this->tab = new char*[ROWS];
+    this->tab = new unsigned char*[ROWS];
     for(int row=0; row<ROWS; ++row)  // Petla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
-        this->tab[row] = new char[COLUMNS];
+        this->tab[row] = new unsigned char[COLUMNS];
 
 }
 

@@ -9,7 +9,7 @@ int player::Move (Direction current){
     */
 
     // Variables Choosen to Execute:
-    char** TAB_TMP = this->roomPos->TAB();;     // Only for Reading Purposes.
+    unsigned char** TAB_TMP = this->roomPos->TAB();     // Only for Reading Purposes.
     int X_DIFF;         // Difference between Object X Position
     int Y_DIFF;         // Difference between Object Y Position
     int SPEED_TMP;
@@ -65,7 +65,7 @@ int player::Action (){
     /** Metoda wywolywana w Inpucie, dla klawisza [ENTER] [E] [e] */
 
 
-    char** TAB_TMP = this->roomPos->TAB();;     // Only for Reading Purposes.
+    unsigned char** TAB_TMP = this->roomPos->TAB();;     // Only for Reading Purposes.
 
     if (this->symbol == (char)S_UP)     this->frontThing = TAB_TMP[ypos-1][xpos+0];
     if (this->symbol == (char)S_DOWN)   this->frontThing = TAB_TMP[ypos+1][xpos+0];

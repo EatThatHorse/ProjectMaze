@@ -20,9 +20,9 @@ public:
     void ShowContainers();
 
     void RoomContainerDanger(int,int,int,int,int);
-    void TabMod(char**);
-
     void AllocateContainers();
+    void AddWalls();
+    void DrawColumnM(int,int);
 
 private:
     int lvl;    /// poziom w pionie

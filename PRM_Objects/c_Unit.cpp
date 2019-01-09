@@ -7,6 +7,7 @@ int Unit::Move (Direction current){
         Modyfikuje odziedziczone po klasie [Obstacle] zmienne polozenia.
     */
 
+    return 0;
 }
 
 int Unit::Action (){

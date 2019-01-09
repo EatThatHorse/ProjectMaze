@@ -5,7 +5,16 @@ RoomContainer::RoomContainer(int Tlvl, int Twid, int Tnr){
     this->wid = Twid;
     this->nr = Tnr;
 
-    this->RoomContainerDanger(10,10,20,20,5);
+
+//    this->RoomContainerDanger(2,2,16,16,10);
+//    this->RoomContainerDanger(2,19,16,33,10);
+//
+//    this->RoomContainerDanger(53,2,67,16,10);
+//    this->RoomContainerDanger(53,19,67,33,10);
+
+
+    this->RoomContainerDanger(2,2,67,33,1);
+    this->AddWalls();
 }
 
 void RoomContainer::ShowContainers(){
@@ -32,12 +41,78 @@ void RoomContainer::AllocateContainers(){
 
 }
 
+
+void RoomContainer::DrawColumnM(int x, int y){
+    WallContainer.AddRecord(x+1,y,(char)219);
+    WallContainer.AddRecord(x+2,y,(char)219);
+    WallContainer.AddRecord(x+3,y,(char)219);
+    WallContainer.AddRecord(x+4,y,(char)219);
+
+    WallContainer.AddRecord(x+0,y+1,(char)219);
+
+    WallContainer.AddRecord(x+1,y+1,(char)219);
+//    WallContainer.AddRecord(x+2,y+1,(char)219);
+//    WallContainer.AddRecord(x+3,y+1,(char)219);
+    WallContainer.AddRecord(x+4,y+1,(char)219);
+
+    WallContainer.AddRecord(x+5,y+1,(char)219);
+
+    WallContainer.AddRecord(x+1,y+2,(char)219);
+    WallContainer.AddRecord(x+2,y+2,(char)219);
+    WallContainer.AddRecord(x+3,y+2,(char)219);
+    WallContainer.AddRecord(x+4,y+2,(char)219);
+}
+
+void RoomContainer::AddWalls(){
+
+    int tmin=0;
+    int tmax=3;
+    int los;
+
+    srand(time(NULL));
+    los = (rand()% tmax-tmin) + tmin;
+
+    /// M medium -------------------------------------------------
+    if (los==0){ // 2 kolumny M_medium V_1
+        DrawColumnM(47,7);
+        DrawColumnM(17,26);
+        return;
+    }
+    if (los==1){ // 2 kolumny M_medium V_2
+        DrawColumnM(17,7);
+        DrawColumnM(17,7);
+        DrawColumnM(47,26);
+        return;
+    }
+    if (los==2){ // 4 kolumny M_medium
+        DrawColumnM(17,7);
+        DrawColumnM(47,7);
+
+        DrawColumnM(17,26);
+        DrawColumnM(47,26);
+        return;
+    }
+    if (los==3){ // 6 kolumn M_medium V
+        DrawColumnM(17,7);
+        DrawColumnM(32,7);
+        DrawColumnM(47,7);
+
+        DrawColumnM(17,26);
+        DrawColumnM(32,26);
+        DrawColumnM(47,26);
+        return;
+    }
+    /// ----------------------------------------------------------
+
+}
+
+
+
+
+
 void RoomContainer::RoomContainerDanger(int posX1,int posY1,int posX2,int posY2,int chan){
-
-
     /// Zapewnienie Warunkow.
-
-    // Metoda Sprawdzajaca czy obiek znajduje sie w Przedziale
+    // Metoda Sprawdzajaca czy obiekt znajduje sie w Przedziale
     // W Przypadku gdyby nie Modyfikuje wprowadzone zmienne - za pomocą wskaznikow
     // Nie testowana duzo. W przypadku bledow, sprawdzic w pierwszej kolejnosci.
     RepairArg(&posX1, &posY1, &posX2, &posY2);
@@ -69,20 +144,9 @@ void RoomContainer::RoomContainerDanger(int posX1,int posY1,int posX2,int posY2,
     for (int i=posY1; i<=posY2; ++i){
         for (int j=posX1; j<=posX2; ++j){
             los = (rand() % (int)variety) + 1;
-            if (los < chan){
-                WallContainer.AddRecord(j,i,'@');
-            }
+            if (los < chan)
+                WallContainer.AddRecord(j,i,(char)254); // 177  176
         }
     }
     // ------------------------------------------------------------
-
-
-}
-void RoomContainer::TabMod(char** tab){
-    ConRecord* tmp;
-    tmp = TrapContainer.KONTENER();
-
-    while(tmp->nextRecord != NULL ){
-        tab[tmp->keptValue->xpos][tmp->keptValue->ypos] = tmp->keptValue->symbol;
-    }
 }
