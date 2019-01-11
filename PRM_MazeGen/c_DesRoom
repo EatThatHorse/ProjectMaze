@@ -15,7 +15,7 @@ public: ///KONSTRUKTOR
 protected: ///ZMIENNE
     #define ROWS 36
     #define COLUMNS 70
-    char** tab;
+    unsigned char** tab;
 
     char ppo = 196;     // ppo  - pojedynzca pozioma
     char ppi = 179;     // ppi - pojedyncza pionowa
@@ -32,14 +32,14 @@ public:
     bool b_east;
 
 public: ///METODY
-    char** TAB() { return this->tab; };
+    unsigned char** TAB() { return this->tab; };
 
     void RenderRoom();
     void ClearRoom ();
     void Danger(int,int,int,int,int);
 
     void EditPX (int&,int&,char);
-    void EditPX_F (int&,int&,char);
+    void EditPX_F (int,int,char);
 
 private: ///METODY PRYWATNE
     void ClearLine (int);

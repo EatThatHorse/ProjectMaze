@@ -70,15 +70,14 @@ void ko_room_design_EXEC (){
 //  ____________________________________________________________________________________________________________
 /// KONSTRUKTOR
 DesRoom::DesRoom(){
-
     this->b_north = 0;
     this->b_south = 0;
     this->b_west =  0;
     this->b_east =  0;
 
-    this->tab = new char*[ROWS];
+    this->tab = new unsigned char*[ROWS];
     for(int row=0; row<ROWS; ++row)  // Petla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
-        this->tab[row] = new char[COLUMNS];
+        this->tab[row] = new unsigned char[COLUMNS];
 
 }
 
@@ -416,7 +415,7 @@ void DesRoom::EditPX (int& posX, int& posY, char symbol){
     this->tab[posY][posX] = symbol;
 }
 
-void DesRoom::EditPX_F (int& posX, int& posY, char symbol){
+void DesRoom::EditPX_F (int posX, int posY, char symbol){
     /** Pozwala na modyfikacje jednego symbolu w tablicy.
         Wykorzystywana przez klase Unit do przemieszczania sie po tablicy.
 

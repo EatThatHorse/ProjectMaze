@@ -12,7 +12,7 @@
         /** Zakaz Uzywania w Metodach Cout, Nie zadziala.
             Wynika to z sposobu dzialania getch() i system("cls")   */
 
-        int Run01G(maze&);
+        int Run01G(bool*, maze&);
         int Run01M(bool&, int&);
     };
 

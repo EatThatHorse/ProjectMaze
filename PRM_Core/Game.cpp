@@ -23,27 +23,39 @@ void Game::GameVer01() {
 
     maze HeadMaze;
 
-//    HeadMaze.ShowMaze();
-    HeadMaze.HERO.ShowGui();
-    cout << "\n\n\n";
-    HeadMaze.walker->RenderRoom(); // PreRender. Wykonanie Pierwszej Klatki.
+    {
+        int x  = HeadMaze.HERO.xpos;
+        int y  = HeadMaze.HERO.ypos;
+        char s = HeadMaze.HERO.symbol;
+
+        system("cls");
+        cout << "\n\n\n";
+        HeadMaze.HERO.ShowGui();
+        HeadMaze.HERO.roomPos->EditPX (x,y,s);  // PreRender Gracza
+        HeadMaze.HERO.roomPos->RenderRoom();    // PreRender. Wykonanie Pierwszej Klatki.
+    }
+
 
     *GLOOP = true;   // GREAT LOOP - Wykonywana tak długo jak działa program.
-    while (GLOOP) {
+    while (*GLOOP) {
         //  Jedno Wykonanie Petli:
         //   - Jeden Input, Jeden Klawisz
         //   - Jedna Klatka, Jeden Frame
 
         int InputEvent;
-        InputEvent = Input::Run01G(HeadMaze);
+        InputEvent = Input::Run01G(GLOOP, HeadMaze);
 
         if (InputEvent!=224) {      // unikamy zdarzenia 224. Zawsze. Wynika to z dzialania [getch] <conio.h>
             system("cls");                          // Czyszczenie, Zerowanie Konsoli.
 
-//            HeadMaze.ShowMaze();
-            HeadMaze.HERO.ShowGui();
+            int x  = HeadMaze.HERO.xpos;
+            int y  = HeadMaze.HERO.ypos;
+            char s = HeadMaze.HERO.symbol;
+
             cout << "\n\n\n";
-            HeadMaze.walker->RenderRoom();    // Main Render
+            HeadMaze.HERO.ShowGui();
+            HeadMaze.HERO.roomPos->EditPX (x,y,s);  // PreRender Gracza
+            HeadMaze.HERO.roomPos->RenderRoom();    // PreRender. Wykonanie Pierwszej Klatki.
         }
     }
     return;

@@ -13,7 +13,7 @@
         Container();
         ~Container();
 
-    private: /// ZMIENNE
+    public: /// ZMIENNE
         int konSIZE;
         ConRecord* kontener;    // Adres pierwszego elementu kontenera. => Adres Listy
         ConRecord* lastRecord;  // Adres ostatniego elementu kontenera. => Dodawanie nowych Recordow.

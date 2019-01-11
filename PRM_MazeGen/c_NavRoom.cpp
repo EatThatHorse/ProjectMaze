@@ -10,7 +10,8 @@ int NavRoom::iloscPokoi = 0; //statyczna zmienna globalna
 
 // ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 //     KONSTRUKTORY / DESTRUKTORY       KONSTRUKTORY / DESTRUKTORY       KONSTRUKTORY / DESTRUKTORY       KONSTRUKTORY / DESTRUKTORY
-NavRoom::NavRoom(NavRoom* t_south, NavRoom* t_east, NavRoom* t_west, int t_lvl, int t_wid){
+NavRoom::NavRoom (NavRoom* t_south, NavRoom* t_east, NavRoom* t_west, int t_lvl, int t_wid)
+        :RoomContainer(t_lvl, t_wid, (iloscPokoi+1))   {
     /** Tworzenie nowego pokoju.
         Ustawianie wskaznikow.
         Ustawiene koordynatow pokoju.
@@ -33,6 +34,7 @@ NavRoom::NavRoom(NavRoom* t_south, NavRoom* t_east, NavRoom* t_west, int t_lvl, 
     // Ustawienie wskaznika poprzedniego pokoju:
     if (t_south != NULL)        // Sprawdzamy czy jest to pierwszy dodany pokoj
         t_south->north = this;  // Nie jest, wiec ustawiamy wskaznik poprzedniego pokoju na nas.
+
 }
 NavRoom::~NavRoom (){
     /** Sprzatanie po skasowanym pokoju.

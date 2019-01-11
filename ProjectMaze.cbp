@@ -87,8 +87,6 @@
 		<Unit filename="PRM_Objects/c_Player.cpp" />
 		<Unit filename="PRM_Objects/c_Unit" />
 		<Unit filename="PRM_Objects/c_Unit.cpp" />
-		<Unit filename="c_menu" />
-		<Unit filename="c_menu.cpp" />
 		<Unit filename="u_ProjectUtilities" />
 		<Unit filename="u_ProjectUtilities.cpp" />
 		<Extensions>

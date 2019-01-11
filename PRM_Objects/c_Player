@@ -4,6 +4,7 @@
 
     #include "c_Unit"               // Plik z [KLASA BAZOWA]
     #include "../u_ProjectUtilities"   // [enum Directory]
+    #include "../PRM_MazeGen/c_NavRoom"
 
     /// INIT SYMBOLS CONSTANS
     // Animation Symbols / Char's:
@@ -31,6 +32,8 @@
         // Ranked / Status
         int score;              // def.[0]
         int hp;                 // Need to test for Optimalization.
+    public:
+        NavRoom* roomPos;
 
     public: /// METODY
         int Move (Direction);

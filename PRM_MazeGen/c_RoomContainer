@@ -11,7 +11,7 @@ using namespace std;RenderRoom
 
 class RoomContainer : public DesRoom {
 public:
-    RoomContainer();
+    RoomContainer(int,int,int);
 
     Container TrapContainer;
     Container WallContainer;
@@ -20,8 +20,14 @@ public:
     void ShowContainers();
 
     void RoomContainerDanger(int,int,int,int,int);
-    void TabMod(char**);
+    void AllocateContainers();
+    void AddWalls();
+    void DrawColumnM(int,int);
 
+private:
+    int lvl;    /// poziom w pionie
+    int wid;    /// szerokosc
+    int nr;     /// nrumer pokoju (room 0,0 - nr 1)
 
 };
 
