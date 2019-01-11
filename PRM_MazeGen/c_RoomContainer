@@ -7,7 +7,7 @@
 #include "c_DesRoom"
 #include "../u_ProjectUtilities"
 
-using namespace std;
+using namespace std;RenderRoom
 
 class RoomContainer : public DesRoom {
 public:
