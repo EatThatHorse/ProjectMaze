@@ -3,7 +3,7 @@
 /// KONSTRUKTORY / DESTRUKTORY
 ConRecord::ConRecord(int Tindex, ConRecord* prev, int xpos, int ypos, char symbol){
          // : keptValue(xpos, ypos, symbol) { // LISTA INICJALIZACYJNA
-    this->keptValue = new Obstacle(xpos, ypos, symbol);
+    this->keptValue = new Obstacle(xpos, ypos, PLAYER, symbol);
 
     this->previousRecord = prev;
     this->nextRecord = 0;

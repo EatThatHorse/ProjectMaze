@@ -3,10 +3,16 @@
 
 
 /// KONSTRUKTORY / DESTRUKTORY
-Obstacle::Obstacle(int X, int Y, char S){
+Obstacle::Obstacle(int X, int Y, PRM_Object E, char S){
     this->xpos = X;
     this->ypos = Y;
-    this->symbol = S;
+    this->etykieta = E;
+
+    if (S==0){
+    }else{
+        this->symbol = S;
+    }
+
 }
 
 Obstacle::~Obstacle() {

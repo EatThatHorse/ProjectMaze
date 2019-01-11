@@ -133,6 +133,19 @@ void player::ShowGui(){
 
 
 
+int player::getdmg (){
+
+
+    unsigned char** tab = this->roomPos->TAB();
+
+
+    //tab [wiersz][kolumny]
+
+
+
+return 0;
+}
+
 
 
 
