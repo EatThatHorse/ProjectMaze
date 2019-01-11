@@ -32,8 +32,9 @@ public:
 public:
     NavRoom* lastRoomAdded;     // Umozliwi dodawanie pokoi. It starts with: zeroRoom.
     NavRoom* veryFirstRoom;     // Zawsze wskazuje na zeroRoom.
-
+    NavRoom* walker;
     player HERO;
+
 
 /// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ///     METODY - PRYWATNE

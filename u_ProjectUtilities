@@ -15,6 +15,8 @@ enum PRM_Object { WALL=0, CWALL=1, CHEST=2, TRAP=3 };
 
 void DEBUG_KEYBOARD ();
 
+void RepairArg(int*,int*,int* =0,int* =0);
+
 
 
 #endif // u_PROJ_UTILITIES

@@ -12,8 +12,8 @@
         niezbedne do swobodnego skakania po pokoju.
     */
     public:
-    Unit (int O_xpos, int O_ypos, char O_symbol, int speedVY, int speedHX, NavRoom* roomPos)
-          : Obstacle(O_xpos, O_ypos, O_symbol, roomPos) {
+    Unit (int O_xpos, int O_ypos, char O_symbol, int speedVY, int speedHX)
+          : Obstacle(O_xpos, O_ypos, O_symbol) {
 
         this->speedVY = speedVY;
         this->speedHX = speedHX;

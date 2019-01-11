@@ -69,16 +69,15 @@ void ko_room_design_EXEC (){
 //  ____________________________________________________________________________________________________________
 //  ____________________________________________________________________________________________________________
 /// KONSTRUKTOR
-DesRoom::DesRoom() {
-
+DesRoom::DesRoom(){
     this->b_north = 0;
     this->b_south = 0;
     this->b_west =  0;
     this->b_east =  0;
 
-    this->tab = new char*[ROWS];
+    this->tab = new unsigned char*[ROWS];
     for(int row=0; row<ROWS; ++row)  // Petla przeskakuje przez wszystkie 35 wiersze. Indeksy Od 0 do 34
-        this->tab[row] = new char[COLUMNS];
+        this->tab[row] = new unsigned char[COLUMNS];
 
 }
 
@@ -89,6 +88,8 @@ void DesRoom::RenderRoom(){
 	/** Wyswietla 36 wiersze o 70 kolumnach (ktore nie sa w kolejnych wierszach klonami)
         wyswietla wszystkie elementy tablicy 36x70
 	*/
+
+
 	for (int wiersz=0; wiersz<36; ++wiersz){
         cout << "\n" << margin29 ;
 		for (int kolumny=0; kolumny<70; ++kolumny){
@@ -255,7 +256,7 @@ void DesRoom::Danger(int posX1,int posY1,int posX2,int posY2,int chan){
     // Nie testowana duzo. W przypadku bledow, sprawdzic w pierwszej kolejnosci.
     CheckEntry(&posX1, &posY1, &posX2, &posY2);
 
-
+//#define TEST_IN_ERROR_CASE
 #ifdef TEST_IN_ERROR_CASE
     // ------------------------------------------------------------
     //  An1  <==>  Anchor_1  <==>  ( posX1, posY1 )
@@ -414,7 +415,7 @@ void DesRoom::EditPX (int& posX, int& posY, char symbol){
     this->tab[posY][posX] = symbol;
 }
 
-void DesRoom::EditPX_F (int& posX, int& posY, char symbol){
+void DesRoom::EditPX_F (int posX, int posY, char symbol){
     /** Pozwala na modyfikacje jednego symbolu w tablicy.
         Wykorzystywana przez klase Unit do przemieszczania sie po tablicy.
 

@@ -4,11 +4,12 @@
 
 //_________________________________________________________________________________________________________________
 //───────────────────────────────────────────────────────────────────────────────────────────────────────────────── G-01
-int Input::Run01G(maze& HEAD){
+int Input::Run01G(bool* gloop, maze& HEAD){
     /** Zakaz Uzywania Cout, Nie zadziala
         Wynika to z sposobu dzialania getch() i system("cls")
     */
     player& HERO = HEAD.HERO;
+
 
     unsigned char znak;
     znak = getch();   // Oczekiwanie na Input.
@@ -16,6 +17,8 @@ int Input::Run01G(maze& HEAD){
 
     // Obsluga Input Eventow: -------------------------------------
     if (znak == 27) {       // ESCAPE
+        *gloop = false;
+
         return znak;
     }
     if (znak == 32) {       // SPACJA
@@ -50,10 +53,10 @@ int Input::Run01G(maze& HEAD){
 //───────────────────────────────────────────────────────────────────────────────────────────────────────────────── M-01
 
 
-//int Input::Run01M(bool& gloop, int& option){
+int Input::Run01M(bool& gloop, int& option){
     /** Zakaz Uzywania Cout, Nie zadziala
         Wynika to z sposobu dzialania getch() i system("cls")   */
-/*
+
     unsigned char znak;
     znak = getch();   // Oczekiwanie na Input.
     if (znak == 224) return 224;    // PUNKT KONTROLNY - Wynika z dzialania getch().
@@ -83,4 +86,4 @@ int Input::Run01G(maze& HEAD){
 
 
     return 224;     // 224 - z decyzji [Kacu]: kod bledu nakazujacy robic nic.
-}*/
+}

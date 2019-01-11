@@ -6,6 +6,12 @@
     #include "c_Render"
 
     #include <windows.h>    // system("");
+    #include <conio.h>      // getch
+    #include <stdio.h>      // getchar
+    #include <iostream>
+    using std::cout;
+    using std::string;
+
 
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
     class Menu : public Input, public Render  {
@@ -15,11 +21,19 @@
     public: // PUBLICZNE METODY
         void Execute();
 
+        void ShowMENU(int&);
+        void AsciiButton (int, string, string, int);
+        void Write(int&);
+        int Input(int&);
+
     private: // ZMIENNE
         bool* GLOOP;  // Pointer to GreatLoop flag.
+        bool enterGame;
 
     private: // EVERY MENU VERSION:
         void MenuVer01();
     };
     /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
 #endif // C_MENU__PRM
+
+

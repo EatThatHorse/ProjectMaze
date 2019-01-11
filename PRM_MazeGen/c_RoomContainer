@@ -1,0 +1,34 @@
+#ifndef C_ROOMCONTAINER
+#define C_ROOMCONTAINER
+
+#include <iostream>
+#include <ctime>
+#include "c_Container"
+#include "c_DesRoom"
+#include "../u_ProjectUtilities"
+
+//using namespace std;RenderRoom
+
+class RoomContainer : public DesRoom {
+public:
+    RoomContainer(int,int,int);
+
+    Container TrapContainer;
+    Container WallContainer;
+    Container ItemContainer;
+
+    void ShowContainers();
+
+    void RoomContainerDanger(int,int,int,int,int);
+    void AllocateContainers();
+    void AddWalls();
+    void DrawColumnM(int,int);
+
+private:
+    int lvl;    /// poziom w pionie
+    int wid;    /// szerokosc
+    int nr;     /// nrumer pokoju (room 0,0 - nr 1)
+
+};
+
+#endif // C_ROOMCONTAINER

@@ -18,8 +18,8 @@
         ConRecord* previousRecord;
         ConRecord* nextRecord;
 
-    private: /// ZMIENNE - WARTOSCI
-        Obstacle keptValue;
+    public: /// ZMIENNE - WARTOSCI
+        Obstacle* keptValue;
 
     public: /// METODY
         void ShowRecord ();

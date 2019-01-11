@@ -77,6 +77,8 @@
 		<Unit filename="PRM_MazeGen/c_DesRoom.cpp" />
 		<Unit filename="PRM_MazeGen/c_NavRoom" />
 		<Unit filename="PRM_MazeGen/c_NavRoom.cpp" />
+		<Unit filename="PRM_MazeGen/c_RoomContainer" />
+		<Unit filename="PRM_MazeGen/c_RoomContainer.cpp" />
 		<Unit filename="PRM_MazeGen/c_maze" />
 		<Unit filename="PRM_MazeGen/c_maze.cpp" />
 		<Unit filename="PRM_Objects/c_Obstacle" />
@@ -85,8 +87,6 @@
 		<Unit filename="PRM_Objects/c_Player.cpp" />
 		<Unit filename="PRM_Objects/c_Unit" />
 		<Unit filename="PRM_Objects/c_Unit.cpp" />
-		<Unit filename="c_menu" />
-		<Unit filename="c_menu.cpp" />
 		<Unit filename="u_ProjectUtilities" />
 		<Unit filename="u_ProjectUtilities.cpp" />
 		<Extensions>

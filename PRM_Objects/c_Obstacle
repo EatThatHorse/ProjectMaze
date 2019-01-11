@@ -2,14 +2,12 @@
 #ifndef C_OBSTACLE
 #define C_OBSTACLE
 
-    #include "../PRM_MazeGen/c_NavRoom"
-
     class Obstacle {
     /** Znajduja sie w niej informacje niezbedne dla
         wszystkiego co znajduje się w pokoju.
     */
     public:
-        Obstacle(int, int, char, NavRoom* = 0);
+        Obstacle(int, int, char);
         ~Obstacle();
 
     public: // PUBLICZNE, TYLKO DO ODCZYTU:
@@ -18,7 +16,6 @@
         char SYMBOL () {return this->symbol;}
 
     public: /// ZMIENNE
-        NavRoom* roomPos;
         int xpos;
         int ypos;
         char symbol;    // Reprezentacja wizualna w Render Tablicy.

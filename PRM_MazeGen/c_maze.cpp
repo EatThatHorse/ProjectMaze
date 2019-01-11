@@ -8,10 +8,12 @@ maze::maze() {
         // Przygotowanie Nowo Powstalego Pokoju.
         veryFirstRoom->SET_DOORS();
         veryFirstRoom->ClearRoom();
-        veryFirstRoom->Danger(1,1,80,80,10);
+//        veryFirstRoom->Danger(1,1,80,80,10);
 
     this->lastRoomAdded = veryFirstRoom;
+    this->walker = veryFirstRoom;
     this->HERO.roomPos = this->veryFirstRoom;
+
 
     this->AddFloor();
 }
@@ -148,6 +150,7 @@ void recur_UpdateFloor (Direction dir, NavRoom* tmproom){
     // Pojawilismy sie w tym pokoju, posprzatajmy.
     tmproom->SET_DOORS();
     tmproom->ClearRoom();
+    tmproom->AllocateContainers();
 
     if (dir == LEFT) // Przybylismy z pokoju po PRAWEJ
         if (tmproom->WEST() != NULL) // Zobaczmy czy mozemy isc dalej w LEWO.
@@ -169,12 +172,15 @@ void maze::UpdateLastFloor(){
     // Czyszczenie last room:
     tmpRoom->SET_DOORS();
     tmpRoom->ClearRoom();
+    tmpRoom->AllocateContainers();
 
     if (tmpRoom->SOUTH() != NULL){ // Ide poziom nizej, O ile moge.
         tmpRoom = tmpRoom->SOUTH();
         // Czyszczenie
         tmpRoom->SET_DOORS();
         tmpRoom->ClearRoom();
+        tmpRoom->AllocateContainers();
+
     }else{ return; }
 
     if (tmpRoom->WEST() != NULL){ // Zobaczmy czy mozemy isc w LEWO.

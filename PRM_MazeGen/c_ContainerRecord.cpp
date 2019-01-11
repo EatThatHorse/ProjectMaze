@@ -1,8 +1,9 @@
 #include "c_ContainerRecord"
 
 /// KONSTRUKTORY / DESTRUKTORY
-ConRecord::ConRecord(int Tindex, ConRecord* prev, int xpos, int ypos, char symbol)
-          : keptValue(xpos, ypos, symbol) { // LISTA INICJALIZACYJNA
+ConRecord::ConRecord(int Tindex, ConRecord* prev, int xpos, int ypos, char symbol){
+         // : keptValue(xpos, ypos, symbol) { // LISTA INICJALIZACYJNA
+    this->keptValue = new Obstacle(xpos, ypos, symbol);
 
     this->previousRecord = prev;
     this->nextRecord = 0;
@@ -28,6 +29,6 @@ void ConRecord::ShowRecord (){
     else                 cout << ")\t";
 
     cout << " id: [" << index << "]"
-         << " X,Y: [" << keptValue.xpos << "," << keptValue.ypos << "]"
-         << " char: ['" << keptValue.symbol << "']";
+         << " X,Y: [" << keptValue->xpos << "," << keptValue->ypos << "]"
+         << " char: ['" << keptValue->symbol << "']";
 }
