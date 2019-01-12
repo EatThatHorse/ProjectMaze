@@ -5,6 +5,7 @@
     #include "c_Game"
     #include "c_Menu"
 
+
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
     class GreatLoop {
     public: // KONSTRUKTOR

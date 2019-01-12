@@ -85,6 +85,8 @@
 		<Unit filename="PRM_Objects/c_Obstacle.cpp" />
 		<Unit filename="PRM_Objects/c_Player" />
 		<Unit filename="PRM_Objects/c_Player.cpp" />
+		<Unit filename="PRM_Objects/c_Stats" />
+		<Unit filename="PRM_Objects/c_Stats.cpp" />
 		<Unit filename="PRM_Objects/c_Unit" />
 		<Unit filename="PRM_Objects/c_Unit.cpp" />
 		<Unit filename="u_ProjectUtilities" />

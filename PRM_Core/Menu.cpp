@@ -137,10 +137,10 @@ void Menu::ShowMENU(int& option){
     int odzn = 0;
 
     if (option < 0){
-        option = 3;
+        option = 2;
     }
 
-    if (option > 3){
+    if (option > 2){
         option = 0;
     }
 
@@ -151,22 +151,22 @@ void Menu::ShowMENU(int& option){
     }
 
 
-    if (option == 1){
-        AsciiButton (20,"Wczytaj",odstep,zazn);
-    } else {
-        AsciiButton (20,"Wczytaj",odstep,odzn);
-    }
+//    if (option == 1){
+//        AsciiButton (20,"Wczytaj",odstep,zazn);
+//    } else {
+//        AsciiButton (20,"Wczytaj",odstep,odzn);
+//    }
 
-    if (option == 2){
+    if (option == 1){
         AsciiButton (20,"Tabela Wynikow",odstep,zazn);
     } else {
         AsciiButton (20,"Tabela Wynikow",odstep,odzn);
     }
 
 
-    cout << "\n\n";
+   // cout << "\n\n";
 
-    if (option == 3){
+    if (option == 2){
         AsciiButton (20,"Zamknij",odstep,zazn);
     } else {
         AsciiButton (20,"Zamknij",odstep,odzn);
@@ -187,17 +187,19 @@ void Menu::Write(int& choose){
         getchar();
         enterGame = true;
     }
+//    if (choose == 1){
+//        system("cls");
+//        cout<<"Wczytaj! \n";
+//        getchar();
+//    }
     if (choose == 1){
         system("cls");
-        cout<<"Wczytaj! \n";
+        cout<<"Tabela ! \n";
+        Stats Data;
+        Data.Read();
         getchar();
     }
     if (choose == 2){
-        system("cls");
-        cout<<"Tabela ! \n";
-        getchar();
-    }
-    if (choose == 3){
         system("cls");
         cout<<"KONIEC! \n";
         getchar();
@@ -216,10 +218,10 @@ int Menu::Input(int& option){
 
     // Obsluga Input Eventow: -------------------------------------
     if (znak == 27) {       // ESCAPE
-        if (option==3)
+        if (option==2)
             *GLOOP = false;
         else
-            option = 3;
+            option = 2;
         return znak;
     }
     if (znak == 13) {         // ENTER

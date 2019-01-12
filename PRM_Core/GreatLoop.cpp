@@ -24,7 +24,6 @@ void GreatLoop::Execute(){
     if (this->GLOOP)
         Main_GAME.Execute();
 
-
     return;
 }
 

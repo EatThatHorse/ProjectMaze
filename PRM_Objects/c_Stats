@@ -1,0 +1,26 @@
+#ifndef C_STATS
+#define C_STATS
+
+#include <windows.h>    // system("");
+#include <conio.h>      // getch
+#include <stdio.h>      // getchar
+#include <iostream>
+#include <fstream>      // zapis do pliku
+
+#include "../PRM_MazeGen/c_NavRoom"
+using std::cout;
+using std::string;
+using std::cin;
+
+class Stats{
+    public:
+        string PlayerName;
+        int Score;
+
+        void Write();
+        void Save(int);
+        void Read();
+
+
+};
+#endif

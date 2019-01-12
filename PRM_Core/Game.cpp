@@ -12,13 +12,20 @@ void Game::Execute(){
         Obsluga wiekszosci bledow.
     */
     // METODY WYWOLANIA GRY.
-    GameVer01();
+    int score;
+     score = GameVer01();
+
+        Stats Data;
+        Data.Save(score);    /// zapis nicka po rozgrywce
+        Data.Write();       ///zapis do pliku
+
+
 
     return;
 }
 
 
-void Game::GameVer01() {
+int Game::GameVer01() {
     /** Pierwsza wersja Funkcji Sterującej Rozgrywką. */
 
     maze HeadMaze;
@@ -33,6 +40,8 @@ void Game::GameVer01() {
         HeadMaze.HERO.ShowGui();
         HeadMaze.HERO.roomPos->EditPX (x,y,s);  // PreRender Gracza
         HeadMaze.HERO.roomPos->RenderRoom();    // PreRender. Wykonanie Pierwszej Klatki.
+
+
     }
 
 
@@ -56,9 +65,17 @@ void Game::GameVer01() {
             HeadMaze.HERO.ShowGui();
             HeadMaze.HERO.roomPos->EditPX (x,y,s);  // PreRender Gracza
             HeadMaze.HERO.roomPos->RenderRoom();    // PreRender. Wykonanie Pierwszej Klatki.
-        }
-    }
-    return;
+
+
+            }
+                }
+
+
+
+
+
+
+    return 0;
 }
 
 

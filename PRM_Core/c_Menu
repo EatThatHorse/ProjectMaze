@@ -4,6 +4,7 @@
 
     #include "c_Input"
     #include "c_Render"
+    #include "../PRM_Objects/c_Stats"
 
     #include <windows.h>    // system("");
     #include <conio.h>      // getch
@@ -11,6 +12,7 @@
     #include <iostream>
     using std::cout;
     using std::string;
+    using std::cin;
 
 
     /// DEFINICJA KLASY --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -

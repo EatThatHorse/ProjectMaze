@@ -5,6 +5,7 @@
     #include "c_Input"
     #include "c_Update"
     #include "c_Render"
+    #include "../PRM_Objects/c_Stats"
 
     #include "../PRM_MazeGen/c_maze"
 
@@ -22,7 +23,7 @@
         bool* GLOOP;  // Pointer to GreatLoop flag.
 
     private: // EVERY GAME VERSION:
-        void GameVer01();
+        int GameVer01();
     };
     /// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
 #endif // C_GAME__PRM
