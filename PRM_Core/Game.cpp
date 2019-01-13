@@ -66,7 +66,7 @@ int Game::GameVer01() {
             HeadMaze.HERO.roomPos->EditPX (x,y,s);  // PreRender Gracza
             HeadMaze.HERO.roomPos->RenderRoom();    // PreRender. Wykonanie Pierwszej Klatki.
 
-
+          //  cout<<HeadMaze.HERO.roomPos->NR();
             }
                 }
 
@@ -75,7 +75,7 @@ int Game::GameVer01() {
 
 
 
-    return 11;
+    return HeadMaze.HERO.roomPos->NR();
 }
 
 
