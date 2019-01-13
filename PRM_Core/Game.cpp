@@ -75,7 +75,7 @@ int Game::GameVer01() {
 
 
 
-    return 0;
+    return 11;
 }
 
 

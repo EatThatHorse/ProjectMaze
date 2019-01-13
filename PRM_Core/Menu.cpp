@@ -194,7 +194,7 @@ void Menu::Write(int& choose){
 //    }
     if (choose == 1){
         system("cls");
-        cout<<"Tabela ! \n";
+        cout<<"\t\t\t\t\t\tNick..........Wynik \n";
         Stats Data;
         Data.Read();
         getchar();
