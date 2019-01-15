@@ -151,20 +151,12 @@ void Menu::ShowMENU(int& option){
     }
 
 
-//    if (option == 1){
-//        AsciiButton (20,"Wczytaj",odstep,zazn);
-//    } else {
-//        AsciiButton (20,"Wczytaj",odstep,odzn);
-//    }
-
     if (option == 1){
         AsciiButton (20,"Tabela Wynikow",odstep,zazn);
     } else {
         AsciiButton (20,"Tabela Wynikow",odstep,odzn);
     }
 
-
-   // cout << "\n\n";
 
     if (option == 2){
         AsciiButton (20,"Zamknij",odstep,zazn);
@@ -187,11 +179,7 @@ void Menu::Write(int& choose){
         getchar();
         enterGame = true;
     }
-//    if (choose == 1){
-//        system("cls");
-//        cout<<"Wczytaj! \n";
-//        getchar();
-//    }
+
     if (choose == 1){
         system("cls");
         cout<<"\t\t\t\t\t\tNick..........Wynik \n";
