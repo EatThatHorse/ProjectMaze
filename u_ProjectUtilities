@@ -17,6 +17,8 @@ void DEBUG_KEYBOARD ();
 
 void RepairArg(int*,int*,int* =0,int* =0);
 
+void Epilepsja();
+
 
 
 #endif // u_PROJ_UTILITIES

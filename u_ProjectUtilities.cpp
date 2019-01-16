@@ -95,5 +95,12 @@ void RepairArg(int* posX1,int* posY1,int* posX2,int* posY2){
     }
     // ---------------------------------------------------------------------------------------------
 }
+ void Epilepsja(){
+    cout<<"\n\n\n\n\n\n\n\t\t OSTRZEZENIE!\n"
+        <<"\t\t Gra moze powodowac ataki epileptyczne.\n"
+        <<"\t\t Grasz na wlasna odpowiedzialnosc.\n";
+        getchar();
+        system("cls");
+}
 
 

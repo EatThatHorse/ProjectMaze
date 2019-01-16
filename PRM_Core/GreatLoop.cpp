@@ -13,6 +13,8 @@ void GreatLoop::Execute(){
         Obsluga wiekszosci bledow.
         Metoda wywolywana w MAIN() przez konstruktor.
     */
+    Epilepsja();
+
     Game Main_GAME(&this->GLOOP); // Game Exec
     Menu Main_MENU(&this->GLOOP); // Menu Exec
 
