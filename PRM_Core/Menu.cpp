@@ -128,7 +128,8 @@ void Menu::ShowMENU(int& option){
          << odstep << "| |   | | | (_) | |  __/ (__| |_  | |  | | (_| |/ /  __/         \n"
          << odstep << "|_|   |_|  \\___/| |\\___|\\___|\\__| |_|  |_|\\__,_/___\\___|   \n"
          << odstep << "               _/ |                                              \n"
-         << odstep << "              |__/                                               \n";
+         << odstep << "              |__/                                               \n\n"
+         << odstep << "Game by: Ptysiek, Koziol, Grzybo \n";
 
     cout << "\n\n";
 
