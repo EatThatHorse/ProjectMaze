@@ -183,7 +183,8 @@ void Menu::Write(int& choose){
 
     if (choose == 1){
         system("cls");
-        cout<<"\t\t\t\t\t\tNick..........Wynik \n";
+        cout<<"\n\t\t\t\t\t\tNick..........Wynik \n"
+            <<"\t\t\t\t\t\t-------------------";
         Stats Data;
         Data.Read();
         getchar();
