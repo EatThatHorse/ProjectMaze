@@ -26,7 +26,7 @@
 
     class player : public Unit {
     public: /// KONSTRUKTOR
-        player () : Unit(O_xpos, O_ypos, O_symbol, U_speedVY, U_speedHX) { }
+        player () : Unit(O_xpos, O_ypos, PLAYER, O_symbol, U_speedVY, U_speedHX) { }
 
     private: /// ZMIENNE
         // Ranked / Status
@@ -39,6 +39,7 @@
         int Move (Direction);
         int Action ();
         void ShowGui ();
+        int getdmg ();
     };
 
 #endif // C_PLAYER__PRMAZE
