@@ -3,7 +3,8 @@
 
 
 #include <windows.h>    // system("");
-#include <conio.h>    // system("");
+#include <conio.h>      // getch
+#include <cstdio>       // getchar
 
 #include <iostream>
 using std::cout;
